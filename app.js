@@ -71,4 +71,8 @@
       }else{fallbackCopy(txt,done);}
     });
   });
+
+  /* download résumé as PDF via print dialog */
+  var dl=document.getElementById('dlpdf');
+  if(dl){dl.addEventListener('click',function(){window.print();});}
 })();
