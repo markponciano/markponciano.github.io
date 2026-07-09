@@ -4,135 +4,124 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Case Study — Mark Lorenze Ponciano</title>
-<style>
-  :root{
-    --bg:#f4f2ee; --card:#ffffff; --ink:#1b1b1b; --soft:#5b5b5b; --line:#e3e0d9;
-    --accent:#1f5fa8; --accent2:#137a4d; --accentbg:#eaf1fb; --statbg:#f0f5fc;
-  }
-  @media (prefers-color-scheme:dark){
-    :root{
-      --bg:#14161b; --card:#1c1f27; --ink:#eceef2; --soft:#a2a8b2; --line:#2b2f3a;
-      --accent:#5b9bf0; --accent2:#4fbf8b; --accentbg:#16273f; --statbg:#172231;
-    }
-  }
-  *{box-sizing:border-box}
-  body{margin:0;background:var(--bg);color:var(--ink);
-    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
-  .wrap{max-width:820px;margin:0 auto;padding:46px 22px 72px}
-  .eyebrow{font-size:12.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin:0 0 10px}
-  h1{font-size:33px;line-height:1.18;letter-spacing:-.5px;margin:0 0 12px}
-  .sub{font-size:18px;color:var(--soft);margin:0 0 18px;line-height:1.5}
-  .byline{display:inline-block;font-size:13.5px;color:var(--soft);background:var(--card);
-    border:1px solid var(--line);border-radius:20px;padding:6px 14px}
-  .byline b{color:var(--ink)}
-  h2{font-size:13px;text-transform:uppercase;letter-spacing:1.6px;color:var(--accent);
-    font-weight:700;margin:40px 0 12px}
-  p{margin:0 0 14px}
-  .lead{font-size:17px}
-  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:0 0 14px}
-  .problem li{margin:8px 0}
-  .problem b{color:var(--ink)}
-  .fix{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin:0 0 14px;
-    border-left:4px solid var(--accent)}
-  .fix .tag{display:inline-block;font-size:11.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
-    color:var(--accent);background:var(--accentbg);border-radius:20px;padding:3px 10px;margin:0 0 8px}
-  .fix h3{font-size:19px;margin:0 0 6px;letter-spacing:-.2px}
-  .fix p{margin:0;color:var(--ink)}
-  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:6px 0 4px}
-  .stat{background:var(--statbg);border:1px solid var(--line);border-radius:13px;padding:16px 16px 14px}
-  .stat .n{font-size:24px;font-weight:800;letter-spacing:-.5px;color:var(--accent)}
-  .stat .l{font-size:13px;color:var(--soft);margin-top:3px;line-height:1.4}
-  .close{background:var(--ink);color:var(--bg);border-radius:16px;padding:28px 26px;margin-top:36px}
-  @media (prefers-color-scheme:dark){.close{background:#0c0d11}}
-  .close h2{color:#fff;margin-top:0;opacity:.75}
-  .close p{color:#fff;opacity:.94;font-size:16.5px;margin-bottom:12px}
-  .close .cta{font-size:15px;opacity:.8;margin:0}
-  .close a{color:#8fc0ff;text-decoration:none}
-  footer{margin-top:30px;font-size:12.5px;color:var(--soft);text-align:center;line-height:1.6}
-  @media print{
-    body{background:#fff}
-    .card,.fix,.stat,.close{break-inside:avoid}
-    .close{background:#1b1b1b !important}
-  }
-  @page{margin:14mm}
-</style>
+<title>Case Study — Mark Ponciano</title>
+<meta name="description" content="How I rebuilt the back office of a growing food and events business, and found about £80k a year hiding in the P&L.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Case Study — from manual chaos to systems that run themselves">
+<meta property="og:description" content="How I rebuilt the back office of a growing food and events business, and found about £80k a year hiding in the P&L.">
+<meta property="og:url" content="https://markponciano.github.io/Case_Study.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2322315c'/%3E%3Ctext%20x='16'%20y='22'%20font-family='monospace'%20font-size='14'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
 </head>
 <body>
-<div class="wrap">
 
-  <p class="eyebrow">Case Study</p>
-  <h1>From manual chaos to systems that run themselves</h1>
-  <p class="sub">How I rebuilt the back office of a growing UK street-food and events business, starting in my first few weeks.</p>
-  <span class="byline"><b>Mark Lorenze Ponciano</b> · Systems, Automation &amp; Bookkeeping for SMBs</span>
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">mark<b>.</b>ponciano</a>
+    <nav class="nav">
+      <a href="Case_Study.html">Case study</a>
+      <a href="Body_of_Work.html">Work</a>
+      <a href="Mark_Ponciano_Resume_2026.html">Résumé</a>
+      <a class="nav-cta" href="mailto:marklorenzeponciano@gmail.com">Get in touch</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch light / dark">◐</button>
+    </nav>
+  </div>
+</header>
 
-  <h2>The business</h2>
-  <p class="lead">A multi-venue street-food and events caterer, running food concessions at football stadiums alongside a busy corporate and private events side. Growing quickly, and like a lot of businesses that grow quickly, the back office hadn't kept pace with the front.</p>
+<main class="wrap">
 
-  <h2>The problem</h2>
-  <div class="card problem">
-  <p>On paper the business was doing well. Underneath, the admin was held together by spreadsheets, memory, and people staying late:</p>
-  <ul>
-    <li><b>Payroll was worked out by hand</b> every week, for a rotating crew of contractors and virtual assistants, in more than one currency.</li>
-    <li><b>The weekly P&amp;L wasn't fully trusted.</b> It ran on a cost configuration that had quietly drifted away from what the accounts actually said.</li>
-    <li><b>Quotes and invoices were re-typed by hand</b> between separate tools, with the usual typos, delays and version confusion.</li>
-    <li><b>The CRM was sold as "it does everything,"</b> but its automation was brittle, hard to see into, and kept breaking at the worst moments.</li>
-    <li><b>Bookings, trailers and calendars lived in different places</b> that didn't always agree with each other, so things occasionally got double-booked or missed.</li>
-  </ul>
+  <section class="page-hero">
+    <p class="eyebrow">Case Study</p>
+    <h1>From manual chaos to systems that run themselves</h1>
+    <p class="sub">How I rebuilt the back office of a growing UK street-food and events business, starting in my first few weeks.</p>
+    <span class="byline"><b>Mark Lorenze Ponciano</b> · Systems, Automation &amp; Bookkeeping for SMBs</span>
+  </section>
+
+  <div class="prose">
+
+    <section data-reveal>
+      <h2>The business</h2>
+      <p>A multi-venue street-food and events caterer, running food concessions at football stadiums alongside a busy corporate and private events side. Growing quickly, and like a lot of businesses that grow quickly, the back office hadn't kept pace with the front.</p>
+    </section>
+
+    <section data-reveal>
+      <h2>The problem</h2>
+      <p>On paper the business was doing well. Underneath, the admin was held together by spreadsheets, memory, and people staying late:</p>
+      <div class="card list-card">
+        <ul>
+          <li><b>Payroll was worked out by hand</b> every week, for a rotating crew of contractors and virtual assistants, in more than one currency.</li>
+          <li><b>The weekly P&amp;L wasn't fully trusted.</b> It ran on a cost setup that had quietly drifted away from what the accounts actually said.</li>
+          <li><b>Quotes and invoices were re-typed by hand</b> between separate tools, with the usual typos, delays and version confusion.</li>
+          <li><b>The CRM was sold as "it does everything,"</b> but its automation was brittle, hard to see into, and kept breaking at the worst moments.</li>
+          <li><b>Bookings, trailers and calendars lived in different places</b> that didn't always agree, so things occasionally got double-booked or missed.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section data-reveal>
+      <h2>How I approached it</h2>
+      <p>I don't walk in and start building. I do the books and the day-to-day first, because that is where the real problems show themselves. Reconciling the numbers and running the weekly work is the fastest way to see exactly where the money leaks, where the time goes, and which "system" is really just someone remembering to do a thing. Then I fix the most painful thing first, prove it works, and move on to the next one. Nothing fancier than it needs to be.</p>
+    </section>
+
+    <section data-reveal>
+      <h2>What I did</h2>
+      <div class="fix">
+        <span class="tag">Week 3</span>
+        <h3>Stopped the matchday bleeding</h3>
+        <p>Within three weeks of joining, I replaced the by-hand matchday process with a single living spreadsheet that took in stadium food-sales and worked out subcontractor pay automatically. It changed how the team ran every match day from then on.</p>
+      </div>
+      <div class="fix">
+        <span class="tag">Found money</span>
+        <h3>Surfaced ~£80k hiding in the P&amp;L</h3>
+        <p>I reconciled the weekly P&amp;L's cost setup against the actual accounts and found about £80k a year (annualised) in costs the model had been quietly missing. The business had been reading its profit as higher than it really was. Now the numbers tell the truth.</p>
+      </div>
+      <div class="fix">
+        <span class="tag">Automation</span>
+        <h3>Turned quotes into invoices on their own</h3>
+        <p>Before the business even had a CRM, I built its first automated quote-to-invoice pipeline, wiring together the tools it already used so an enquiry could become an invoice without anyone re-typing anything.</p>
+      </div>
+      <div class="fix">
+        <span class="tag">The engine</span>
+        <h3>Built the system the business actually runs on</h3>
+        <p>I designed and built a proper system that runs bookings, quoting, invoicing and payments from end to end, and moved the fragile automation out of the rented CRM into something reliable. The CRM stayed as the friendly front screen; the real work moved to solid ground underneath, where it can be checked and trusted.</p>
+      </div>
+      <div class="fix">
+        <span class="tag">Reliability</span>
+        <h3>Kept the weekly finances running like clockwork</h3>
+        <p>Payroll, P&amp;L and stadium-sales invoicing, every week without a gap, so the owners always knew exactly where they stood. And when a colleague left a half-built tool behind, I picked it up and shipped it rather than let it rot.</p>
+      </div>
+    </section>
+
+    <section data-reveal>
+      <h2>The results</h2>
+      <div class="proof" style="margin-bottom:16px">
+        <div class="stat"><span class="n mono" data-count="80" data-prefix="£" data-suffix="k">£0</span><span class="l">a year found hiding in the P&amp;L</span></div>
+        <div class="stat"><span class="n mono" data-count="3" data-suffix=" wks">0</span><span class="l">from joining to the first system live</span></div>
+        <div class="stat"><span class="n mono">0</span><span class="l">quotes, invoices or payroll re-typed by hand</span></div>
+      </div>
+      <p>A back office that mostly runs itself, numbers the owners can actually trust, and money that was leaking quietly now accounted for. Built one painful problem at a time, in the order that mattered most.</p>
+    </section>
+
   </div>
 
-  <h2>How I approached it</h2>
-  <p>I don't walk in and start building. I do the books and the day-to-day first, because that is where the real problems show themselves. Reconciling the numbers and running the weekly work is the fastest way to see exactly where the money leaks, where the time goes, and which "system" is really just someone remembering to do a thing. Then I fix the most painful thing first, prove it works, and move on to the next one. Nothing fancier than it needs to be.</p>
-
-  <h2>What I did</h2>
-
-  <div class="fix">
-    <span class="tag">Week 3</span>
-    <h3>Stopped the matchday bleeding</h3>
-    <p>Within three weeks of joining, I replaced the by-hand matchday process with a single living spreadsheet that took in stadium food-sales and worked out subcontractor pay automatically. It changed how the team ran every match day from then on.</p>
-  </div>
-
-  <div class="fix">
-    <span class="tag">Found money</span>
-    <h3>Surfaced ~£80k that was hiding in the P&amp;L</h3>
-    <p>I reconciled the weekly P&amp;L's cost configuration against the actual accounts and found about £80k a year (annualised) in costs the model had been quietly missing. The business had been reading its profit as higher than it really was. Now the numbers tell the truth.</p>
-  </div>
-
-  <div class="fix">
-    <span class="tag">Automation</span>
-    <h3>Turned quotes into invoices on their own</h3>
-    <p>Before the business even had a CRM, I built its first automated quote-to-invoice pipeline, wiring together the tools it already used so an enquiry could become an invoice without anyone re-typing anything.</p>
-  </div>
-
-  <div class="fix">
-    <span class="tag">The engine</span>
-    <h3>Built the system the business actually runs on</h3>
-    <p>I designed and built a proper system that runs bookings, quoting, invoicing and payments from end to end, and moved the fragile automation out of the rented CRM into something reliable. The CRM stayed as the friendly front screen; the real work moved to solid ground underneath, where it can be checked and trusted.</p>
-  </div>
-
-  <div class="fix">
-    <span class="tag">Reliability</span>
-    <h3>Kept the weekly finances running like clockwork</h3>
-    <p>Payroll, P&amp;L and stadium-sales invoicing, every week without a gap, so the owners always knew exactly where they stood. And when a colleague left a half-built tool behind, I picked it up and shipped it rather than let it rot.</p>
-  </div>
-
-  <h2>The results</h2>
-  <div class="stats">
-    <div class="stat"><div class="n">Week 3</div><div class="l">First real win live, not month six</div></div>
-    <div class="stat"><div class="n">~£80k/yr</div><div class="l">Hidden costs surfaced; profit finally accurate</div></div>
-    <div class="stat"><div class="n">0</div><div class="l">Quotes, invoices or payroll re-typed by hand</div></div>
-    <div class="stat"><div class="n">Owned</div><div class="l">Core systems the business owns, not rents</div></div>
-  </div>
-  <p>A back office that mostly runs itself, numbers the owners can actually trust, and money that was leaking quietly now accounted for. Built one painful problem at a time, in the order that mattered most.</p>
-
-  <div class="close">
+  <section class="cta-band" data-reveal>
     <h2>If this sounds like your business</h2>
-    <p>If you're growing but the admin behind you is held together by spreadsheets, memory and late nights, that is exactly the mess I'm good at. I start with your books and your day-to-day, find what's actually costing you time and money, and build the simplest thing that fixes it.</p>
-    <p class="cta">Let's talk: <a href="mailto:marklorenzeponciano@gmail.com">marklorenzeponciano@gmail.com</a></p>
-  </div>
+    <p>If you're growing but the admin behind you is held together by spreadsheets, memory and late nights, that is exactly the mess I'm good at. I start with your books and your day-to-day, find what's costing you time and money, and build the simplest thing that fixes it.</p>
+    <a class="mail" href="mailto:marklorenzeponciano@gmail.com">marklorenzeponciano@gmail.com</a>
+  </section>
 
-  <footer>Client details anonymised for confidentiality. Figures are drawn from live reconciliation work; the ~£80k is an annualised run-rate.</footer>
+  <p style="margin-top:28px"><a class="back-home" href="index.html"><span aria-hidden="true">←</span> Back to home</a></p>
 
-</div>
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Mark Lorenze Ponciano · client details anonymised</span>
+  <span class="mono">Remote · Philippines (GMT+8)</span>
+</footer>
+
 </body>
 </html>

@@ -191,6 +191,32 @@ h3{font-family:var(--sans);font-weight:600;font-size:1.2rem;margin:0 0 6px}
   .nav .nav-cta{display:none}
 }
 
+/* ---------- content pages (case study / body of work / résumé) ---------- */
+.page-hero{padding:52px 0 6px}
+.page-hero .sub{font-size:1.22rem;color:var(--muted);margin:2px 0 16px;max-width:640px;line-height:1.5}
+.byline{display:inline-block;font-family:var(--mono);font-size:12.5px;color:var(--muted);
+  background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:6px 14px}
+.byline b{color:var(--ink)}
+.prose{max-width:720px}
+.prose > p{margin:0 0 16px}
+.prose h2{margin-top:46px}
+.list-card ul{margin:6px 0 0;padding-left:20px}
+.list-card li{margin:9px 0;color:var(--ink)}
+.list-card li b{color:var(--ink)}
+.back-home{font-family:var(--mono);font-size:13px;color:var(--muted);display:inline-flex;gap:6px;align-items:center;margin-top:8px}
+.back-home:hover{color:var(--ink)}
+/* fix cards ("what I did") */
+.fix{background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--amber);
+  border-radius:var(--radius);padding:22px 24px;margin:0 0 14px;box-shadow:var(--shadow-sm);
+  transition:transform .18s,box-shadow .18s}
+.fix:hover{transform:translateY(-2px);box-shadow:var(--shadow)}
+.fix .tag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:1px;
+  text-transform:uppercase;color:var(--amber);background:var(--amber-soft);border-radius:20px;padding:3px 10px;margin:0 0 10px}
+.fix h3{font-family:var(--serif);font-weight:600;font-size:1.3rem;margin:0 0 6px}
+.fix p{margin:0;color:var(--ink)}
+/* download button row */
+.dl-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:6px 0 8px}
+
 /* ---------- respect reduced motion ---------- */
 @media (prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important}
