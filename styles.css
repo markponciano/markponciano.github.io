@@ -274,17 +274,64 @@ h3{font-family:var(--sans);font-weight:600;font-size:1.2rem;margin:0 0 6px}
 .resume .edu p{margin:7px 0;font-size:15px}
 .resume h2{margin:40px 0 12px;font-size:1.4rem}
 .resume section{scroll-margin-top:80px}
-@page{margin:14mm}
+@page{margin:11mm 13mm;size:A4}
 @media print{
-  .site-header,.site-footer,.back-home,.dl-row,.theme-toggle,.page-hero .eyebrow,.page-hero .sub{display:none!important}
-  body{background:#fff;color:#141414;font-size:12px}
-  .wrap{max-width:none;padding:0}
-  .page-hero{padding:0}
-  .resume h1{font-size:22px;margin-bottom:2px}
-  .resume h2{color:#1f2a4d;margin:16px 0 7px;font-size:15px}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  html,body{background:#fff!important;color:#141414!important;
+    font-family:"IBM Plex Sans",Arial,sans-serif!important;
+    font-size:10px!important;line-height:1.38!important}
+
+  /* strip screen chrome */
+  .site-header,.site-footer,.back-home,.dl-row,.theme-toggle,
+  .page-hero .eyebrow,.page-hero .sub{display:none!important}
+
+  /* release width + spacing */
+  .wrap,.wrap.reading{max-width:none!important;padding:0!important;margin:0!important}
+  .page-hero{padding:0!important;margin:0 0 4px!important}
+  main{margin:0!important;padding:0!important}
+
+  /* name + contact line */
+  .resume h1{font-family:"IBM Plex Serif",Georgia,serif!important;
+    font-size:20px!important;letter-spacing:-.3px;margin:0 0 2px!important;line-height:1.1!important;color:#141414!important}
+  .resume .byline{display:block!important;background:transparent!important;border:none!important;
+    padding:0!important;margin:0 0 8px!important;font-family:"IBM Plex Sans",sans-serif!important;
+    font-size:9.5px!important;color:#444!important;letter-spacing:0!important}
+  .resume .byline b{color:#141414}
+  .resume .byline a{color:#22315c!important}
+
+  /* section headings */
+  .resume h2{font-family:"IBM Plex Serif",Georgia,serif!important;color:#22315c!important;
+    font-size:12px!important;letter-spacing:.3px;margin:9px 0 3px!important;padding:0 0 2px;
+    border-bottom:.6px solid #ccc;text-transform:none!important;break-after:avoid}
+
+  /* summary + generic paragraphs */
+  .resume section > p{margin:0 0 3px!important;font-size:10px!important;line-height:1.42!important}
+
+  /* proficiencies */
+  .resume .prof p{margin:2px 0!important;font-size:9.5px!important;line-height:1.38!important}
+  .resume .prof p b{color:#141414}
+
+  /* experience */
+  .resume .job{margin:0 0 6px!important;break-inside:avoid}
+  .resume .jh{margin:0;align-items:baseline;gap:6px}
+  .resume .jt{font-weight:700!important;font-size:10.5px!important;color:#141414}
+  .resume .jo{font-weight:400!important;font-size:10px!important;color:#444}
+  .resume .jd{font-family:"IBM Plex Mono",monospace!important;font-size:9px!important;color:#666!important}
+  .resume .jf{font-style:italic;color:#22315c!important;font-size:9.5px!important;margin:0 0 2px!important}
+  .resume .job ul{margin:1px 0 0!important;padding-left:14px!important}
+  .resume .job li{margin:1.5px 0!important;font-size:9.75px!important;line-height:1.4!important;break-inside:avoid}
+  .resume .job li b{color:#141414}
+
+  /* education */
+  .resume .edu p{margin:2px 0!important;font-size:9.75px!important}
+  .resume .muted{color:#555!important}
+
+  /* reveal always on */
   .resume [data-reveal]{opacity:1!important;transform:none!important}
-  .resume .job,.resume .job li{break-inside:avoid}
-  a{color:#1f2a4d;text-decoration:none}
+
+  /* clean links */
+  a{color:#22315c!important;text-decoration:none!important}
+  a[href^="http"]::after,a[href^="mailto"]::after{content:""!important}
 }
 
 /* ---------- respect reduced motion ---------- */
