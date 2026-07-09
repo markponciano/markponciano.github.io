@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mark Lorenze Ponciano — Body of Work</title>
+<style>
+  :root{
+    --bg:#f7f6f3; --card:#ffffff; --ink:#1a1a1a; --muted:#5c5c5c; --line:#e4e1da;
+    --accent:#1f6feb; --accent-soft:#eaf1fe;
+    --live:#137333; --live-bg:#e6f4ea; --ship:#1f6feb; --ship-bg:#eaf1fe;
+    --prog:#b06000; --prog-bg:#fdf0e1; --draft:#6a6a6a; --draft-bg:#eeeae4;
+    --arch:#7a5a00; --arch-bg:#f5efdc;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --bg:#14151a; --card:#1c1e26; --ink:#eceef2; --muted:#a0a6b0; --line:#2b2e39;
+      --accent:#4d9fff; --accent-soft:#17263f;
+      --live:#5fd08a; --live-bg:#12291b; --ship:#6fb0ff; --ship-bg:#132335;
+      --prog:#e0a35e; --prog-bg:#2c2013; --draft:#9aa0aa; --draft-bg:#23262f;
+      --arch:#d8bd6a; --arch-bg:#2a2410;
+    }
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--bg);color:var(--ink);
+    font:16px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;}
+  .wrap{max-width:920px;margin:0 auto;padding:48px 22px 80px}
+  header.top{border-bottom:2px solid var(--ink);padding-bottom:22px;margin-bottom:8px}
+  h1{font-size:34px;line-height:1.15;margin:0 0 6px;letter-spacing:-.5px}
+  .role{font-size:18px;color:var(--muted);margin:0 0 14px;font-weight:500}
+  .lede{font-size:17px;margin:0;max-width:70ch}
+  .lede b{color:var(--ink)}
+  .meta{margin-top:16px;font-size:13px;color:var(--muted)}
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:30px 0 8px}
+  .fact{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 16px 14px}
+  .fact .n{font-size:24px;font-weight:700;letter-spacing:-.5px;color:var(--accent)}
+  .fact .l{font-size:12.5px;color:var(--muted);margin-top:3px;line-height:1.4}
+  h2{font-size:13px;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);
+     margin:46px 0 4px;font-weight:700}
+  .cap{background:var(--card);border:1px solid var(--line);border-radius:14px;
+       padding:22px 24px;margin-top:14px}
+  .cap h3{font-size:21px;margin:0 0 4px;letter-spacing:-.3px}
+  .cap .say{font-size:15px;color:var(--muted);margin:0 0 16px;font-style:italic}
+  .item{padding:13px 0;border-top:1px solid var(--line)}
+  .item:first-of-type{border-top:none;padding-top:2px}
+  .item .h{display:flex;flex-wrap:wrap;gap:8px;align-items:baseline}
+  .item .name{font-weight:650;font-size:15.5px}
+  .item .date{font-size:12.5px;color:var(--muted)}
+  .item .desc{font-size:14.5px;color:var(--ink);margin:4px 0 0;opacity:.92}
+  .tag{font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;
+       padding:2px 8px;border-radius:20px;white-space:nowrap}
+  .t-live{color:var(--live);background:var(--live-bg)}
+  .t-ship{color:var(--ship);background:var(--ship-bg)}
+  .t-prog{color:var(--prog);background:var(--prog-bg)}
+  .t-draft{color:var(--draft);background:var(--draft-bg)}
+  .t-arch{color:var(--arch);background:var(--arch-bg)}
+  .skills{margin-top:14px;font-size:13px;color:var(--muted)}
+  .skills b{color:var(--ink);font-weight:600}
+  .callout{background:var(--accent-soft);border:1px solid var(--line);border-left:4px solid var(--accent);
+           border-radius:10px;padding:18px 20px;margin-top:16px}
+  .callout p{margin:0 0 8px}.callout p:last-child{margin:0}
+  .honest{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-top:14px}
+  .honest li{margin:6px 0;font-size:14px;color:var(--muted)}
+  .honest b{color:var(--ink)}
+  .close{margin-top:40px;padding:26px;background:var(--ink);color:var(--bg);border-radius:14px}
+  .close h3{margin:0 0 10px;font-size:20px;color:#fff}
+  @media (prefers-color-scheme:dark){.close{background:#0c0d11}.close h3{color:#fff}}
+  .close p{margin:0 0 10px;opacity:.9;font-size:15px}
+  .close .id{font-size:18px;font-weight:600;line-height:1.4;opacity:1}
+  footer{margin-top:34px;font-size:12.5px;color:var(--muted);text-align:center}
+  @media print{body{background:#fff}.cap,.fact,.honest{break-inside:avoid}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <h1>Mark Lorenze Ponciano</h1>
+  <p class="role">Systems builder &amp; operations engineer — finance-rooted, AI-native</p>
+  <p class="lede">A body of work built inside one UK street-food &amp; events business over roughly four months —
+  from a <b>live production software system</b> that runs the company's bookings and money,
+  to the weekly finance and reconciliation engine underneath it, to the team, strategy and
+  web work around it. Compiled so the work can be <b>seen</b> — because most of it was never visible from the outside.</p>
+  <p class="meta">Work period surveyed: March – July 2026 · Compiled from 6,300+ project files across 13 areas · Status labels and caveats are honest and included by design.</p>
+</header>
+
+<section class="facts">
+  <div class="fact"><div class="n">Live</div><div class="l">A custom production system running the real business, end-to-end</div></div>
+  <div class="fact"><div class="n">~14,700</div><div class="l">Lines of PHP in the production "spine" · 191 commits</div></div>
+  <div class="fact"><div class="n">358</div><div class="l">Automated tests behind a 5-stage CI merge-gate</div></div>
+  <div class="fact"><div class="n">~46,000</div><div class="l">Words of plain-English system specification</div></div>
+  <div class="fact"><div class="n">~10 wks</div><div class="l">Unbroken weekly payroll &amp; P&amp;L runs</div></div>
+  <div class="fact"><div class="n">Jul 4</div><div class="l">Big-bang production cutover — executed, zero downtime</div></div>
+</section>
+
+<!-- 1 -->
+<h2>Capability 1 — Systems architecture &amp; production engineering</h2>
+<div class="cap">
+  <h3>I designed and shipped a live production platform, solo.</h3>
+  <p class="say">Not a prototype. Real users, real bookings, real money, tested and gated.</p>
+
+  <div class="item"><div class="h"><span class="name">The "spine" — DB-backed operational engine</span><span class="date">Jun 19 – Jul 8, 2026</span><span class="tag t-live">Live</span></div>
+  <p class="desc">A PHP 8.2 domain system (~50 classes) that replaced a SaaS CRM's automation layer. Bookings are records; state is <em>derived from facts</em> (quote accepted → op-form in → invoiced → paid) rather than hand-set. Deployed as WordPress mu-plugins. This is YumStreet's live nervous system.</p></div>
+
+  <div class="item"><div class="h"><span class="name">Big-bang production flip</span><span class="date">Executed Jul 4, 2026</span><span class="tag t-live">Live</span></div>
+  <p class="desc">Migrated a live revenue path off its existing platform with an ordered, per-step-reversible runbook and a ~130-check pre-flight gate battery. Zero downtime. Senior-grade release engineering.</p></div>
+
+  <div class="item"><div class="h"><span class="name">Test suite + 5-stage CI pipeline</span><span class="tag t-live">Live</span></div>
+  <p class="desc">358 PHPUnit tests including an end-to-end lifecycle regression (capture → quote → accept → op-form → invoice → pay → confirmed, asserting the money at each step). Every PR gated on lint, a custom collision check, PHPCS (PSR-12), PHPStan, and the full test run.</p></div>
+
+  <div class="item"><div class="h"><span class="name">Migration-based schema (26 migrations)</span><span class="tag t-live">Live</span></div>
+  <p class="desc">26 numbered, idempotent, additive SQL migrations with a custom runner and a version ledger that caught real production drift the day it was introduced.</p></div>
+
+  <div class="item"><div class="h"><span class="name">Production-incident hardening — double-invoice race fix</span><span class="date">PRs #153/#154 · Jul 7</span><span class="tag t-live">Live</span></div>
+  <p class="desc">Found and root-caused a real double-invoicing race (two Approve clicks → two Xero invoices), fixed it with an atomic DB claim, then audited and hardened every "once-only fact gates a side-effect" path. Concrete debugging depth and production ownership.</p></div>
+
+  <div class="item"><div class="h"><span class="name">Observability — Cockpit &amp; Observatory</span><span class="date">PRs #140–152 · Jul 6–7</span><span class="tag t-live">Live</span></div>
+  <p class="desc">An alert recorder with dedup + P1/P2 escalation wired into all seven cron sweeps, P1 email plus an external dead-man's-switch, and a live operator page with a heartbeat pill and plain-English activity feed.</p></div>
+
+  <div class="skills"><b>Demonstrates:</b> systems architecture · domain modelling · PHP OOP · database design · CI/PR discipline · automated testing · concurrency debugging · release engineering · operational resilience (SRE).</div>
+</div>
+
+<!-- 2 -->
+<h2>Capability 2 — Finance, data &amp; reconciliation (the operating engine)</h2>
+<div class="cap">
+  <h3>I run the weekly numbers a business depends on — and I automate them.</h3>
+  <p class="say">The recurring, reliable work owners never see and always rely on. ~43 deliverables, 10 types, an unbroken rhythm March–June.</p>
+
+  <div class="item"><div class="h"><span class="name">Weekly P&amp;L validation</span><span class="date">6-week continuous backfill + weekly</span><span class="tag t-ship">Recurring</span></div>
+  <p class="desc">Rebuilds and validates the weekly profit-and-loss from source data (sales, COGS, waste, crew food, wages) against a fixed template, catching gaps and applying config-driven overrides.</p></div>
+
+  <div class="item"><div class="h"><span class="name">VA payroll preparation</span><span class="date">~10 consecutive weeks, unbroken</span><span class="tag t-ship">Recurring</span></div>
+  <p class="desc">Consolidates virtual-assistant hours per person, applies rates, converts USD→GBP at a captured exchange rate, formatted as a payroll-ready board import. The single most consistent stream in the record.</p></div>
+
+  <div class="item"><div class="h"><span class="name">Matchday sales → Xero invoicing pipeline</span><span class="date">5+ fixtures, Apr–May</span><span class="tag t-ship">Recurring</span></div>
+  <p class="desc">Per football matchday: takes per-unit till sales, applies rent (25%) and admin charges, produces a board import, and generates a Xero-ready sales invoice with account codes and VAT. A complete source-to-invoice pipeline.</p></div>
+
+  <div class="item"><div class="h"><span class="name">POS analytics — discounts, voids, price/COGS integrity</span><span class="date">Weekly, April</span><span class="tag t-ship">Recurring</span></div>
+  <p class="desc">Breaks down Square discounts and voids by category against industry benchmarks, flags control gaps (e.g. anonymous discount codes at 30% of spend), and reviews supplier price changes for COGS-distorting unit-of-measure errors.</p></div>
+
+  <div class="item"><div class="h"><span class="name">Break-even feasibility study (with statistics)</span><span class="date">Apr 2026</span><span class="tag t-ship">Shipped</span></div>
+  <p class="desc">Cleaned 30 months / 173 Xero invoices to a defensible 9-invoice sample, derived average booking value with a <em>Student's-t 95% confidence interval</em>, modelled break-even, and honestly separated "self-funds easily" from "won't close the £500k gap." A near-academic evidence framework followed in Phase 2.</p></div>
+
+  <div class="skills"><b>Demonstrates:</b> financial modelling · P&amp;L construction · reconciliation &amp; controls · payroll processing · statistical analysis (confidence intervals, sensitivity) · data cleaning · COGS integrity · benchmarking — a <b>bookkeeper's data-integrity discipline applied at scale.</b></div>
+</div>
+
+<!-- 3 -->
+<h2>Capability 3 — Integrations &amp; automation</h2>
+<div class="cap">
+  <h3>I make separate systems talk to each other — safely.</h3>
+  <p class="say">The join between finance, CRM, calendar and email that most tools can't do.</p>
+  <div class="item"><div class="h"><span class="name">Xero / GHL / Brevo / Calendar integrations</span><span class="tag t-live">Live</span></div>
+  <p class="desc">Invoice issue + payment webhooks with HMAC verification, one-way DB→CRM card mirroring, two-way calendar sync with an echo-guard, and email-delivery webhooks — all with idempotency handling.</p></div>
+  <div class="item"><div class="h"><span class="name">WordPress SEO MCP connector</span><span class="date">Jul 3, 2026</span><span class="tag t-ship">Working</span></div>
+  <p class="desc">Wired an AI assistant to the live WordPress site's built-in MCP server over authenticated HTTP, enabling native audit/read and guarded auto-fix of the live site's SEO.</p></div>
+  <div class="skills"><b>Demonstrates:</b> third-party API integration · webhook security (HMAC / shared-secret) · idempotency · MCP server integration · event-driven design.</div>
+</div>
+
+<!-- 4 -->
+<h2>Capability 4 — Web &amp; product delivery</h2>
+<div class="cap">
+  <h3>I ship web products and reusable systems, not one-off pages.</h3>
+  <p class="say">From a deployed React app to a locked template that scales across a whole site.</p>
+  <div class="item"><div class="h"><span class="name">SEO Growth Agent (React web app)</span><span class="date">Shipped Jun 22, 2026</span><span class="tag t-ship">Live*</span></div>
+  <p class="desc">Took an abandoned laptop-only prototype to a live, secured, company-owned web app (React + Vite + Supabase, magic-link auth, on Vercel): 7-dimension page scoring, real Google PageSpeed data replacing a fabricated score, scoped from 7 features to a focused 2. <em>*Live per project record + commit history; foundation partly inherited (see notes).</em></p></div>
+  <div class="item"><div class="h"><span class="name">Reusable "YS Service Page" WordPress template</span><span class="date">Jul 2026</span><span class="tag t-prog">Piloting</span></div>
+  <p class="desc">A locked, on-brand PHP/CSS page template with custom fields and auto-generated FAQ + Google FAQ schema — lets a non-technical colleague produce consistent branded service pages without breaking layout. Real CMS engineering, built as leverage.</p></div>
+  <div class="item"><div class="h"><span class="name">WordPress site survey &amp; performance diagnosis</span><span class="date">Jul 3, 2026</span><span class="tag t-ship">Shipped</span></div>
+  <p class="desc">A UX + technical audit that correctly overturned the "it's the images" assumption — diagnosing a 3.46 MB autoplay video + site-wide reCAPTCHA as the real mobile-speed cause — plus an automated Rank Math audit (85/100).</p></div>
+  <div class="item"><div class="h"><span class="name">Kwackers World Cup landing page</span><span class="date">Jul 4, 2026</span><span class="tag t-draft">Draft — pending client access</span></div>
+  <p class="desc">Hand-coded responsive HTML/CSS landing page for a sports-bar client: custom brand colour system, CSS animation, conversion copy, and a QR print-to-web booking funnel. Client-ready, awaiting WordPress access to publish.</p></div>
+  <div class="item"><div class="h"><span class="name">Media-library sharpness audit tool</span><span class="date">Jul 6, 2026</span><span class="tag t-ship">Shipped</span></div>
+  <p class="desc">Ran 97 site images through a Laplacian-variance blur-detection scan, scored and banded them, flagged duplicate re-uploads, and shipped a clickable HTML report with an honest methodology write-up. Computational image analysis + data viz.</p></div>
+  <div class="skills"><b>Demonstrates:</b> React/front-end development · WordPress/CMS &amp; PHP theming · deployment (Vercel/Supabase) · design systems · responsive HTML/CSS · conversion copy · image analysis · product judgment (scope/ship decisions).</div>
+</div>
+
+<!-- 5 -->
+<h2>Capability 5 — Strategy &amp; analysis</h2>
+<div class="cap">
+  <h3>I do the build-vs-buy homework before anyone spends money.</h3>
+  <p class="say">Market research and cost discipline, findings stated plainly rather than sold.</p>
+  <div class="item"><div class="h"><span class="name">AI Data Hub investigation + owner-facing proposal</span><span class="date">May 2026</span><span class="tag t-ship">Shipped</span></div>
+  <p class="desc">Evaluated 37 tools/platforms to prove no product connects the specific business stack, then designed a credible low-cost build (Make → BigQuery → AI query layer → Sheets) mirroring £14k–60k/yr enterprise tools for ~£0–5/month — with risks and failure modes stated honestly. Packaged for a non-technical owner as a branded report.</p></div>
+  <div class="item"><div class="h"><span class="name">"AI Tools Weekly" briefings</span><span class="date">May 2026</span><span class="tag t-ship">Shipped</span></div>
+  <p class="desc">A recurring series evaluating marketing/ops/lead-gen AI tools, each benchmarked against what the business already runs, with a clear Try / Watch / Radar verdict.</p></div>
+  <div class="skills"><b>Demonstrates:</b> build-vs-buy analysis · competitive/market research · data-architecture design · cost-benefit analysis · honest risk assessment · translating technical findings for decision-makers.</div>
+</div>
+
+<!-- 6 -->
+<h2>Capability 6 — Documentation, specification &amp; governance</h2>
+<div class="cap">
+  <h3>I write systems down so they don't live in one person's head.</h3>
+  <p class="say">The explicit cure for the "bus-factor" — and evidence of operating at architecture altitude.</p>
+  <div class="item"><div class="h"><span class="name">The SPEC — full system specification</span><span class="tag t-live">Maintained</span></div>
+  <p class="desc">A ~46,000-word, 15-chapter plain-English specification of the entire booking system — deliberately written in English, never code, so it survives beyond any one builder.</p></div>
+  <div class="item"><div class="h"><span class="name">SPINE — the one-page map + coherence contract</span><span class="tag t-live">Live</span></div>
+  <p class="desc">A one-page conceptual map above the spec, plus a documented "coherence contract" (one home per fact, ripple map) and a custom Python drift-checker that mechanically catches contradictions across the canon.</p></div>
+  <div class="item"><div class="h"><span class="name">Build_Log — decision &amp; sequencing tracker</span><span class="tag t-live">Live</span></div>
+  <p class="desc">An ~870-line living record of what shipped, every decision and why, PR-by-PR history, and the incident-to-safeguard trail — engineering project management in the open.</p></div>
+  <div class="skills"><b>Demonstrates:</b> requirements/spec writing · information architecture · documentation governance · docs-as-code · knowledge transfer · working at altitude.</div>
+</div>
+
+<!-- 7 -->
+<h2>Capability 7 — Leadership &amp; team enablement</h2>
+<div class="cap">
+  <h3>I design how a team works, then write what lets them run it without me.</h3>
+  <p class="say">Not just doing the work — building the function and enabling the people.</p>
+  <div class="item"><div class="h"><span class="name">Stage 1 &amp; Stage 2 operator guides (Ros, Nick)</span><span class="date">May 14, 2026</span><span class="tag t-ship">In use</span></div>
+  <p class="desc">Designed a clean two-stage sales operating model (written comms/quoting → phone/closing) and authored the manuals, by name, that let two teammates run it independently — with KPIs, scope boundaries, and cross-role coordination.</p></div>
+  <div class="item"><div class="h"><span class="name">Team performance oversight</span><span class="date">May–Jun 2026</span><span class="tag t-ship">Delivered</span></div>
+  <p class="desc">Produced impartial, evidence-based oversight for the owner: a call-log analysis (186 attempts pulled via API, 12 conversations transcribed) and careful, neutral time-audit reviews — reporting observed activity without accusation.</p></div>
+  <div class="item"><div class="h"><span class="name">Team onboarding suite + 61-question assessment</span><span class="date">May–Jun 2026</span><span class="tag t-ship">Delivered</span></div>
+  <p class="desc">A full orientation programme (run-of-show, quick-starts, lead-entry process) and a candid 61-question business/role assessment that separates what's built from what isn't and cites a source for every claim.</p></div>
+  <div class="skills"><b>Demonstrates:</b> operating-model design · training design · process documentation · stakeholder enablement · impartial performance reporting.</div>
+</div>
+
+<h2>Honest notes (kept in on purpose)</h2>
+<div class="honest">
+  <ul>
+    <li><b>AI-assisted throughout.</b> This work was produced through AI-assisted sessions. The architecture, decisions, judgment, and direction are Mark's; much of the code and prose was drafted with an AI. That is the modern way this class of work gets built — and stated plainly, it costs nothing.</li>
+    <li><b>Some foundations were inherited.</b> The SEO Growth Agent's foundation and a competitor analysis came from a previous engineer; Mark's contribution was finishing, scoping, correcting a fabricated metric, securing, and shipping it — credited as delivery/judgment, not from-scratch authorship.</li>
+    <li><b>Some work is draft or in progress.</b> The Kwackers page awaits client access; the service-page template is piloting; the feasibility Phase 2 is a framework awaiting sourcing; one system module is dormant behind a flag. Labelled honestly above.</li>
+    <li><b>"Live" on the SEO app</b> rests on the project record and commit history, not a fresh uptime check.</li>
+  </ul>
+</div>
+
+<div class="close">
+  <h3>What this adds up to</h3>
+  <p>Seven distinct capability areas. A live, tested, documented production system that runs a real business. Months of unbroken financial operations underneath it. Strategy, web products, and a team enabled around it.</p>
+  <p class="id">This is not the footprint of a virtual assistant. It's the footprint of a finance-rooted systems builder — a bookkeeper's discipline joined to the ability to design, ship, and document real software.</p>
+  <p style="margin-top:14px;opacity:.8">Three uses for this document: <b>confidence</b> in the room · the raw material for a <b>case study</b> · the backbone of a <b>consulting</b> offer — the systems the books reveal are missing.</p>
+</div>
+
+<footer>Compiled July 2026 · Private working document · Client names can be anonymised for external sharing.</footer>
+
+</div>
+</body>
+</html>
