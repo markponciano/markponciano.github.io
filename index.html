@@ -106,8 +106,11 @@
 
   <section class="cta-band" data-reveal>
     <h2>If this sounds like your business</h2>
-    <p>If you're growing but the admin behind you is held together by spreadsheets, memory and late nights — that's exactly the mess I'm good at.</p>
-    <a class="mail" href="mailto:marklorenzeponciano@gmail.com">marklorenzeponciano@gmail.com</a>
+    <p>If you're growing but the admin behind you is held together by spreadsheets, memory and late nights, that's exactly the mess I'm good at.</p>
+    <div class="mail-row">
+      <a class="mail" href="mailto:marklorenzeponciano@gmail.com">marklorenzeponciano@gmail.com</a>
+      <button class="copy-btn" data-copy="marklorenzeponciano@gmail.com" aria-label="Copy email address">Copy</button>
+    </div>
   </section>
 
 </main>
@@ -171,6 +174,9 @@
     });
   },{threshold:.2});
   document.querySelectorAll('[data-reveal]').forEach(function(el){io.observe(el);});
+
+  function fallbackCopy(txt,cb){try{var t=document.createElement('textarea');t.value=txt;t.setAttribute('readonly','');t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();document.execCommand('copy');document.body.removeChild(t);cb();}catch(e){}}
+  document.querySelectorAll('.copy-btn').forEach(function(b){var label=b.textContent;b.addEventListener('click',function(){var txt=b.getAttribute('data-copy')||'';var done=function(){b.textContent='Copied ✓';b.classList.add('copied');setTimeout(function(){b.textContent=label;b.classList.remove('copied');},1600);};if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,function(){fallbackCopy(txt,done);});}else{fallbackCopy(txt,done);}});});
 })();
 </script>
 </body>

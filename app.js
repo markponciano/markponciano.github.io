@@ -53,4 +53,22 @@
   } else {
     document.querySelectorAll('[data-reveal]').forEach(function(el){el.classList.add('in');});
   }
+
+  /* copy-to-clipboard buttons */
+  function fallbackCopy(txt,cb){
+    try{var t=document.createElement('textarea');t.value=txt;t.setAttribute('readonly','');
+      t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);
+      t.select();document.execCommand('copy');document.body.removeChild(t);cb();}catch(e){}
+  }
+  document.querySelectorAll('.copy-btn').forEach(function(b){
+    var label=b.textContent;
+    b.addEventListener('click',function(){
+      var txt=b.getAttribute('data-copy')||'';
+      var done=function(){b.textContent='Copied ✓';b.classList.add('copied');
+        setTimeout(function(){b.textContent=label;b.classList.remove('copied');},1600);};
+      if(navigator.clipboard&&navigator.clipboard.writeText){
+        navigator.clipboard.writeText(txt).then(done,function(){fallbackCopy(txt,done);});
+      }else{fallbackCopy(txt,done);}
+    });
+  });
 })();

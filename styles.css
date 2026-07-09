@@ -217,6 +217,14 @@ h3{font-family:var(--sans);font-weight:600;font-size:1.2rem;margin:0 0 6px}
 /* download button row */
 .dl-row{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:6px 0 8px}
 
+/* ---------- copy-email button (sits on the dark CTA band) ---------- */
+.mail-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.copy-btn{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.4px;color:#fff;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.34);border-radius:20px;
+  padding:6px 13px;cursor:pointer;transition:background .15s,border-color .15s,color .15s}
+.copy-btn:hover{background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.6)}
+.copy-btn.copied{background:var(--amber);border-color:var(--amber);color:#1a140b}
+
 /* ---------- respect reduced motion ---------- */
 @media (prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important}
