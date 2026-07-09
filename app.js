@@ -75,4 +75,16 @@
   /* download résumé as PDF via print dialog */
   var dl=document.getElementById('dlpdf');
   if(dl){dl.addEventListener('click',function(){window.print();});}
+
+  /* mark the current page in the header nav */
+  (function markCurrentNav(){
+    var path=(location.pathname.split('/').pop()||'index.html').toLowerCase();
+    if(path==='') path='index.html';
+    document.querySelectorAll('.site-header .nav a').forEach(function(a){
+      var href=a.getAttribute('href');
+      if(!href||href.charAt(0)==='#'||href.indexOf('mailto:')===0) return;
+      var file=href.split('/').pop().split('#')[0].split('?')[0].toLowerCase();
+      if(file===path||(path==='index.html'&&file==='')){ a.setAttribute('aria-current','page'); }
+    });
+  })();
 })();

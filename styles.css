@@ -70,8 +70,13 @@ a{color:var(--navy);text-decoration:none}
 .brand{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:.3px;color:var(--ink)}
 .brand b{color:var(--amber)}
 .nav{display:flex;align-items:center;gap:22px}
-.nav a{font-size:14.5px;color:var(--muted);font-weight:500;transition:color .15s}
+.nav a{font-size:14.5px;color:var(--muted);font-weight:500;transition:color .15s;position:relative}
 .nav a:hover{color:var(--ink)}
+.nav a[aria-current="page"]{color:var(--ink);font-weight:600}
+.nav a[aria-current="page"]:not(.nav-cta)::after{
+  content:"";position:absolute;left:0;right:0;bottom:-7px;
+  height:2px;background:var(--amber);border-radius:2px;
+}
 .nav .nav-cta{
   color:var(--navy);border:1px solid var(--line);border-radius:20px;padding:6px 14px;
 }
