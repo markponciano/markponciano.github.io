@@ -5,10 +5,10 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Body of Work — Mark Ponciano</title>
-<meta name="description" content="Everything I've built and run inside one growing business, grouped by what it proves: live systems, finance operations, integrations and more.">
+<meta name="description" content="Everything I've built and run inside real businesses, grouped by what it proves: money found, systems shipped, weekly finance operations, integrations and more.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Body of Work — Mark Ponciano">
-<meta property="og:description" content="A live production system, months of unbroken finance operations, strategy, web products and a team enabled — grouped by capability.">
+<meta property="og:description" content="Real money recovered, real systems shipped, weekly finance operations that don't miss, and all of it documented so nothing walks out with me.">
 <meta property="og:url" content="https://markponciano.github.io/Body_of_Work.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2322315c'/%3E%3Ctext%20x='16'%20y='22'%20font-family='monospace'%20font-size='14'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,13 +39,13 @@
     <p class="eyebrow">Body of Work</p>
     <h1>Mark Lorenze Ponciano</h1>
     <p class="role">A bookkeeper who fixes the admin and backend chaos the books reveal, and builds the systems that stop it happening again.</p>
-    <p class="lede">Everything below is real work I've done inside real businesses over the last few years: the money I've recovered, the systems I've set up, and the day-to-day operations I run every week. Grouped by what it proves, not by job title.</p>
-    <p class="meta">Compiled from ~6,300 project files across 13 areas · Status labels and caveats are honest and included by design.</p>
+    <p class="lede">If you run a small business, you already know the feeling. The numbers do not tie out, the tools do not talk to each other, and half the process lives in one person's head. This page is a working record of the kind of mess I sort out and the kind of systems I leave behind so it does not come back. Everything below is real work inside real businesses over the last few years: money recovered, tools wired together, weekly operations that do not miss, and a team enabled to run without me hovering. It is grouped by what it proves, not by job title.</p>
+    <p class="meta">Compiled from around 6,300 project files across 13 areas of work. Client details anonymised where needed. Status labels are honest by design: what is live is called live, what is draft is called draft, what I inherited is credited.</p>
   </section>
 
   <section class="facts" data-reveal aria-label="Headline outcomes">
     <div class="fact"><div class="n">$8K AUD</div><div class="l">Reclaimed from double-paid GPs by cross-checking two mismatched exports</div></div>
-    <div class="fact"><div class="n">~£80k/yr</div><div class="l">Hidden costs surfaced in a weekly P&amp;L — profit had been overstated by the same</div></div>
+    <div class="fact"><div class="n">~£80k/yr</div><div class="l">Hidden costs surfaced in a weekly P&amp;L. Profit had been overstated by the same</div></div>
     <div class="fact"><div class="n">Integrations</div><div class="l">Xero, GHL, email and calendar wired to share one truth, no re-typing</div></div>
     <div class="fact"><div class="n">Zero downtime</div><div class="l">Every step tested and every rollback path proven before switching the system over</div></div>
     <div class="fact"><div class="n">No lock-in</div><div class="l">The whole setup written down in plain English so anyone can pick it up without me</div></div>
@@ -54,121 +54,227 @@
   <h2 data-reveal>Making the software actually reliable</h2>
   <div class="cap" data-reveal>
     <h3>I set up GHL so the business can actually rely on it.</h3>
-    <p class="say">GHL stays as the friendly screen everyone uses. The actual work — bookings, invoicing, payments — moved into proper code underneath, where it can be checked and trusted.</p>
-    <div class="item"><div class="h"><span class="name">GHL as the front face, with a proper backend running the show</span><span class="date">Jun 19 – Jul 8, 2026</span><span class="tag t-live">Live</span></div>
-    <p class="desc">The CRM (GoHighLevel) stayed as the customer-facing surface everyone knows and clicks. Underneath, a PHP 8.2 domain layer (~50 classes) took over the automation — bookings, quoting, invoicing, payments — with a database as the single source of truth. Booking state is <em>derived from facts</em> (quote accepted, op-form in, invoiced, paid), never from someone remembering to move a card. Deployed as WordPress mu-plugins. This is the live nervous system of the business.</p></div>
-    <div class="item"><div class="h"><span class="name">Careful cutover to the new setup, no downtime</span><span class="date">Executed Jul 4, 2026</span><span class="tag t-live">Live</span></div>
-    <p class="desc">Moved a live revenue path off its old rails with an ordered, per-step-reversible runbook and a ~130-check pre-flight gate battery. Nothing broke. Nothing paused for customers. The kind of switch-over most small businesses avoid attempting because it's usually where things go sideways.</p></div>
-    <div class="item"><div class="h"><span class="name">Rigorous testing before anything ships</span><span class="tag t-live">Live</span></div>
-    <p class="desc">358 automated tests including a full lifecycle regression that walks a booking end-to-end (capture, quote, accept, op-form, invoice, pay, confirmed), asserting the money at every step. Every change gated on five checks — lint, a custom collision check, PSR-12 style, PHPStan, and the full test run — before it can touch production.</p></div>
-    <div class="item"><div class="h"><span class="name">Safe, reversible changes to the database</span><span class="tag t-live">Live</span></div>
-    <p class="desc">26 numbered, additive SQL migrations with a custom runner and a version ledger. The ledger caught real production drift the day it was introduced — meaning small silent mistakes stopped being possible.</p></div>
-    <div class="item"><div class="h"><span class="name">Found and fixed a real bug that was creating duplicate invoices</span><span class="date">Jul 7, 2026</span><span class="tag t-live">Live</span></div>
-    <p class="desc">Two Approve clicks in quick succession could produce two Xero invoices for the same booking. Found the race condition, root-caused it, fixed it with an atomic DB claim, then audited and hardened every similar "once-only fact gates a side-effect" path so the same class of bug can't reappear.</p></div>
-    <div class="item"><div class="h"><span class="name">Monitoring so problems can't hide</span><span class="date">Jul 6–7, 2026</span><span class="tag t-live">Live</span></div>
-    <p class="desc">An alert recorder with dedup and P1/P2 escalation wired into every scheduled task, an external dead-man's-switch that pings me if the site goes silent, and a live operator page with a heartbeat pill and a plain-English activity feed.</p></div>
-    <div class="skills"><b>What this uses:</b> PHP 8.2, MySQL, WordPress mu-plugins · webhook and API integrations · automated testing (PHPUnit) · PHPStan and PSR-12 · GitHub Actions CI · database migrations · atomic DB operations · alerting and dead-man's-switch monitoring.</div>
+    <p class="say">GoHighLevel stayed the friendly screen everyone uses. The actual work moved into solid code underneath, where mistakes get caught automatically.</p>
+    <div class="item"><div class="h">
+<span class="name">GoHighLevel as the front face, with solid code running the show</span>
+<span class="date">Jun 19 to Jul 8, 2026</span>
+<span class="tag t-live">Live</span>
+</div>
+    <p class="desc">GoHighLevel stayed the customer-facing surface everyone clicks. Underneath, I built a PHP 8.2 backend layer with about 50 classes that runs the business: bookings, quoting, invoicing, payments. Booking status is derived from facts like 'quote was accepted' and 'payment cleared', not from someone remembering to move a card. Deployed as WordPress plugins.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Switched to the new system July 4 with zero downtime</span>
+<span class="date">Executed Jul 4, 2026</span>
+<span class="tag t-live">Live</span>
+</div>
+    <p class="desc">Moved the live revenue path over using an ordered runbook that was reversible at every step. I ran about 130 pre-flight checks to catch issues before they affected customers. Nothing broke. Nothing paused. This is the kind of switch most small businesses avoid because it is usually where things go wrong.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Every change tested end-to-end before it ships</span>
+<span class="tag t-live">Live</span>
+</div>
+    <p class="desc">358 automated tests walk through every booking scenario from capture through payment, checking that money is accounted for correctly at every step. Every code change must pass five gates before shipping: linter check, custom collision detector, code-style verification, static analysis, and the full test run.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Database changes that do not break things</span>
+<span class="tag t-live">Live</span>
+</div>
+    <p class="desc">26 numbered SQL migrations, all additive. I built a custom runner and a version ledger that tracks which migrations have been applied. The ledger caught real production drift the day it went live, meaning small silent mistakes stopped being possible.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Caught and fixed the duplicate invoice bug</span>
+<span class="date">Jul 7, 2026</span>
+<span class="tag t-live">Live</span>
+</div>
+    <p class="desc">Two quick Approve clicks on the same booking could produce two Xero invoices. Found the race condition, fixed it with an atomic database operation, then audited every similar transaction to ensure the same bug could not hide elsewhere.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Monitoring so problems cannot hide</span>
+<span class="date">Jul 6 to 7, 2026</span>
+<span class="tag t-live">Live</span>
+</div>
+    <p class="desc">Alert recorder with dedup and escalation on every scheduled task. External dead-mans-switch that pages me if the site goes silent. Live operator page showing heartbeat status and a plain-English activity feed so I can see what is happening anytime.</p></div>
+    <div class="skills"><b>What this uses:</b> PHP 8.2 · MySQL · WordPress mu-plugins · Webhook and API integrations · Automated testing (PHPUnit) · PHPStan and PSR-12 · GitHub Actions CI · Database migrations · Atomic database operations · Alerting and monitoring</div>
   </div>
 
-  <h2 data-reveal>Finance operations, and finding the money in the numbers</h2>
+  <h2 data-reveal>Finance operations and finding the money hiding in the numbers</h2>
   <div class="cap" data-reveal>
-    <h3>I run the weekly numbers, and I find what's hiding in them.</h3>
-    <p class="say">The recurring, reliable work owners never see and always rely on. About 43 deliverables across 10 types, unbroken every week since February.</p>
-    <div class="item"><div class="h"><span class="name">Reclaimed $8K AUD from double-paid GPs at a clinic</span><span class="date">2025, AU medical clinic</span><span class="tag t-ship">Shipped</span></div>
-    <p class="desc">The clinic was moving from one billing model to another (old: clinic collects and pays GPs; new: GPs collect and clinic invoices them for fees), and during the transition some weeks accidentally ran both — so GPs got paid twice. I cross-referenced the payments export against the service export to pin each GP's true overpayment, about $8K across 40 accounts. Then set up a painless installment recoupment through the weekly clinic-fee invoice, so no doctor ever had a lump-sum clawback.</p></div>
-    <div class="item"><div class="h"><span class="name">Found ~£80k a year hiding in the weekly P&amp;L</span><span class="date">Apr 2026</span><span class="tag t-ship">Shipped</span></div>
-    <p class="desc">The weekly profit-and-loss report ran on a cost configuration that had quietly drifted from what Xero actually showed. I reconciled the two side-by-side over four months. About £1,540 a week (~£80k a year annualised) in real costs were missing from the model. Profit had been overstated by the same amount. Now the weekly number tells the truth.</p></div>
-    <div class="item"><div class="h"><span class="name">Weekly P&amp;L, rebuilt from source data</span><span class="date">6-week backfill + weekly</span><span class="tag t-ship">Recurring</span></div>
-    <p class="desc">Rebuilds and validates the weekly profit-and-loss from source data — sales, COGS, waste, crew food, wages — against a fixed template, catching gaps and applying config-driven overrides.</p></div>
-    <div class="item"><div class="h"><span class="name">Weekly multi-currency VA payroll</span><span class="date">Weekly since February 2026</span><span class="tag t-ship">Recurring</span></div>
-    <p class="desc">Consolidates virtual-assistant hours per person, applies rates, converts USD to GBP at a captured exchange rate, formatted as a payroll-ready board import. The single most consistent stream in my record — unbroken every week for over five months.</p></div>
-    <div class="item"><div class="h"><span class="name">Matchday sales to Xero, end to end</span><span class="date">5+ fixtures, Apr–May</span><span class="tag t-ship">Recurring</span></div>
-    <p class="desc">Per football matchday: takes per-unit till sales, applies rent (25%) and admin charges, produces a board import, and generates a Xero-ready sales invoice with account codes and VAT. A complete source-to-invoice pipeline.</p></div>
-    <div class="item"><div class="h"><span class="name">POS analytics: discounts, voids, and COGS integrity</span><span class="date">Weekly, April</span><span class="tag t-ship">Recurring</span></div>
-    <p class="desc">Breaks down Square discounts and voids by category against industry benchmarks, flags control gaps (e.g. anonymous discount codes making up 30% of spend), and reviews supplier price changes for COGS-distorting unit-of-measure errors.</p></div>
-    <div class="item"><div class="h"><span class="name">Supplier cost analysis when a new vendor bid</span><span class="date">2026</span><span class="tag t-ship">Shipped</span></div>
-    <p class="desc">Compared the incoming supplier's line items to the current suppliers, item by item, and delivered a keep/switch recommendation to the store manager so the decision was made on numbers, not on the sales pitch.</p></div>
-    <div class="skills"><b>What this uses:</b> Xero, Dext, Best Practice, Square, MarketMan, Monday.com · advanced Google Sheets and Excel modelling · multi-currency and multi-entity reconciliation · GST / VAT · a bookkeeper's data-integrity discipline applied at scale.</div>
+    <h3>I run the weekly numbers and find what is hiding in them</h3>
+    <p class="say">The weekly work that keeps a business grounded and honest: about 43 deliverables across 10 types, unbroken every week since February.</p>
+    <div class="item"><div class="h">
+<span class="name">Found and reclaimed $8,000 AUD from GPs who got paid twice</span>
+<span class="date">2025, AU medical clinic</span>
+<span class="tag t-ship">Shipped</span>
+</div>
+    <p class="desc">The clinic switched billing models mid-stream (old: clinic collects and pays GPs; new: GPs collect their own fees and invoice the clinic). For a few weeks both ran in parallel, so 40 GPs got paid twice. I cross-referenced the payments export against the service log to pin each person's overpayment, totalling $8,000. Then set it up as painless installments through the weekly clinic-fee invoice so no one took a sudden hit.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Found £80,000 a year hiding in the weekly P&L</span>
+<span class="date">Apr 2026</span>
+<span class="tag t-ship">Shipped</span>
+</div>
+    <p class="desc">The weekly profit report ran on a cost configuration that had quietly drifted from what Xero actually showed. I reconciled both side by side over four months and found about £1,540 a week (£80,000 annualised) in real costs missing from the model. Profit had been overstated by the same amount. Now the weekly number tells the truth.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Rebuilt the weekly P&L from source data</span>
+<span class="date">6-week backfill + weekly</span>
+<span class="tag t-ship">Recurring</span>
+</div>
+    <p class="desc">Rebuilds and validates the weekly profit-and-loss from source data (sales, COGS, waste, crew food, wages) against a fixed template. Catches gaps and applies config-driven overrides.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Weekly multi-currency VA payroll</span>
+<span class="date">Weekly since February 2026</span>
+<span class="tag t-ship">Recurring</span>
+</div>
+    <p class="desc">Consolidates virtual-assistant hours per person, applies their individual rates, converts USD to GBP at the day's exchange rate, and formats it as a Monday.com board import ready to pay. The single most consistent stream in my record: unbroken every week for over five months.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Matchday sales to Xero, end to end</span>
+<span class="date">5+ fixtures, Apr to May</span>
+<span class="tag t-ship">Recurring</span>
+</div>
+    <p class="desc">After each football matchday, takes the till sales per unit, applies rent (25%) and admin charges, produces a Monday.com import, and generates a Xero invoice with the right account codes and VAT. A complete journey from register to accounts.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Square analytics: tracking discounts, voids, and cost leaks</span>
+<span class="date">Weekly, April</span>
+<span class="tag t-ship">Recurring</span>
+</div>
+    <p class="desc">Breaks down Square discounts and voids by category against industry benchmarks, flags control gaps (like anonymous discount codes making up 30% of spend), and reviews supplier price changes for COGS-distorting unit-of-measure errors.</p></div>
+    <div class="item"><div class="h">
+<span class="name">When a new supplier bid arrives, I compare the numbers</span>
+<span class="date">2026</span>
+<span class="tag t-ship">Shipped</span>
+</div>
+    <p class="desc">Compared the new supplier's line items to the current supplier's, item by item, and delivered a keep-or-switch recommendation to the store manager so the decision was made on numbers, not the sales pitch.</p></div>
+    <div class="skills"><b>What this uses:</b> Xero · Dext · Best Practice · Square · MarketMan · Monday.com · advanced Google Sheets and Excel modelling · multi-currency and multi-entity reconciliation · GST/VAT · bookkeeper's data-integrity discipline</div>
   </div>
 
   <h2 data-reveal>Making the tools talk to each other</h2>
   <div class="cap" data-reveal>
     <h3>I wire separate tools together so they share one truth.</h3>
-    <p class="say">The join between finance, CRM, calendar and email that most SMB stacks don't have — and that most tools alone can't do.</p>
-    <div class="item"><div class="h"><span class="name">Xero, GHL, email and calendar, all wired together</span><span class="tag t-live">Live</span></div>
-    <p class="desc">Invoice-issue and payment webhooks with HMAC signature verification, one-way DB-to-GHL card mirroring, two-way calendar sync with an echo-guard so we don't loop on our own events, and email-delivery webhooks. All with idempotency handling so a retried message doesn't create a duplicate.</p></div>
-    <div class="item"><div class="h"><span class="name">An AI assistant plugged into the WordPress site</span><span class="date">Jul 3, 2026</span><span class="tag t-ship">Working</span></div>
-    <p class="desc">Wired Claude to the live WordPress site's built-in MCP server over authenticated HTTP, so it can audit the site and (when approved) auto-fix specific SEO issues in place, rather than just recommending changes.</p></div>
-    <div class="skills"><b>What this uses:</b> Xero API, GoHighLevel API, Brevo, Google Calendar API, Model Context Protocol (MCP) · webhook security (HMAC / shared-secret) · idempotency and echo-guards · event-driven design.</div>
+    <p class="say">Finance, CRM, calendar, and email all pulling from the same place so they agree on what is real.</p>
+    <div class="item"><div class="h">
+<span class="name">Xero, GoHighLevel, email and calendar, all wired together</span>
+<span class="tag t-live">Live</span>
+</div>
+    <p class="desc">Invoice and payment webhooks with HMAC signature verification, one-way invoice mirroring to GoHighLevel, two-way calendar sync with an echo-guard to prevent looping on the same events, and email delivery webhooks. All with idempotency handling so a retried message does not create a duplicate.</p></div>
+    <div class="item"><div class="h">
+<span class="name">An AI assistant plugged into the WordPress site</span>
+<span class="date">Jul 3, 2026</span>
+<span class="tag t-ship">Working</span>
+</div>
+    <p class="desc">I connected Claude to the live WordPress site's MCP server over authenticated HTTP, so it audits pages and, with approval, fixes SEO issues directly in the code. Rather than just making recommendations, it makes the actual changes.</p></div>
+    <div class="skills"><b>What this uses:</b> Xero API · GoHighLevel API · Brevo · Google Calendar API · Model Context Protocol · webhook security (HMAC) · idempotency · echo-guards · event-driven design</div>
   </div>
 
-  <h2 data-reveal>Web things I've shipped</h2>
+  <h2 data-reveal>Web things I have shipped</h2>
   <div class="cap" data-reveal>
     <h3>I ship complete web products, not one-off pages.</h3>
-    <p class="say">From a deployed React app to a template a non-technical colleague can use to update the site.</p>
-    <div class="item"><div class="h"><span class="name">Finished and shipped an SEO audit tool a colleague left behind</span><span class="date">Shipped Jun 22, 2026</span><span class="tag t-ship">Live*</span></div>
-    <p class="desc">Took an abandoned laptop-only prototype to a live, secured, company-owned web app (React + Vite + Supabase, magic-link auth, on Vercel). Kept the useful bits, cut what wasn't earning its place, and replaced a fabricated performance score with real Google PageSpeed data. <em>*Live per project record and commit history; foundation partly inherited (see notes).</em></p></div>
-    <div class="item"><div class="h"><span class="name">Reusable page template so non-technical colleagues can update the website</span><span class="date">Jul 2026</span><span class="tag t-prog">Piloting</span></div>
-    <p class="desc">A locked, on-brand PHP and CSS page template with custom fields and auto-generated FAQ (plus Google FAQ schema for SEO). Colleagues can produce consistent branded pages by filling in fields, without touching layout or risking the design.</p></div>
-    <div class="item"><div class="h"><span class="name">WordPress performance audit that fixed the actual problem</span><span class="date">Jul 3, 2026</span><span class="tag t-ship">Shipped</span></div>
-    <p class="desc">A UX and technical audit that correctly overturned the "it's the images" assumption everyone had. Diagnosed a 3.46 MB autoplay video and a site-wide reCAPTCHA as the real mobile-speed cause, plus an automated Rank Math audit landing at 85/100.</p></div>
-    <div class="item"><div class="h"><span class="name">World Cup table-booking landing page for a client</span><span class="date">Jul 4, 2026</span><span class="tag t-draft">Draft, pending client access</span></div>
-    <p class="desc">Hand-coded responsive HTML/CSS landing page: custom brand colour system, CSS animation, conversion copy, and a QR-code print-to-web booking funnel. Client-ready, awaiting WordPress access to publish.</p></div>
-    <div class="item"><div class="h"><span class="name">Photo-quality audit tool for a website's image library</span><span class="date">Jul 6, 2026</span><span class="tag t-ship">Shipped</span></div>
-    <p class="desc">Ran 97 site images through a Laplacian-variance blur-detection scan, scored and banded them, flagged duplicate re-uploads, and shipped a clickable HTML report with an honest methodology write-up — so a non-technical editor could see, at a glance, which photos to replace.</p></div>
-    <div class="skills"><b>What this uses:</b> React, Vite, Supabase, Vercel · WordPress, PHP, custom fields, schema.org · responsive HTML and CSS · design systems · conversion copy · Google PageSpeed · image analysis (Laplacian variance) and data reporting.</div>
+    <p class="say">From deployed React apps to templates that non-technical colleagues can actually use to update the site.</p>
+    <div class="item"><div class="h">
+<span class="name">Took an abandoned SEO tool and shipped it live</span>
+<span class="date">Shipped Jun 22, 2026</span>
+<span class="tag t-ship">Live*</span>
+</div>
+    <p class="desc">Started with an incomplete prototype, kept what was useful, cut the rest, and replaced a fabricated performance metric with real Google PageSpeed data. Shipped it live as a secured web app built on React, Vite, Supabase on Vercel with magic-link auth, Jun 22, 2026.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Page template so colleagues can update the website without code</span>
+<span class="date">Jul 2026</span>
+<span class="tag t-prog">Piloting</span>
+</div>
+    <p class="desc">Built a locked, on-brand PHP and CSS template with custom fields and auto-generated FAQ schema. Colleagues fill in the fields to create new pages while the layout and design stay protected. Piloting since Jul 2026.</p></div>
+    <div class="item"><div class="h">
+<span class="name">WordPress performance audit that found the real cause</span>
+<span class="date">Jul 3, 2026</span>
+<span class="tag t-ship">Shipped</span>
+</div>
+    <p class="desc">Everyone assumed it was the images. I ran a technical and UX audit, correctly identified a 3.46MB autoplay video and site-wide reCAPTCHA as the real mobile-speed problems, and ran an automated Rank Math audit landing at 85/100. Shipped Jul 3, 2026.</p></div>
+    <div class="item"><div class="h">
+<span class="name">World Cup landing page for restaurant table bookings</span>
+<span class="date">Jul 4, 2026</span>
+<span class="tag t-draft">Draft, pending client access</span>
+</div>
+    <p class="desc">Hand-coded responsive HTML and CSS with custom brand colours, CSS animation, conversion copy, and a QR code print-to-web booking funnel. Client-ready but awaiting WordPress access to go live. Drafted Jul 4, 2026.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Photo-quality audit of a website's image library</span>
+<span class="date">Jul 6, 2026</span>
+<span class="tag t-ship">Shipped</span>
+</div>
+    <p class="desc">Scanned 97 site images through Laplacian-variance blur detection, ranked them, and flagged duplicates. Shipped a clickable HTML report with methodology notes so a non-technical editor could see at a glance which photos needed replacing. Shipped Jul 6, 2026.</p></div>
+    <div class="skills"><b>What this uses:</b> React · Vite · Supabase · Vercel · WordPress · PHP · custom fields · schema markup · responsive HTML and CSS · design systems · conversion copy · Google PageSpeed · image analysis (Laplacian variance) · data reporting</div>
   </div>
 
   <h2 data-reveal>Research before spending money</h2>
   <div class="cap" data-reveal>
     <h3>I do the build-vs-buy homework before anyone spends money.</h3>
-    <p class="say">Market research and cost discipline. Findings stated plainly, not sold.</p>
-    <div class="item"><div class="h"><span class="name">AI Hub research: what's on the market, what it costs, what would actually work</span><span class="date">May 2026</span><span class="tag t-ship">Shipped</span></div>
-    <p class="desc">Evaluated 37 tools and platforms to prove no product on the market connects the specific business stack the owner needs. Then designed a credible low-cost build (Make, BigQuery, an AI query layer, Google Sheets) that mirrors £14k–60k/year enterprise tools for about £0–5 a month, with risks and failure modes stated honestly. Packaged for a non-technical owner as a branded report.</p></div>
-    <div class="item"><div class="h"><span class="name">Weekly AI-tools briefings for the owner</span><span class="date">May 2026</span><span class="tag t-ship">Shipped</span></div>
-    <p class="desc">A recurring series evaluating marketing, ops and lead-gen AI tools, each benchmarked against what the business already runs, with a clear Try / Watch / Radar verdict — so the owner could act, not just browse.</p></div>
-    <div class="skills"><b>What this uses:</b> BigQuery (evaluated) · Make · vendor and market research · build-vs-buy analysis · cost-benefit analysis · honest risk assessment · translating technical findings for a non-technical decision-maker.</div>
+    <p class="say">I research the market honestly and tell you straight what works and what it costs.</p>
+    <div class="item"><div class="h">
+<span class="name">AI Hub research: what is on the market, what it costs, what would actually work</span>
+<span class="date">May 2026</span>
+<span class="tag t-ship">Shipped</span>
+</div>
+    <p class="desc">Evaluated 37 tools and platforms; confirmed none connect your specific business stack. Designed a low-cost build using Make, BigQuery, an AI query layer, and Google Sheets that delivers what enterprise tools charge £14,000 to £60,000 a year for, at roughly £0 to £5 monthly. Mapped the risks honestly and packaged it for a non-technical owner.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Weekly AI-tools briefings for the owner</span>
+<span class="date">May 2026</span>
+<span class="tag t-ship">Shipped</span>
+</div>
+    <p class="desc">Recurring briefings on marketing, ops, and lead-gen AI tools, each benchmarked against your current stack with a clear Try / Watch / Radar verdict. So you can act on what matters, not just browse.</p></div>
+    <div class="skills"><b>What this uses:</b> BigQuery (evaluated) · Make · Google Sheets · vendor research · market research · build-vs-buy analysis · cost-benefit analysis · risk assessment · translating for non-technical owners</div>
   </div>
 
-  <h2 data-reveal>The whole setup, written down</h2>
+  <h2 data-reveal>Everything written down</h2>
   <div class="cap" data-reveal>
-    <h3>I write systems down so they don't live in one person's head.</h3>
-    <p class="say">The cure for the "if I get hit by a bus…" problem. Also what lets a system be handed over, audited or picked up by someone new.</p>
-    <div class="item"><div class="h"><span class="name">The whole system explained in plain English</span><span class="tag t-live">Maintained</span></div>
-    <p class="desc">Every part of the setup — bookings, quoting, invoicing, payments, chase, calendar — documented chapter by chapter in plain English, never in code. Deliberately. It's the artefact that lets someone new pick it up without needing me.</p></div>
-    <div class="item"><div class="h"><span class="name">One-page map above all the details</span><span class="tag t-live">Live</span></div>
-    <p class="desc">A one-page conceptual map that sits above the detailed spec, plus a documented "coherence contract" (one home per fact, ripple map). And a small custom drift-checker that catches contradictions across the docs mechanically, before they become confusion.</p></div>
-    <div class="item"><div class="h"><span class="name">A running log of every decision and why</span><span class="tag t-live">Live</span></div>
-    <p class="desc">A living record of what shipped, every decision made and the reason for it, PR-by-PR history, and the incident-to-safeguard trail. Project management in the open, so nothing has to be reconstructed later from memory.</p></div>
-    <div class="skills"><b>What this uses:</b> requirements and spec writing · information architecture · knowledge transfer · docs-as-code · custom Python drift-checker.</div>
+    <h3>I write the whole system down so it doesn't live in one person's head.</h3>
+    <p class="say">The cure for the 'if I get hit by a bus' problem, and what lets a system be handed over, audited, or picked up by someone new without chaos.</p>
+    <div class="item"><div class="h">
+<span class="name">The whole system explained in plain English</span>
+<span class="tag t-live">Maintained</span>
+</div>
+    <p class="desc">Every part of the setup (bookings, quoting, invoicing, payments, chase, calendar) is documented chapter by chapter in plain English, never in code. Deliberately. This is what lets someone new actually pick it up and run with it.</p></div>
+    <div class="item"><div class="h">
+<span class="name">One-page map above all the details</span>
+<span class="tag t-live">Live</span>
+</div>
+    <p class="desc">A one-page map shows how each part connects, sitting above the detailed spec. Plus a custom drift-checker that catches contradictions in the docs before they cause confusion. Every fact lives in only one place, so when something changes, everything stays in sync.</p></div>
+    <div class="item"><div class="h">
+<span class="name">A running log of every decision and why</span>
+<span class="tag t-live">Live</span>
+</div>
+    <p class="desc">Every decision, when it shipped, and why it was made. The full PR history. The incidents and the safeguards that followed. Project management in the open, so nobody has to reconstruct it from memory later.</p></div>
+    <div class="skills"><b>What this uses:</b> requirements and spec writing · information architecture · knowledge transfer · docs-as-code · Python drift-checker</div>
   </div>
 
   <h2 data-reveal>Enabling the team</h2>
   <div class="cap" data-reveal>
     <h3>I design how a team works, then write what lets them run it without me.</h3>
-    <p class="say">Not just doing the work — building the function so it doesn't need me in every conversation.</p>
-    <div class="item"><div class="h"><span class="name">Two-stage sales operating model, with written guides</span><span class="date">May 14, 2026</span><span class="tag t-ship">In use</span></div>
-    <p class="desc">Designed a clean two-stage sales model (Stage 1: written comms and quoting; Stage 2: phone and closing) and authored the operating guides that let two salespeople run it independently, with KPIs, scope boundaries, and how they hand off between each other.</p></div>
-    <div class="item"><div class="h"><span class="name">Sales performance reporting for the owner</span><span class="date">May–Jun 2026</span><span class="tag t-ship">Delivered</span></div>
-    <p class="desc">Impartial, evidence-based performance reporting: a sales call-log analysis pulling 186 call attempts via API, with 12 substantive conversations transcribed and summarised. Turned raw activity data into clear, neutral insight for the owner.</p></div>
-    <div class="item"><div class="h"><span class="name">Team onboarding suite + 61-question business assessment</span><span class="date">May–Jun 2026</span><span class="tag t-ship">Delivered</span></div>
-    <p class="desc">A full orientation programme (run-of-show, quick-starts, lead-entry process) and a candid 61-question business and role assessment that separates what's built from what isn't and cites a source for every claim.</p></div>
-    <div class="skills"><b>What this uses:</b> operating-model design · training design · process documentation · stakeholder enablement · impartial reporting.</div>
+    <p class="say">Not just doing the work, but building systems the team can operate on their own.</p>
+    <div class="item"><div class="h">
+<span class="name">Two-stage sales operating model, with written guides</span>
+<span class="date">May 14, 2026</span>
+<span class="tag t-ship">In use</span>
+</div>
+    <p class="desc">Built a two-stage sales model (Stage 1: written comms and quoting; Stage 2: phone and closing) with documented operating guides that let two salespeople run it independently. Includes KPIs, clear scope boundaries, and the handoff process between stages.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Sales performance reporting for the owner</span>
+<span class="date">May to Jun 2026</span>
+<span class="tag t-ship">Delivered</span>
+</div>
+    <p class="desc">Impartial, evidence-based performance reporting: pulled 186 call attempts via API and transcribed 12 substantive conversations. Turned raw activity data into clear, neutral insight the owner could act on.</p></div>
+    <div class="item"><div class="h">
+<span class="name">Team onboarding suite plus 61-question business assessment</span>
+<span class="date">May to Jun 2026</span>
+<span class="tag t-ship">Delivered</span>
+</div>
+    <p class="desc">Built a full orientation programme (run-of-show, quick-starts, lead-entry process) and created a candid 61-question business and role assessment that clearly separates what is actually built from what is not, with sources cited for every claim.</p></div>
+    <div class="skills"><b>What this uses:</b> operating-model design · training design · process documentation · stakeholder enablement · impartial reporting</div>
   </div>
 
   <h2 data-reveal>Honest notes (kept in on purpose)</h2>
   <div class="honest" data-reveal>
     <ul>
-      <li><b>AI-assisted throughout.</b> This work was produced through AI-assisted sessions. The design, decisions, judgment and direction are mine; a lot of the code and prose was drafted with an AI. That's the modern way this class of work gets built, and stated plainly, it costs nothing.</li>
-      <li><b>Some foundations were inherited.</b> The SEO audit tool's foundation came from a colleague who left mid-build. My contribution was finishing, scoping, correcting a fabricated metric, securing it, and shipping it. Credited as delivery and judgment, not from-scratch authorship.</li>
-      <li><b>Some work is draft or in progress.</b> The World Cup landing page awaits client access; the reusable page template is piloting. Labelled honestly above.</li>
-      <li><b>"Live" on the SEO app</b> rests on the project record and commit history, not a fresh uptime check.</li>
+      <li><b>AI-assisted throughout.</b> This work was produced in AI-assisted sessions. The design, the judgment, the decisions and the direction are mine; a lot of the code and prose was drafted with an AI. That is how this class of work gets built now, and saying it plainly costs me nothing.</li>
+      <li><b>Some foundations were inherited.</b> The SEO audit tool started with a colleague who left mid-build. My contribution was finishing it, scoping it down, replacing a fabricated metric with real PageSpeed data, securing it, and getting it shipped. Credited as delivery and judgment, not from-scratch authorship.</li>
+      <li><b>Some work is draft or in progress.</b> The World Cup landing page is a finished draft waiting on client access to WordPress. The reusable page template is in its pilot round. Both are labelled honestly in the sections above.</li>
+      <li><b>The SEO app is described as live</b> based on the project record and commit history, not a fresh uptime check on the day you are reading this.</li>
     </ul>
   </div>
 
   <div class="close-band" data-reveal>
-    <h3>What this adds up to</h3>
-    <p>Real money found. Real systems shipped. Weekly finance operations that don't miss. Tools connected. A team enabled. And all of it documented so it doesn't disappear when I do.</p>
+    <h3>What all this adds up to</h3>
+    <p>Real money found in the accounts. Real systems shipped and running. A weekly finance rhythm that has not missed since February 2026. Separate tools wired together so they share one version of the truth. A team with the guides and reporting they need to run the day without me. And every bit of it written down, so if I walk out the door tomorrow, nothing walks out with me. If any of that sounds like what your business is missing, I am the person to call.</p>
     <span class="id">A bookkeeper who fixes the admin and backend chaos the books reveal, and builds the systems that stop it happening again.</span>
   </div>
 
