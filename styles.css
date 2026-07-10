@@ -281,6 +281,9 @@ h3{font-family:var(--sans);font-weight:600;font-size:1.2rem;margin:0 0 6px}
   opacity:.82;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:1px;
 }
 .close-band .cta-row a.mail-alt:hover{opacity:1;border-color:#fff}
+/* small "or" separator between Book and Email */
+.cta-or{font-family:var(--mono);font-size:13px;color:var(--muted);opacity:.85;letter-spacing:.4px}
+.close-band .cta-or{color:#fff;opacity:.6}
 
 /* ---------- résumé page ---------- */
 .resume .prof p{margin:5px 0;font-size:15px}
