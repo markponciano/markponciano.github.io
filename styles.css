@@ -262,8 +262,25 @@ h3{font-family:var(--sans);font-weight:600;font-size:1.2rem;margin:0 0 6px}
 .honest b{color:var(--ink)}
 .close-band{background:var(--navy);color:#fff;border-radius:18px;padding:30px;margin-top:38px}
 .close-band h3{font-family:var(--serif);color:#fff;font-size:1.4rem;margin:0 0 10px}
-.close-band p{opacity:.92;margin:0 0 10px;font-size:15px}
-.close-band .id{font-size:1.05rem;font-weight:600;opacity:1;display:block}
+.close-band p{opacity:.92;margin:0 0 14px;font-size:15px}
+.close-band .id{font-size:1.05rem;font-weight:600;opacity:1;display:block;margin-top:16px}
+
+/* CTA buttons — Book a call + email */
+.btn-book{
+  display:inline-flex;align-items:center;gap:6px;
+  background:var(--amber);color:#1a140b;
+  font-weight:600;font-size:14.5px;
+  padding:11px 20px;border-radius:10px;
+  text-decoration:none;transition:transform .18s,box-shadow .18s;
+  border:1px solid var(--amber);
+}
+.btn-book:hover{transform:translateY(-2px);box-shadow:0 8px 20px color-mix(in srgb,var(--amber) 40%,transparent)}
+.cta-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:6px 0 8px}
+.close-band .cta-row a.mail-alt{
+  color:#fff;font-family:var(--mono);font-size:13.5px;text-decoration:none;
+  opacity:.82;border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:1px;
+}
+.close-band .cta-row a.mail-alt:hover{opacity:1;border-color:#fff}
 
 /* ---------- résumé page ---------- */
 .resume .prof p{margin:5px 0;font-size:15px}
