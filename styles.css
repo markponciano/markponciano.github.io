@@ -281,6 +281,14 @@ h3{font-family:var(--sans);font-weight:600;font-size:1.2rem;margin:0 0 6px}
 .way .way-name{font-weight:600;font-size:15px;color:var(--ink);margin:0 0 6px;display:flex;align-items:center;gap:8px}
 .way .way-name::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--amber);flex:0 0 auto}
 .way p{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
+.hw-sub{font-weight:600;font-size:15px;color:var(--ink);margin:22px 0 2px}
+.start-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px;margin:10px 0 4px}
+.step-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.step-card .step-n{font-family:var(--mono);font-size:11.5px;font-weight:600;color:var(--amber);letter-spacing:1.5px;text-transform:uppercase}
+.step-card h4{margin:6px 0 5px;font-size:15px;color:var(--ink)}
+.step-card p{margin:0;font-size:14px;color:var(--muted);line-height:1.5}
+.hw-avail{margin-top:18px;font-size:14.5px;color:var(--muted);line-height:1.55}
+.hw-avail b{color:var(--ink);font-weight:600}
 
 /* case study callout */
 .cs-callout{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
