@@ -260,7 +260,7 @@ h3{font-family:var(--sans);font-weight:600;font-size:1.2rem;margin:0 0 6px}
 .honest ul{margin:0;padding-left:20px}
 .honest li{margin:7px 0;font-size:14px;color:var(--muted)}
 .honest b{color:var(--ink)}
-.close-band{background:var(--navy);color:#fff;border-radius:18px;padding:30px;margin-top:38px}
+.close-band{background:#22315c;color:#fff;border-radius:18px;padding:30px;margin-top:38px}
 .close-band h3{font-family:var(--serif);color:#fff;font-size:1.4rem;margin:0 0 10px}
 .close-band p{opacity:.92;margin:0 0 14px;font-size:15px}
 .close-band .id{font-size:1.05rem;font-weight:600;opacity:1;display:block;margin-top:16px}
