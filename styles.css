@@ -67,8 +67,15 @@ a{color:var(--navy);text-decoration:none}
   max-width:1000px;margin:0 auto;padding:12px 24px;
   display:flex;align-items:center;justify-content:space-between;gap:16px;
 }
-.brand{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:.3px;color:var(--ink)}
+.brand{font-family:var(--mono);font-weight:600;font-size:15px;letter-spacing:.3px;color:var(--ink);
+  display:inline-flex;align-items:center;gap:9px}
 .brand b{color:var(--amber)}
+.brand-photo{
+  width:30px;height:30px;border-radius:50%;object-fit:cover;
+  border:1px solid var(--line);flex:0 0 auto;
+  transition:border-color .18s;
+}
+.brand:hover .brand-photo{border-color:var(--amber)}
 .nav{display:flex;align-items:center;gap:22px}
 .nav a{font-size:14.5px;color:var(--muted);font-weight:500;transition:color .15s;position:relative}
 .nav a:hover{color:var(--ink)}
@@ -264,34 +271,6 @@ h3{font-family:var(--sans);font-weight:600;font-size:1.2rem;margin:0 0 6px}
 .close-band h3{font-family:var(--serif);color:#fff;font-size:1.4rem;margin:0 0 10px}
 .close-band p{opacity:.92;margin:0 0 14px;font-size:15px}
 .close-band .id{font-size:1.05rem;font-weight:600;opacity:1;display:block;margin-top:16px}
-
-/* hero with photo (Body of Work) */
-.hero-with-photo{
-  display:flex;gap:36px;align-items:flex-start;flex-wrap:wrap;
-}
-.hero-with-photo .hero-text{flex:1 1 60%;min-width:0}
-.hero-with-photo .hero-photo{
-  flex:0 0 auto;order:1;
-  width:140px;height:140px;border-radius:50%;
-  object-fit:cover;
-  border:3px solid var(--surface);
-  box-shadow:0 4px 18px rgba(0,0,0,.08),0 0 0 1px var(--line);
-  margin-top:12px;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) .hero-with-photo .hero-photo{
-    box-shadow:0 4px 18px rgba(0,0,0,.4),0 0 0 1px var(--line);
-  }
-}
-:root[data-theme="dark"] .hero-with-photo .hero-photo{
-  box-shadow:0 4px 18px rgba(0,0,0,.4),0 0 0 1px var(--line);
-}
-@media (max-width:640px){
-  .hero-with-photo{gap:14px}
-  .hero-with-photo .hero-photo{
-    width:96px;height:96px;order:0;margin-top:0;
-  }
-}
 
 /* CTA buttons — Book a call + email */
 .btn-book{
