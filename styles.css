@@ -361,7 +361,7 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
     font-size:10px!important;line-height:1.38!important}
 
   /* strip screen chrome */
-  .site-header,.site-footer,.back-home,.dl-row,.theme-toggle,
+  .site-header,.site-footer,.back-home,.dl-row,.theme-toggle,.cta-band,
   .page-hero .eyebrow,.page-hero .sub{display:none!important}
 
   /* release width + spacing */

@@ -72,10 +72,6 @@
     });
   });
 
-  /* download résumé as PDF via print dialog */
-  var dl=document.getElementById('dlpdf');
-  if(dl){dl.addEventListener('click',function(){window.print();});}
-
   /* mark the current page in the header nav */
   (function markCurrentNav(){
     var path=(location.pathname.split('/').pop()||'index.html').toLowerCase();
