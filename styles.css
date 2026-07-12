@@ -370,12 +370,12 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 @media (max-width:640px){.skillgroup{grid-template-columns:1fr;gap:6px}.skillgroup .sg-label{padding-top:0}}
 .resume h2{margin:40px 0 12px;font-size:1.4rem}
 .resume section{scroll-margin-top:80px}
-@page{margin:13mm 14mm;size:A4}
+@page{margin:17mm 17mm;size:A4}
 @media print{
   *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
   html,body{background:#fff!important;color:#141414!important;
     font-family:"IBM Plex Sans",Arial,sans-serif!important;
-    font-size:10.5px!important;line-height:1.48!important}
+    font-size:12px!important;line-height:1.6!important}
 
   /* strip screen chrome */
   .site-header,.site-footer,.back-home,.dl-row,.theme-toggle,.cta-band,
@@ -390,49 +390,49 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
   .resume h1{font-family:"IBM Plex Serif",Georgia,serif!important;
     font-size:24px!important;letter-spacing:-.3px;margin:0 0 4px!important;line-height:1.1!important;color:#141414!important}
   .resume .byline{display:block!important;background:transparent!important;border:none!important;
-    padding:0!important;margin:0 0 10px!important;font-family:"IBM Plex Sans",sans-serif!important;
-    font-size:10px!important;color:#444!important;letter-spacing:0!important}
+    padding:0!important;margin:0 0 17px!important;font-family:"IBM Plex Sans",sans-serif!important;
+    font-size:11px!important;color:#444!important;letter-spacing:0!important}
   .resume .byline b{color:#141414}
   .resume .byline a{color:#22315c!important}
 
   /* section headings */
   .resume h2{font-family:"IBM Plex Serif",Georgia,serif!important;color:#22315c!important;
-    font-size:13px!important;letter-spacing:.3px;margin:14px 0 5px!important;padding:0 0 2px;
+    font-size:15px!important;letter-spacing:.3px;margin:24px 0 9px!important;padding:0 0 3px;
     border-bottom:.6px solid #ccc;text-transform:none!important;break-after:avoid}
 
   /* summary + generic paragraphs */
-  .resume section > p{margin:0 0 6px!important;font-size:10.5px!important;line-height:1.48!important}
+  .resume section > p{margin:0 0 13px!important;font-size:12px!important;line-height:1.62!important}
 
   /* proficiencies */
   .resume .prof p{margin:2px 0!important;font-size:9.5px!important;line-height:1.38!important}
   .resume .prof p b{color:#141414}
 
   /* experience */
-  .resume .job{margin:0 0 12px!important;break-inside:avoid}
+  .resume .job{margin:0 0 21px!important;break-inside:avoid}
   .resume .jh{margin:0;align-items:baseline;gap:6px}
-  .resume .jt{font-weight:700!important;font-size:12.5px!important;color:#141414}
-  .resume .jo{font-weight:400!important;font-size:11.5px!important;color:#444}
-  .resume .jd{font-family:"IBM Plex Mono",monospace!important;font-size:10.5px!important;color:#666!important}
-  .resume .jf{font-style:italic;color:#22315c!important;font-size:10.5px!important;margin:0 0 4px!important}
-  .resume .job ul{margin:5px 0 0!important;padding-left:17px!important}
-  .resume .job li{margin:3px 0!important;font-size:10.5px!important;line-height:1.48!important;break-inside:avoid}
+  .resume .jt{font-weight:700!important;font-size:13.5px!important;color:#141414}
+  .resume .jo{font-weight:400!important;font-size:12.5px!important;color:#444}
+  .resume .jd{font-family:"IBM Plex Mono",monospace!important;font-size:11px!important;color:#666!important}
+  .resume .jf{font-style:italic;color:#22315c!important;font-size:11.5px!important;margin:0 0 9px!important}
+  .resume .job ul{margin:7px 0 0!important;padding-left:18px!important}
+  .resume .job li{margin:7px 0!important;font-size:12px!important;line-height:1.62!important;break-inside:avoid}
   .resume .job li b{color:#141414}
 
   /* education */
-  .resume .edu p{margin:5px 0!important;font-size:11px!important}
+  .resume .edu p{margin:7px 0!important;font-size:12px!important}
   .resume .muted{color:#555!important}
 
   /* flatten screen decorations for the PDF */
   .resume .facts{display:none!important}
   .resume .job{background:transparent!important;border:0!important;border-radius:0!important;padding:0!important}
   .resume .skills-grid{display:block!important}
-  .resume .skillgroup{display:block!important;margin:3px 0!important;font-size:10.5px!important;line-height:1.48!important}
+  .resume .skillgroup{display:block!important;margin:7px 0!important;font-size:12px!important;line-height:1.62!important}
   .resume .skillgroup .sg-label{display:inline!important;font-weight:700!important;color:#141414!important;padding:0!important}
   .resume .skillgroup .sg-label::after{content:": "}
   .resume .chips{display:inline!important}
   .resume .chip{display:inline!important;border:0!important;background:transparent!important;padding:0!important;border-radius:0!important;font-size:9.5px!important;color:#141414!important}
   .resume .chip + .chip::before{content:" · ";color:#888}
-  .resume .chip{font-size:11px!important}
+  .resume .chip{font-size:12px!important}
 
   /* reveal always on */
   .resume [data-reveal]{opacity:1!important;transform:none!important}
