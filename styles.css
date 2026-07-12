@@ -308,6 +308,16 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 .hw-avail{margin-top:18px;font-size:14.5px;color:var(--muted);line-height:1.55}
 .hw-avail b{color:var(--ink);font-weight:600}
 
+/* diagnostic page — pricing tiers */
+.tiers{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:18px 0 4px}
+.tier{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow-sm);display:flex;flex-direction:column}
+.tier.featured{border-color:var(--amber);box-shadow:var(--shadow)}
+.tier .t-tag{font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--amber)}
+.tier .t-name{font-family:var(--serif);font-weight:600;font-size:1.1rem;color:var(--ink);margin:3px 0 0}
+.tier .t-price{font-family:var(--mono);font-weight:600;font-size:1.9rem;color:var(--navy);line-height:1;margin:12px 0 2px}
+.tier .t-window{font-family:var(--mono);font-size:12px;color:var(--muted);margin-bottom:12px}
+.tier .t-scope{font-size:14px;color:var(--muted);line-height:1.5;margin:0}
+
 /* case study callout */
 .cs-callout{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;
   background:var(--navy-soft);border:1px solid var(--line);border-radius:14px;padding:22px 24px;margin-top:26px}
