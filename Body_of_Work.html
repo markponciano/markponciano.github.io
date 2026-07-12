@@ -76,6 +76,21 @@
 
   <h2 data-reveal>Money I've found in the books</h2>
   <div class="cap" data-reveal>
+    <div class="sys-diagram" data-reveal>
+      <svg viewBox="0 0 560 200" role="img" aria-label="Cross-checking the payments export against the service log surfaced 8,000 dollars in double-payments">
+        <rect class="sd-node" x="45" y="40" width="160" height="40" rx="10"/>
+        <text class="sd-t" x="125" y="64" text-anchor="middle">Payments export</text>
+        <rect class="sd-node" x="45" y="120" width="160" height="40" rx="10"/>
+        <text class="sd-t" x="125" y="144" text-anchor="middle">Service log</text>
+        <line class="sd-link" x1="205" y1="60" x2="330" y2="100"/>
+        <line class="sd-link" x1="205" y1="140" x2="330" y2="100"/>
+        <circle class="mv-dot" cx="330" cy="100" r="4"/>
+        <text class="mv-amt" x="352" y="94">$8,000</text>
+        <text class="sd-s" x="352" y="110">in double-payments</text>
+        <text class="sd-s" x="352" y="123">caught and recovered</text>
+      </svg>
+      <p class="sd-caption">A billing switch was double-paying some providers. Cross-checking the payments export against the service log pinned exactly who and how much, $8,000 in all.</p>
+    </div>
     <div class="item"><div class="h"><span class="name">Clawed back $8,000 from a billing switch that was double-paying providers</span><span class="date">2025, AU medical clinic</span><span class="tag t-ship">Shipped</span></div>
     <p class="desc">A medical clinic of about 40 providers changed how it paid them partway through the year. For a few weeks the old and new methods overlapped, so <b>some providers were paid twice</b>. I cross-checked the payments export against the service log to pin down exactly who had been overpaid and by how much, <b>totalling $8,000 AUD</b>, then set it up as small installments through the weekly clinic-fee invoice so nobody took a sudden hit getting it back.</p></div>
     <div class="sys-diagram" data-reveal>
