@@ -202,6 +202,10 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
   .nav a{font-size:13px}
   .nav .nav-cta{display:none}
 }
+@media (max-width:560px){
+  .brand span{display:none}
+  .nav{gap:11px}
+}
 
 /* ---------- content pages (case study / body of work / résumé) ---------- */
 .page-hero{padding:52px 0 6px}
