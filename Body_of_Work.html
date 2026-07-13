@@ -5,10 +5,10 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Body of Work — Mark Ponciano</title>
-<meta name="description" content="Money found, systems built, weekly finance operations that do not miss. Grouped by what it proves, not by job title.">
+<meta name="description" content="A bookkeeper who builds the data pipelines behind the finance. Money found, schemas and reconciliation pipelines built, weekly finance operations that do not miss.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Body of Work — Mark Ponciano">
-<meta property="og:description" content="A bookkeeper who fixes the back-office chaos the books reveal, and builds the systems that stop it coming back.">
+<meta property="og:description" content="A bookkeeper who builds the data pipelines behind the finance, and the back-office systems around them.">
 <meta property="og:url" content="https://markponciano.github.io/Body_of_Work.html">
 <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2322315c'/%3E%3Ctext%20x='16'%20y='22'%20font-family='monospace'%20font-size='14'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -38,9 +38,9 @@
   <section class="page-hero">
     <p class="eyebrow">Body of Work</p>
     <h1>Mark Lorenze Ponciano</h1>
-    <p class="role">A bookkeeper who fixes the back-office chaos the books reveal, and builds the systems that stop it coming back.</p>
+    <p class="role">A bookkeeper who builds the data pipelines behind the finance, and the back-office systems around them.</p>
     <p class="lede">For two and a half years I kept the books. First a hospitality group with five separate ledgers, then a medical clinic. Both taught me the same thing: <b>the mess was never in the numbers. It was in the admin and the handoffs behind them.</b></p>
-    <p class="lede">In February 2026 a UK street-food and events business hired me to keep their books. Within months I was running their systems and automation. Once I found where the money and hours were leaking, fixing it properly meant <em>building</em> the thing that stopped the leak.</p>
+    <p class="lede">In February 2026 a UK street-food and events business hired me to keep their books. Within months I was running their systems and automation. Once I found where the money and hours were leaking, fixing it properly meant <em>building</em>: a data model the operation runs on, reconciliation pipelines that catch what people miss, and the tools wired together so the numbers stay right on their own.</p>
     <p class="lede"><b>That's the whole pitch, made real. It's what I'd do for you.</b></p>
   </section>
 
@@ -49,7 +49,7 @@
     <div class="fact"><div class="n">~$8K</div><div class="l">Clawed back at a 40-provider clinic where a billing switch was double-paying providers.</div></div>
     <div class="fact"><div class="n">~130 checks</div><div class="l">Moved the live payment path onto a rebuilt system, rollbacks proven first. No customer interruption.</div></div>
     <div class="fact"><div class="n">3 years, weekly</div><div class="l">Weekly reporting and reconciliation kept on cadence across three businesses, caf&eacute;s to clinic to events.</div></div>
-    <div class="fact"><div class="n">95% matched</div><div class="l">Clinic reconciliation matched or pre-matched 95% of transactions, leaving just the ~5% risky items to review by hand.</div></div>
+    <div class="fact"><div class="n">~15k/mo</div><div class="l">Transaction lines reconciled across a dozen payment rails with no shared ID to match on. An Apps Script pipeline I built auto-matched 95%, leaving only the risky ~5% to check by hand.</div></div>
   </section>
 
   <section class="howiwork" data-reveal>
@@ -117,7 +117,7 @@
   <h2 data-reveal>The system underneath</h2>
   <div class="cap" data-reveal>
     <div class="sys-diagram" data-reveal>
-      <svg viewBox="0 0 640 320" role="img" aria-label="GoHighLevel, Xero, email and calendar all mirror one central booking record">
+      <svg viewBox="0 0 640 320" role="img" aria-label="GoHighLevel, Xero, email and calendar all mirror one MySQL schema I designed">
         <line class="sd-link" x1="320" y1="160" x2="140" y2="55"/>
         <line class="sd-link" x1="320" y1="160" x2="500" y2="55"/>
         <line class="sd-link" x1="320" y1="160" x2="140" y2="275"/>
@@ -135,13 +135,15 @@
         <text class="sd-t" x="500" y="274" text-anchor="middle">Calendar</text>
         <text class="sd-s" x="500" y="288" text-anchor="middle">availability</text>
         <rect class="sd-hub" x="230" y="130" width="180" height="60" rx="13"/>
-        <text class="sd-t" x="320" y="157" text-anchor="middle">The booking</text>
+        <text class="sd-t" x="320" y="157" text-anchor="middle">MySQL schema</text>
         <text class="sd-s" x="320" y="173" text-anchor="middle">one source of truth</text>
       </svg>
-      <p class="sd-caption">Every tool mirrors one central record. The status updates itself from what actually happened, so nothing gets re-typed and nothing falls out of sync.</p>
+      <p class="sd-caption">Every tool mirrors one schema I designed. The status updates itself from what actually happened, so nothing gets re-typed and nothing falls out of sync.</p>
     </div>
-    <div class="item"><div class="h"><span class="name">Set up the CRM that runs the whole operation</span><span class="date">2026</span><span class="tag t-live">Live</span></div>
-    <p class="desc">The CRM the team works from runs it all: bookings, quotes, invoices, payments and a live availability calendar. <b>Each booking's status updates itself from what actually happened</b>, and quiet customers get chased automatically.</p></div>
+    <div class="item"><div class="h"><span class="name">Designed the data model the whole operation runs on</span><span class="date">2026</span><span class="tag t-live">Live</span></div>
+    <p class="desc">I designed a <b>MySQL schema I own as the single source of truth</b>. GoHighLevel, Xero, email and the calendar all mirror it, so a booking flows from enquiry to quote to invoice to payment with nothing re-typed, and quiet customers get chased automatically. The CRM is the dashboard the team works from; the data model underneath is what keeps it honest. Built in PHP and JavaScript.</p></div>
+    <div class="item"><div class="h"><span class="name">Built the matchday payroll and sales pipeline</span><span class="date">2026</span><span class="tag t-live">Live</span></div>
+    <p class="desc">An <b>Apps Script pipeline</b> for matchday pay and sales: it ingests form submissions on a timer, resolves inconsistent names to one canonical roster, de-duplicates with an audit log, works out pay, and reconciles hours against the posted schedule with variance and duplicate-payment flags. <b>Cut about half a day of manual work per event.</b></p></div>
     <div class="item"><div class="h"><span class="name">Integration apps or custom code, whichever the job needs</span><span class="date">2026</span><span class="tag t-ship">Shipped</span></div>
     <p class="desc">I pick the tool to fit the business, not the other way round. <b>Before the CRM was even bought, I built an automated quote-to-invoice pipeline with integration apps</b>, so an enquiry became an invoice on its own.</p></div>
     <div class="item"><div class="h"><span class="name">Moved the live money path across without a minute of downtime</span><span class="date">Jul 2026</span><span class="tag t-live">Live</span></div>
@@ -179,7 +181,7 @@
     <div class="item"><div class="h"><span class="name">Ran the books for a five-caf&eacute; group, five separate Xero organisations</span><span class="date">2023 to 2024, AU hospitality</span></div>
     <p class="desc">Ran accounts payable across five caf&eacute; entities, each its own Xero org with its own suppliers and feeds. Built rule-based routing that pulled supplier invoices from Gmail into Xero, <b>cutting 15 to 25 manual entries a day</b>.</p></div>
     <div class="item"><div class="h"><span class="name">Cut a clinic's manual reconciliation to about 5%</span><span class="date">2025, AU medical clinic</span></div>
-    <p class="desc">For a multi-practitioner clinic, I built reconciliation that matched or pre-matched about <b>95% of transactions</b> across 40 provider accounts, so manual review only touched the ~5% genuinely risky items: WorkCover claims, patient refunds, payment exceptions.</p></div>
+    <p class="desc">For a 40-provider clinic, I built an <b>Apps Script reconciliation pipeline</b> handling about 15,000 lines a month. It normalised the export first, then matched across a dozen payment rails, EFT, Medicare, DVA, WorkCover, HICAPS, cards, cash, and pre-matched or matched about <b>95%</b>, so manual review only touched the risky ~5%, including WorkCover records with no reference to match on.</p></div>
   </div>
 
   <h2 data-reveal>Beyond the day job</h2>
