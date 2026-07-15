@@ -54,17 +54,17 @@
 
   <section data-reveal>
     <h2>Summary</h2>
-    <p>A certified bookkeeper who builds the data pipelines behind the finance. I design schemas, normalize sources that never agree, and ship scheduled reconciliation and reporting pipelines, in <b>Apps Script, JavaScript, Node and PHP</b>, on a <b>MySQL data model I designed</b>. I reconcile at scale, including records with <b>no join key</b>, wire whole stacks together so the numbers stay right and self-updating, and use AI coding tools daily while staying strict about where they belong in a system that has to tie to the penny. The finance domain most engineers lack, and the engineering most bookkeepers lack.</p>
+    <p>A certified bookkeeper who builds the data pipelines behind the finance. I design schemas, normalize sources that never agree, and ship scheduled reconciliation and reporting pipelines on a <b>MySQL data model I designed</b>. I reconcile at scale, including records with <b>no join key</b>, wire whole stacks together so the numbers stay right and self-updating, and use AI coding tools daily while staying strict about where they belong in a system that has to tie to the penny.</p>
   </section>
 
   <section data-reveal>
     <h2>What I work with</h2>
     <div class="skills-grid">
-      <div class="skillgroup"><div class="sg-label">Languages &amp; data</div><div class="chips"><span class="chip">Apps Script</span><span class="chip">JavaScript</span><span class="chip">Node</span><span class="chip">PHP</span><span class="chip">SQL</span><span class="chip chip-key">MySQL (schema design)</span><span class="chip">Sheets / Excel modeling</span></div></div>
-      <div class="skillgroup"><div class="sg-label">Pipelines &amp; automation</div><div class="chips"><span class="chip">Scheduled ETL</span><span class="chip">Data normalization</span><span class="chip">Entity resolution &amp; dedup</span><span class="chip">Reconciliation</span><span class="chip">Variance / exception flagging</span><span class="chip">Make.com</span><span class="chip">API &amp; webhook integrations</span></div></div>
-      <div class="skillgroup"><div class="sg-label">Finance</div><div class="chips"><span class="chip chip-key">Xero (Advisor Certified)</span><span class="chip chip-key">Dext (Certified Expert)</span><span class="chip">Multi-entity reconciliation</span><span class="chip">AP automation</span><span class="chip">GST / VAT</span><span class="chip">Payroll</span></div></div>
-      <div class="skillgroup"><div class="sg-label">Integration stack</div><div class="chips"><span class="chip">GoHighLevel</span><span class="chip">Brevo</span><span class="chip">CloudConvert</span><span class="chip">Google Calendar</span><span class="chip">Google Workspace / Apps Script</span><span class="chip">WordPress / SiteGround</span></div></div>
-      <div class="skillgroup"><div class="sg-label">Web &amp; deploy</div><div class="chips"><span class="chip">React</span><span class="chip">Supabase</span><span class="chip">Vercel</span><span class="chip">GitHub</span><span class="chip">AI-assisted development</span><span class="chip">LLM APIs</span></div></div>
+      <div class="skillgroup"><div class="sg-label">Finance</div><div class="chips"><span class="chip chip-key">Xero (Advisor Certified)</span><span class="chip chip-key">Dext (Certified Expert)</span><span class="chip">Multi-entity reconciliation</span><span class="chip">AR / AP processing</span><span class="chip">GST / VAT</span><span class="chip">Payroll</span></div></div>
+      <div class="skillgroup"><div class="sg-label">Reconciliation &amp; pipelines</div><div class="chips"><span class="chip">Data normalization</span><span class="chip">Entity resolution &amp; dedup</span><span class="chip">Reconciliation</span><span class="chip">Variance / exception flagging</span><span class="chip">API &amp; webhook integrations</span></div></div>
+      <div class="skillgroup"><div class="sg-label">Data architecture</div><div class="chips"><span class="chip chip-key">MySQL schema design (single source of truth)</span><span class="chip">SQL</span><span class="chip">Sheets / Excel modeling</span></div></div>
+      <div class="skillgroup"><div class="sg-label">Integration stack</div><div class="chips"><span class="chip">GoHighLevel</span><span class="chip">Monday.com</span><span class="chip">Make.com</span><span class="chip">Brevo</span><span class="chip">CloudConvert</span><span class="chip">Google Calendar</span><span class="chip">Google Workspace</span><span class="chip">WordPress</span></div></div>
+      <div class="skillgroup"><div class="sg-label">Tools &amp; languages</div><div class="chips"><span class="chip">Apps Script</span><span class="chip">JavaScript</span><span class="chip">Node</span><span class="chip">PHP</span><span class="chip">React</span><span class="chip">Supabase</span><span class="chip">Vercel</span><span class="chip">GitHub</span><span class="chip">AI-assisted development</span><span class="chip">LLM APIs</span></div></div>
     </div>
   </section>
 
@@ -86,8 +86,8 @@
       <div class="jh"><span class="jt">Bookkeeper<span class="jo">, Confidential Multi-Practitioner Medical Clinic (Remote, AU)</span></span><span class="jd">Jan 2025 – Dec 2025</span></div>
       <p class="jf">40-practitioner superclinic: reconciliation and billing</p>
       <ul>
-        <li><b>Reconciliation pipeline:</b> built an Apps Script pipeline reconciling <b>~15,000 transaction lines a month</b> from Best Practice against the GPs' bank statements. Normalized the export first, then matched across a dozen payment rails (EFT, Medicare, DVA, WorkCover, HICAPS, credit card, deposits, cash): ~80% matched outright, ~15% pre-matched, and the hard ~5% flagged for review, including <b>WorkCover records with no direct reference to match on</b>. Ran monthly for the year; handed over without friction.</li>
-        <li><b>Revenue assurance:</b> during a billing-model change that occasionally double-paid providers, cross-referenced the payments export against the service export to pin each provider's true overpayment, about <b>$8K</b> across 40 accounts, and set up a painless installment recoupment.</li>
+        <li><b>Reconciliation pipeline:</b> built an Apps Script pipeline reconciling <b>~15,000 transaction lines a month</b> from Best Practice against the GPs' bank statements. Normalized the export first, then matched across a dozen payment rails (EFT, Medicare, DVA, WorkCover, HICAPS, credit card, deposits, cash): ~80% matched outright, ~15% pre-matched, and the hard ~5% flagged for review, including <b>WorkCover records with no direct reference to match on</b>. Ran monthly for the year, then handed it over with a walkthrough.</li>
+        <li><b>Revenue assurance:</b> during a billing-model change that occasionally double-paid providers, cross-referenced the payments export against the service export to pin each provider's true overpayment, about <b>$8K</b> across 40 accounts, and recovered it in staged installments rather than clawing it back in one hit.</li>
       </ul>
     </div>
 
@@ -112,7 +112,7 @@
 
   <section class="cta-band" data-reveal>
     <h2>Want to talk about a project?</h2>
-    <p>If your books are messy or your tools don't talk to each other, that's exactly the mess I'm good at.</p>
+    <p>If your books are messy or your tools don't talk to each other, that's the kind of work I do.</p>
     <div class="mail-row">
       <a class="btn-book" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a 20-minute call →</a>
       <span class="mail-alt"><span class="cta-or">or email</span>
