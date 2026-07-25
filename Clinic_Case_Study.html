@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case Study: Superclinic Reconciliation — Mark Ponciano</title>
+<meta name="description" content="How I built the pipeline that reconciled about 15,000 transaction lines a month across nine payment types for an AU medical superclinic, and caught around A$8,000 in double-payments.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Case Study — reconciliation and controls for a busy AU superclinic">
+<meta property="og:description" content="Reconciling ~15,000 transaction lines a month across nine payment types with no shared ID, and catching ~A$8,000 the clinic was overpaying its providers.">
+<meta property="og:url" content="https://markponciano.github.io/Clinic_Case_Study.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2322315c'/%3E%3Ctext%20x='16'%20y='22'%20font-family='monospace'%20font-size='14'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html"><img class="brand-photo" src="mark.jpg" alt="" width="30" height="30" aria-hidden="true"><span>mark<b>.</b>ponciano</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="Case_Studies.html">Case studies</a>
+      <a href="Body_of_Work.html">Work</a>
+      <a href="Mark_Ponciano_Resume_2026.html">Résumé</a>
+      <a class="nav-cta" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a call</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch light / dark">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="page-hero">
+    <p class="eyebrow">Case Study</p>
+    <h1>Reconciliation and controls for a busy AU superclinic</h1>
+    <p class="sub">How I built the pipeline that reconciled about 15,000 transaction lines a month across nine payment types, and caught around A$8,000 the clinic was quietly overpaying its providers.</p>
+    <span class="byline"><b>Mark Lorenze Ponciano</b> · Systems, Automation &amp; Bookkeeping for SMBs</span>
+  </section>
+
+  <div class="prose">
+
+    <section data-reveal>
+      <h2>The clinic</h2>
+      <p>A confidential multi-practitioner medical superclinic in Australia. My job was the reconciliation behind the provider payments: matching what the clinic's practice-management system, <b>Best Practice</b>, said had happened against the payments that actually came in. The payment stream I owned covered around 40 providers, and the money arrived through <b>nine different channels, each with its own rules</b>.</p>
+    </section>
+
+    <section data-reveal>
+      <h2>The problem</h2>
+      <p>On the surface it was bookkeeping. Underneath, it was a matching problem at volume, with no clean key to match on:</p>
+      <div class="card list-card">
+        <ul>
+          <li><b>About 15,000 transaction lines a month</b>, arriving across <b>nine payment types</b> — direct debit, EFT, Medicare, DVA, WorkCover, HICAPS, credit card, cash and deposit allocation — each reconciled by its own rules, <b>with no shared ID across them</b>.</li>
+          <li><b>WorkCover was the worst of it:</b> high volume and mostly <b>unreferenced</b>, so there was often nothing clean to match a payment back to.</li>
+          <li><b>Best Practice doesn't export clean.</b> None of it could be trusted or matched until the data was heavily normalised first.</li>
+          <li><b>The clinic changed how it paid providers partway through the year.</b> The old and new methods overlapped for a stretch, and some providers were quietly being <b>paid twice</b>.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section data-reveal>
+      <h2>How I approached it</h2>
+      <p>Same as always: I did the reconciliation by hand before I automated any of it. Working the real exports month to month is what showed me how each payment type actually behaved, which ones were the troublemakers, and exactly where the matching broke. Then I built for that, and left the genuinely ambiguous cases to human review rather than let a machine guess at real providers' money.</p>
+    </section>
+
+    <section data-reveal>
+      <h2>What I did</h2>
+      <div class="fix">
+        <span class="tag">Foundation</span>
+        <h3>Normalised the messy export first</h3>
+        <p>Best Practice came out inconsistent and couldn't be matched as it was. I built the normalisation step that turned each export into one clean, consistent shape, because nothing downstream could be trusted until it was.</p>
+      </div>
+      <div class="fix">
+        <span class="tag">Automation</span>
+        <h3>Built the reconciliation pipeline</h3>
+        <p>An Apps Script pipeline that ran all nine payment types, each against its own matching rules. About <b>80% matched outright</b>, another <b>15% part-matched</b> for a quick human confirm, leaving only the hardest <b>5% for full manual reconciliation</b> — the genuinely ambiguous cases like unreferenced WorkCover.</p>
+      </div>
+      <div class="fix">
+        <span class="tag">Accuracy</span>
+        <h3>Reconciled to the cent, and it's provable</h3>
+        <p>This isn't a "roughly right" number. Across about 15,000 lines a month, a single wrong match would surface as a break that stops the whole reconciliation from balancing. <b>It balanced, every month.</b> That's not a claim about the work; it's a property of it.</p>
+      </div>
+      <div class="fix">
+        <span class="tag">Found money</span>
+        <h3>Caught about A$8,000 in double-payments</h3>
+        <p>When the billing model changed and providers started being paid twice, I cross-checked the payments export against the service export to pin down exactly who had been overpaid and by how much. It came to roughly <b>A$8,000 across 40 accounts</b>.</p>
+      </div>
+      <div class="fix">
+        <span class="tag">Handled with care</span>
+        <h3>Recovered it without anyone taking a hit</h3>
+        <p>Rather than claw the money back in one lump, I set it up as small instalments through the weekly clinic-fee invoice, so no provider took a sudden cut to pay it back.</p>
+      </div>
+    </section>
+
+    <section data-reveal>
+      <h2>The results</h2>
+      <div class="proof" style="margin-bottom:16px">
+        <div class="stat"><span class="n mono" data-count="80" data-suffix="%">0</span><span class="l">matched automatically, before a human touched it</span></div>
+        <div class="stat"><span class="n mono">~A$8K</span><span class="l">in double-payments caught and recovered</span></div>
+        <div class="stat"><span class="n mono">~15k</span><span class="l">transaction lines reconciled a month</span></div>
+      </div>
+      <p>High-volume reconciliation across nine payment types that used to be a manual slog, now mostly automated and provably accurate. The money going out matched the work that came in, and an overpayment that would have gone unnoticed was found and put right without hurting a single provider.</p>
+    </section>
+
+  </div>
+
+  <section class="cta-band" data-reveal>
+    <h2>Got reconciliation like this one?</h2>
+    <p>If your numbers come in from a dozen directions and never quite tie out, that's the kind of work I do. I start by reconciling it myself, find where the money and the matching break, and build the pipeline that keeps it right.</p>
+    <div class="mail-row">
+      <a class="btn-book" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a 20-minute call →</a>
+      <span class="mail-alt"><span class="cta-or">or email</span>
+      <a class="mail" href="mailto:marklorenzeponciano@gmail.com">marklorenzeponciano@gmail.com</a>
+      <button class="copy-btn" data-copy="marklorenzeponciano@gmail.com" aria-label="Copy email address">Copy</button></span>
+    </div>
+  </section>
+
+  <p style="margin-top:28px"><a class="back-home" href="Case_Studies.html"><span aria-hidden="true">←</span> All case studies</a></p>
+
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Mark Lorenze Ponciano · client details anonymised</span>
+  <span class="mono">Remote · Philippines (GMT+8)</span>
+  <span class="privacy">No cookies · no analytics · no tracking. This site collects nothing about you.</span>
+</footer>
+
+</body>
+</html>
