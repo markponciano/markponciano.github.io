@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Six systems, one database</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@400;500;600&display=swap">
+<style>
+:root{
+  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --bg:#191712; --surface:#221f18; --ink:#efe9dc; --muted:#a49d8e; --line:#332f26;
+  --navy:#9db0e4; --navy-soft:#242a41; --amber:#e0954a; --amber-soft:#2d2214;
+  --shadow:0 1px 2px rgba(0,0,0,.3),0 12px 26px rgba(0,0,0,.32);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:var(--sans); font-size:17px; line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+  padding-inline:24px; padding-block:22px 20px;
+  display:flex; flex-direction:column; gap:16px;
+}
+header{display:flex; justify-content:space-between; align-items:flex-end; gap:16px; flex-wrap:wrap}
+.who{font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--muted)}
+h1{font-family:var(--serif); font-weight:600; font-size:1.5rem; margin:4px 0 0; letter-spacing:-.01em}
+.hint{font-family:var(--mono); font-size:.7rem; color:var(--muted); letter-spacing:.04em}
+kbd{font-family:var(--mono); font-size:.68rem; border:1px solid var(--line); background:var(--surface); border-radius:4px; padding:1px 5px; color:var(--ink)}
+nav{display:flex; gap:6px; flex-wrap:wrap; border-bottom:1px solid var(--line); padding-bottom:12px}
+.chap{
+  font-family:var(--mono); font-size:.72rem; letter-spacing:.04em;
+  background:none; border:1px solid transparent; border-radius:999px;
+  padding:5px 11px; color:var(--muted); cursor:pointer; display:flex; gap:7px; align-items:baseline;
+}
+.chap .num{opacity:.55; font-size:.66rem}
+.chap:hover{color:var(--ink); border-color:var(--line)}
+.chap.cur{background:var(--navy); border-color:var(--navy); color:var(--bg)}
+.chap.cur .num{opacity:.7}
+.chap:focus-visible{outline:2px solid var(--amber); outline-offset:2px}
+main{flex:1; display:grid; grid-template-columns:1.3fr 1fr; gap:30px; min-height:0}
+#diagram{position:relative; min-height:500px}
+#wires{position:absolute; inset:0; width:100%; height:100%; overflow:visible; pointer-events:none}
+.wire{stroke:var(--line); stroke-width:1.5; transition:stroke .35s, opacity .35s}
+.wire.on{stroke:var(--navy); opacity:1}
+.wire.off{opacity:.28}
+.node{
+  position:absolute; transform:translate(-50%,-50%);
+  background:var(--surface); border:1px solid var(--line); border-radius:11px;
+  padding:10px 13px; width:185px; box-shadow:var(--shadow);
+  transition:opacity .35s, border-color .35s, transform .35s; cursor:pointer;
+}
+.node .tag{font-family:var(--mono); font-size:.59rem; letter-spacing:.11em; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:2px}
+.node .t{font-weight:600; font-size:.92rem; line-height:1.25; display:block}
+.node .s{font-family:var(--mono); font-size:.66rem; color:var(--muted); display:block; margin-top:3px; line-height:1.4}
+.node.off{opacity:.3}
+.node.on{border-color:var(--navy); transform:translate(-50%,-50%) scale(1.04)}
+.node.hero{background:var(--navy-soft); border-left:3px solid var(--navy)}
+.node.hero .t{font-family:var(--serif); font-size:1.02rem; color:var(--navy)}
+.node.watch.on{border-color:var(--amber); background:var(--amber-soft)}
+.node.watch.on .t,.node.watch.on .tag{color:var(--amber)}
+#dock{display:flex; flex-direction:column; justify-content:center; gap:14px; min-width:0}
+#dock h2{font-family:var(--serif); font-weight:600; font-size:1.48rem; margin:0; letter-spacing:-.01em; text-wrap:balance}
+#dock .lead{margin:0; color:var(--muted); font-size:1rem; max-width:46ch}
+#dock ul{margin:0; padding:0; list-style:none; display:flex; flex-direction:column; gap:9px}
+#dock li{font-size:.93rem; padding-left:16px; position:relative; max-width:46ch}
+#dock li::before{content:""; position:absolute; left:0; top:.62em; width:6px; height:1.5px; background:var(--navy)}
+#dock .note{font-family:var(--mono); font-size:.74rem; color:var(--muted); border-left:2px solid var(--amber); padding-left:11px; margin:2px 0 0; line-height:1.5}
+footer{
+  border-top:1px solid var(--line); padding-top:11px;
+  display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap;
+  font-family:var(--mono); font-size:.7rem; color:var(--muted); letter-spacing:.03em;
+}
+@media (max-width:860px){
+  body{font-size:16px}
+  main{grid-template-columns:1fr; gap:20px}
+  #diagram{min-height:540px}
+  .node{width:148px; padding:8px 10px}
+}
+@media (prefers-reduced-motion:reduce){ .node,.wire{transition:none} }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <div class="who">Mark Lorenze Ponciano &middot; a system I built</div>
+    <h1>Six systems, one database</h1>
+  </div>
+  <div class="hint">Use <kbd>&larr;</kbd> <kbd>&rarr;</kbd> to move through</div>
+</header>
+<nav id="nav"></nav>
+<main>
+  <div id="diagram"><svg id="wires"></svg></div>
+  <div id="dock"></div>
+</main>
+<footer>
+  <span>markponciano.github.io &middot; client anonymised</span>
+  <span id="pos"></span>
+</footer>
+<script>
+const nodes = {
+  wp:     {x:15, y:10, t:'WordPress',           s:'the customer funnel',        tag:'Source'},
+  ghl:    {x:15, y:30, t:'GoHighLevel',         s:'PIT + inbound webhooks',     tag:'CRM'},
+  xero:   {x:15, y:50, t:'Xero',                s:'OAuth 2.0 + refresh',        tag:'Money'},
+  gcal:   {x:15, y:70, t:'Google Calendar',     s:'dates and availability',     tag:'Source'},
+  brevo:  {x:15, y:90, t:'Brevo, CloudConvert', s:'email and PDFs, API keys',   tag:'Source'},
+  db:     {x:52, y:50, t:'MySQL',               s:'one source of truth\nstate derived, never typed', tag:'Core', hero:true},
+  console:{x:85, y:30, t:'Operator console',    s:'what the team works from',   tag:'Surface'},
+  obs:    {x:85, y:72, t:'Observatory',         s:'is any of this still alive?', tag:'Surface', watch:true}
+};
+const wires = [['wp','db'],['ghl','db'],['xero','db'],['gcal','db'],['brevo','db'],['db','console'],['db','obs']];
+const chapters = [
+  {k:'Overview', t:'Six systems, one database', on:'all',
+   lead:'A UK catering and events company. Six tools that had to agree with each other, wired to one MySQL schema I designed and own. A booking runs from enquiry to quote to invoice to payment with nothing re-typed anywhere.',
+   pts:['Built in PHP and JavaScript, every schema change a numbered migration','Live and running the business since July 2026','Deployed through one sanctioned path, with a way back at every step'],
+   note:null},
+  {k:'The problem', t:'Nothing agreed with anything', on:['wp','ghl','xero','gcal','brevo'],
+   lead:'Before this, bookings were being run across WordPress, several Monday boards, email and a handful of marketing tools. None of them agreed, and the owner was tired of assembling the picture by hand.',
+   pts:['The same booking existed in four places, in four states','Anything anyone learned had to be re-typed somewhere else','Nobody could answer "where is this job actually up to" without asking three people'],
+   note:'The fix was not another tool. It was deciding which one held the truth.'},
+  {k:'Connecting', t:'Whatever each system required', on:['wp','ghl','xero','gcal','brevo','db'],
+   lead:'Four different authentication mechanisms, because four vendors made four different decisions. None of that should be the business owner’s problem.',
+   pts:['GoHighLevel: a Private Integration Token, which does not expire','Xero: full OAuth 2.0, including refresh-token rotation','Brevo and CloudConvert: API keys and bearer tokens','HMAC signatures both ways, checking inbound webhooks are genuine and signing the links we send customers so they cannot be tampered with'],
+   note:null},
+  {k:'The truth', t:'The database holds what is true', on:['db','ghl'],
+   lead:'A booking’s stage is calculated from what actually happened, quote accepted, form in, invoiced, paid, and never set by hand. The CRM card is recalculated from the database rather than edited, so the two cannot drift apart.',
+   pts:['Derived state means nobody can forget to update a status','One idempotent operation reflects a booking outward, so re-running it is always safe','Every schema change is a numbered migration, so the whole thing rebuilds from its own history'],
+   note:'An earlier version created once and never updated. Cards showed £0, console edits never arrived, and collisions were dropped silently. Replacing it fixed all three at once.'},
+  {k:'The team', t:'What people actually work from', on:['console','ghl','db'],
+   lead:'The logic underneath got sophisticated, but a CRM’s custom fields are plain fields that all look equally important and can be edited by mistake. So the team got a purpose-made page, linked from inside each card.',
+   pts:['Everything about a booking in one place, readable and changeable','The actions that would break something are simply not offered','Their day-to-day dashboard stayed the CRM’s own, because once the data feeding it was clean it reported the truth'],
+   note:'Building a dashboard is not the hard part. Building one you can trust depends entirely on what is underneath it.'},
+  {k:'Watching it', t:'The system watches itself', on:['obs','db'],
+   lead:'The Observatory is a backend health dashboard: alerts, a merged activity feed, deploy state, and a heartbeat. It watches the integrations themselves, not just the code.',
+   pts:['If a token stops refreshing or a webhook key goes missing, it says so','It says it in plain terms: not "secret missing", but "customer quote links break"','An external monitor pings from outside, because the alerting runs inside the jobs it watches and is blind to its own death'],
+   note:'This is the part most integrations skip. It is the difference between a dashboard you glance at and one you can actually rely on.'}
+];
+const diagram = document.getElementById('diagram');
+const nodeEls = {};
+for(const id in nodes){
+  const n = nodes[id];
+  const el = document.createElement('div');
+  el.className = 'node' + (n.hero ? ' hero' : '') + (n.watch ? ' watch' : '');
+  el.style.left = n.x + '%';
+  el.style.top  = n.y + '%';
+  el.innerHTML = '<span class="tag">' + n.tag + '</span><span class="t">' + n.t + '</span><span class="s">' + n.s.replace(/\n/g,'<br>') + '</span>';
+  el.addEventListener('click', () => {
+    const i = chapters.findIndex(c => c.on !== 'all' && c.on.includes(id));
+    if(i >= 0) go(i);
+  });
+  diagram.appendChild(el);
+  nodeEls[id] = el;
+}
+const svg = document.getElementById('wires');
+const wireEls = wires.map(([a,b]) => {
+  const l = document.createElementNS('http://www.w3.org/2000/svg','line');
+  l.setAttribute('class','wire'); l.dataset.a = a; l.dataset.b = b;
+  svg.appendChild(l); return l;
+});
+function layoutWires(){
+  const r = diagram.getBoundingClientRect();
+  svg.setAttribute('viewBox', '0 0 ' + r.width + ' ' + r.height);
+  wireEls.forEach(l => {
+    const a = nodeEls[l.dataset.a].getBoundingClientRect();
+    const b = nodeEls[l.dataset.b].getBoundingClientRect();
+    l.setAttribute('x1', a.left + a.width/2 - r.left);
+    l.setAttribute('y1', a.top + a.height/2 - r.top);
+    l.setAttribute('x2', b.left + b.width/2 - r.left);
+    l.setAttribute('y2', b.top + b.height/2 - r.top);
+  });
+}
+const nav = document.getElementById('nav');
+const dock = document.getElementById('dock');
+const pos = document.getElementById('pos');
+chapters.forEach((c,i) => {
+  const btn = document.createElement('button');
+  btn.className = 'chap';
+  btn.innerHTML = '<span class="num">' + String(i+1).padStart(2,'0') + '</span>' + c.k;
+  btn.addEventListener('click', () => go(i));
+  nav.appendChild(btn);
+});
+let cur = -1;
+function go(i){
+  if(i < 0 || i >= chapters.length || i === cur) return;
+  cur = i;
+  const c = chapters[i];
+  const set = c.on === 'all' ? null : new Set(c.on);
+  for(const id in nodeEls){
+    const el = nodeEls[id];
+    el.classList.remove('on','off');
+    if(set) el.classList.add(set.has(id) ? 'on' : 'off');
+  }
+  wireEls.forEach(l => {
+    l.classList.remove('on','off');
+    if(set) l.classList.add(set.has(l.dataset.a) && set.has(l.dataset.b) ? 'on' : 'off');
+  });
+  [...nav.children].forEach((b,n) => b.classList.toggle('cur', n === i));
+  dock.innerHTML = '<h2>' + c.t + '</h2><p class="lead">' + c.lead + '</p><ul>' +
+    c.pts.map(p => '<li>' + p + '</li>').join('') + '</ul>' +
+    (c.note ? '<p class="note">' + c.note + '</p>' : '');
+  pos.textContent = String(i+1).padStart(2,'0') + ' / ' + String(chapters.length).padStart(2,'0');
+  layoutWires();
+}
+document.addEventListener('keydown', e => {
+  if(e.key === 'ArrowRight' || e.key === ' '){ e.preventDefault(); go(cur+1); }
+  if(e.key === 'ArrowLeft'){ e.preventDefault(); go(cur-1); }
+  if(e.key === 'Home'){ e.preventDefault(); go(0); }
+  if(e.key === 'End'){ e.preventDefault(); go(chapters.length-1); }
+});
+window.addEventListener('resize', layoutWires);
+if(document.fonts) document.fonts.ready.then(layoutWires);
+go(0);
+</script>
+</body>
+</html>
