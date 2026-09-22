@@ -692,7 +692,7 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 .case .v-fixed .cm-total b{font-weight:700;color:var(--navy)}
 
 /* the mistake travelling */
-.case .travel{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.case .travel{display:flex;flex-direction:column;align-items:flex-start;gap:0}
 .case .tv-node{border:1px solid var(--amber);background:var(--amber-soft);border-radius:10px;padding:8px 11px;
   font-size:13px;font-weight:600;white-space:nowrap}
 .case .tv-node b{color:var(--amber);margin-left:3px}
@@ -818,8 +818,8 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 .case .tv-node{transition:none}
 /* end state by default (no JS, reduced motion); the animation starts them grey */
 .case .tv-step{border-color:var(--amber);background:var(--amber-soft);color:var(--ink)}
-.case .tv-arrow{position:relative;flex:1;min-width:26px;height:2px;background:var(--line);display:inline-block}
-.case .tv-dot{position:absolute;top:-4px;left:0;width:10px;height:10px;border-radius:50%;background:var(--amber);opacity:0}
+.case .tv-arrow{position:relative;width:2px;height:22px;margin-left:26px;background:var(--line);display:block}
+.case .tv-dot{position:absolute;left:-4px;top:0;width:10px;height:10px;border-radius:50%;background:var(--amber);opacity:0}
 .case .fs-before{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;opacity:0}
 .case .fs-before span{height:34px;border-radius:6px;background:color-mix(in srgb,var(--muted) 30%,transparent)}
 .case .fs-after{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
@@ -833,7 +833,7 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
   .case .vis.play .cm-edit{animation:hw-edit 1.2s ease 1.4s both}
   .case .vis.play .cm-total{animation:hw-edit 1.2s ease 2s both}
   /* the mistake travelling: a dot runs the line, each stop turns amber behind it */
-  .case .vis.play .tv-dot{animation:hw-run 1s ease forwards}
+  .case .vis.play .tv-dot{animation:hw-fall .9s ease forwards}
   .case .vis.play .travel > :nth-child(2) .tv-dot{animation-delay:.4s}
   .case .vis.play .travel > :nth-child(4) .tv-dot{animation-delay:1.4s}
   .case .vis.play .travel > :nth-child(6) .tv-dot{animation-delay:2.4s}
@@ -847,6 +847,7 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 }
 @keyframes hw-edit{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--amber) 45%,transparent)}40%{box-shadow:0 0 0 5px color-mix(in srgb,var(--amber) 28%,transparent)}100%{box-shadow:0 0 0 0 transparent}}
 @keyframes hw-run{0%{opacity:1;left:0}100%{opacity:1;left:calc(100% - 10px)}}
+@keyframes hw-fall{0%{opacity:1;top:0}100%{opacity:1;top:calc(100% - 10px)}}
 @keyframes hw-amber{from{border-color:var(--line);background:var(--surface-2);color:var(--muted)}to{border-color:var(--amber);background:var(--amber-soft);color:var(--ink)}}
 
 /* ---------- page-to-page transitions ----------
