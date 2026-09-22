@@ -54,6 +54,26 @@
     document.querySelectorAll('[data-reveal]').forEach(function(el){el.classList.add('in');});
   }
 
+  /* play a visual's animation once it reaches the reading zone. People read in the top
+     half of the screen while scrolling, so wait until the visual's top edge passes 55%
+     of the way down, not the moment it peeks in at the bottom. */
+  var plays=document.querySelectorAll('.vis');
+  if(plays.length && !reduce && 'IntersectionObserver' in window){
+    var po=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){ if(en.isIntersecting){ en.target.classList.add('play'); po.unobserve(en.target); } });
+    },{rootMargin:'0px 0px -45% 0px',threshold:0});
+    plays.forEach(function(el){el.classList.add('armed');po.observe(el);});
+    /* near the end of the page the last visuals may never climb that high, so reaching
+       the bottom plays whatever is still waiting */
+    var atEnd=function(){
+      if(window.innerHeight+window.scrollY>=document.documentElement.scrollHeight-40){
+        document.querySelectorAll('.vis.armed:not(.play)').forEach(function(el){el.classList.add('play');po.unobserve(el);});
+        window.removeEventListener('scroll',atEnd);
+      }
+    };
+    window.addEventListener('scroll',atEnd,{passive:true}); atEnd();
+  }
+
   /* copy-to-clipboard buttons */
   function fallbackCopy(txt,cb){
     try{var t=document.createElement('textarea');t.value=txt;t.setAttribute('readonly','');

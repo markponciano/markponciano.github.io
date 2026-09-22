@@ -449,6 +449,216 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
   a[href^="http"]::after,a[href^="mailto"]::after{content:""!important}
 }
 
+/* ---------- how I work (Body_of_Work.html) ----------
+   Every visual shows its finished state by default: with JavaScript off, with reduced
+   motion, or before it scrolls in. The short animations only run once the visual reaches
+   the upper part of the screen, where people are actually reading (.play), and only when
+   motion is welcome. */
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.how .page-hero h1{max-width:760px}
+.how .lede{font-size:1.2rem;line-height:1.55;color:var(--muted);max-width:640px;margin:0}
+.how .how-sub{margin:-6px 0 18px;color:var(--ink);font-size:1.08rem}
+.how .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.how .steps li{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:20px 22px;box-shadow:var(--shadow-sm)}
+.how .steps .num{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;
+  background:var(--navy);color:var(--bg);font-family:var(--mono);font-weight:600;font-size:13px;margin-bottom:10px}
+.how .steps h3{margin:0 0 6px;font-size:1.08rem}
+.how .steps p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+
+.how .pr{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;
+  padding:34px 0;border-top:1px solid var(--line)}
+.how .pr-plain{grid-template-columns:1fr}
+.how .pr-plain .pr-text{max-width:560px}
+.how .pr-n{font-family:var(--mono);font-size:12px;letter-spacing:1.5px;color:var(--amber);margin:0 0 6px}
+.how .pr h3{font-size:1.32rem;line-height:1.3;margin:0 0 8px}
+.how .pr-line{font-size:1.08rem;line-height:1.55;margin:0 0 12px}
+.how .pr-proof{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+.how .pr-proof b{color:var(--ink);font-weight:600}
+
+.how .vis{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:22px;box-shadow:var(--shadow-sm)}
+.how .vis figcaption{margin-top:14px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* 1 · six tools, one answer */
+.how .sync-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.how .tool{display:flex;justify-content:space-between;align-items:center;gap:6px;background:var(--surface-2);
+  border:1px solid var(--line);border-radius:10px;padding:8px 10px;font-size:12.5px}
+.how .tool i{font-style:normal;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.how .tool b{font-family:var(--mono);color:var(--navy);position:relative}
+.how .tool s{display:none;text-decoration:none;color:var(--amber)}
+.how .tool em{font-style:normal}
+.how .sync-core{margin:12px auto 0;display:flex;justify-content:space-between;align-items:center;max-width:220px;
+  border:2px solid var(--navy);border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600}
+.how .sync-core b{font-family:var(--mono);color:var(--navy)}
+
+/* 2 · ten buttons become four steps */
+.how .screen{position:relative;height:96px;background:var(--surface-2);border:1px solid var(--line);border-radius:10px}
+.how .clutter{position:absolute;inset:12px;display:grid;grid-template-columns:repeat(5,1fr);gap:8px;opacity:0}
+.how .clutter span{border-radius:6px;background:color-mix(in srgb,var(--muted) 30%,transparent)}
+.how .four{position:absolute;inset:0;list-style:none;margin:0;padding:0 16px;display:flex;align-items:center;gap:10px}
+.how .four li{flex:1;height:44px;border-radius:8px;border:1px solid var(--line);background:var(--surface);
+  display:grid;place-items:center;font-family:var(--mono);font-size:14px;color:var(--muted)}
+.how .four li.on{border:2px solid var(--amber);color:var(--ink)}
+
+/* 3 · the alert chain */
+.how .chain{display:flex;align-items:center;gap:6px}
+.how .chain .node{position:relative;flex:0 0 auto;border:1px solid var(--line);background:var(--surface-2);border-radius:10px;
+  padding:9px 12px;font-size:13.5px;font-weight:600;white-space:nowrap}
+.how .chain .node b{color:var(--navy);margin-left:4px}
+.how .chain .link{flex:1;height:2px;min-width:12px;background:var(--line)}
+.how .chain .fail{display:none;color:var(--amber)}
+.how .alert{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;font-size:13px;font-weight:600;
+  color:var(--ink);background:var(--amber-soft);border-radius:20px;padding:5px 12px}
+.how .alert .dot{width:8px;height:8px;border-radius:50%;background:var(--amber)}
+
+/* 4 · access */
+.how .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.how .col-h{font-size:12.5px;font-weight:600;margin:0 0 8px}
+.how .col ul{list-style:none;margin:0;padding:0}
+.how .col li{font-size:13.5px;padding:7px 10px;border-radius:8px;margin-bottom:5px}
+.how .col li.has{background:var(--navy-soft);color:var(--ink)}
+.how .col li.has::before{content:"✓ ";color:var(--navy);font-weight:700}
+.how .col li.no{color:var(--muted);text-decoration:line-through;opacity:.7}
+.how .col li.no::before{content:"— ";text-decoration:none;display:inline-block;margin-right:2px}
+
+/* 5 · change log */
+.how .log{list-style:none;margin:0;padding:0;font-size:13px}
+.how .log li{display:grid;grid-template-columns:46px 52px 1fr;gap:8px;padding:8px 0;border-bottom:1px dashed var(--line)}
+.how .log li:last-child{border-bottom:0}
+.how .log time{font-family:var(--mono);color:var(--muted)}
+.how .log b{font-weight:600;color:var(--navy)}
+
+/* 7 · checks, then the switch */
+.how .bar-wrap{height:10px;border-radius:6px;background:var(--surface-2);border:1px solid var(--line);overflow:hidden}
+.how .bar-fill{height:100%;width:100%;background:var(--navy)}
+.how .checks-n{margin:10px 0 0;font-size:13.5px;color:var(--muted)}
+.how .checks-n b{font-family:var(--mono);color:var(--ink)}
+.how .switch{display:flex;align-items:center;gap:10px;margin:12px 0 0;font-size:14px;font-weight:600}
+.how .toggle{width:38px;height:22px;border-radius:12px;background:var(--navy);position:relative;flex:0 0 auto}
+.how .toggle span{position:absolute;top:3px;left:19px;width:16px;height:16px;border-radius:50%;background:var(--surface)}
+
+/* 6 · two jobs, two answers */
+.how .dec{padding:4px 0 12px}
+.how .dec + .dec{border-top:1px dashed var(--line);padding-top:14px}
+.how .dec-h{font-size:12.5px;font-weight:600;margin:0 0 8px}
+.how .dots{display:grid;grid-template-columns:repeat(13,1fr);gap:4px;margin-bottom:10px}
+.how .dots i{aspect-ratio:1;border-radius:3px;background:color-mix(in srgb,var(--muted) 30%,transparent)}
+.how .dec-r{display:flex;justify-content:space-between;align-items:center;gap:10px;margin:0;font-size:13.5px}
+.how .dec-n{color:var(--muted)}
+.how .badge{font-size:12px;font-weight:600;border-radius:20px;padding:4px 11px;white-space:nowrap}
+.how .badge.custom{background:var(--navy);color:var(--bg)}
+.how .badge.ready{background:var(--amber-soft);color:var(--ink);border:1px solid var(--amber)}
+
+/* 8 · the handover */
+.how .hand{display:grid;grid-template-columns:auto 1fr auto;gap:14px;align-items:center}
+.how .who{font-size:12.5px;font-weight:600;border:1px solid var(--line);border-radius:20px;padding:6px 12px;background:var(--surface-2)}
+.how .who.team{border-color:var(--navy);color:var(--navy)}
+.how .docs{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.how .docs li{display:flex;align-items:center;gap:8px;font-size:13px;background:var(--surface-2);
+  border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+.how .docs .ic{color:var(--navy);font-size:12px;width:14px;text-align:center}
+
+/* armed = JS will play it: hold the contents back until then, so it starts from the
+   beginning instead of jumping from the finished state */
+.how .vis.armed:not(.play) > :not(figcaption){visibility:hidden}
+/* motion: only once the visual reaches the reading zone (.play, set in app.js), only when welcome */
+@media (prefers-reduced-motion:no-preference){
+  .how .vis.play .tool s{display:inline;position:absolute;right:0;animation:hw-out .35s ease 1.1s forwards}
+  .how .vis.play .tool em{opacity:0;animation:hw-in .35s ease 1.45s forwards}
+  .how .vis.play .sync-core{animation:hw-pop .5s ease 1.2s both}
+  .how .vis.play .clutter{animation:hw-flash 1.6s ease .3s both}
+  .how .vis.play .four{opacity:0;animation:hw-in .5s ease 1.7s forwards}
+  .how .vis.play .chain .last .fixed{opacity:0;animation:hw-in .3s ease 2.6s forwards}
+  .how .vis.play .chain .last .fail{display:inline;position:absolute;right:12px;animation:hw-out .3s ease 2.5s forwards}
+  .how .vis.play .chain .last{animation:hw-warn 2.6s steps(1) .2s both}
+  .how .vis.play .alert{opacity:0;animation:hw-in .3s ease .9s forwards,hw-pulse 1s ease 1.2s 2}
+  .how .vis.play .log li{opacity:0;transform:translateY(6px);animation:hw-rise .35s ease forwards}
+  .how .vis.play .log li:nth-child(1){animation-delay:.3s}
+  .how .vis.play .log li:nth-child(2){animation-delay:.7s}
+  .how .vis.play .log li:nth-child(3){animation-delay:1.1s}
+  .how .vis.play .log li:nth-child(4){animation-delay:1.5s}
+  .how .vis.play .bar-fill{animation:hw-fill 1.6s cubic-bezier(.3,.6,.3,1) .3s both}
+  .how .vis.play .toggle{animation:hw-toggle-bg .3s ease 2s both}
+  .how .vis.play .toggle span{animation:hw-toggle .3s ease 2s both}
+  /* 4 · items settle one by one */
+  .how .vis.play .col li{opacity:0;animation:hw-rise .3s ease forwards}
+  .how .vis.play .col li:nth-child(1){animation-delay:.2s}
+  .how .vis.play .col li:nth-child(2){animation-delay:.55s}
+  .how .vis.play .col li:nth-child(3){animation-delay:.9s}
+  .how .vis.play .col li:nth-child(4){animation-delay:1.25s}
+  .how .vis.play .col li.no{animation:hw-rise .3s ease forwards,hw-strike .4s ease forwards}
+  .how .vis.play .col li.no:nth-child(2){animation-delay:.55s,1.9s}
+  .how .vis.play .col li.no:nth-child(3){animation-delay:.9s,2.1s}
+  .how .vis.play .col li.no:nth-child(4){animation-delay:1.25s,2.3s}
+  /* 6 · 37 checked, then the answer */
+  .how .vis.play .dots i{animation:hw-check .2s ease both}
+  .how .vis.play .dec-r{opacity:0;animation:hw-in .35s ease 2.1s forwards}
+  .how .vis.play .dec + .dec{opacity:0;animation:hw-in .4s ease 2.7s forwards}
+  .how .vis.play .dots i:nth-child(1){animation-delay:0.20s}
+  .how .vis.play .dots i:nth-child(2){animation-delay:0.24s}
+  .how .vis.play .dots i:nth-child(3){animation-delay:0.29s}
+  .how .vis.play .dots i:nth-child(4){animation-delay:0.34s}
+  .how .vis.play .dots i:nth-child(5){animation-delay:0.38s}
+  .how .vis.play .dots i:nth-child(6){animation-delay:0.42s}
+  .how .vis.play .dots i:nth-child(7){animation-delay:0.47s}
+  .how .vis.play .dots i:nth-child(8){animation-delay:0.52s}
+  .how .vis.play .dots i:nth-child(9){animation-delay:0.56s}
+  .how .vis.play .dots i:nth-child(10){animation-delay:0.60s}
+  .how .vis.play .dots i:nth-child(11){animation-delay:0.65s}
+  .how .vis.play .dots i:nth-child(12){animation-delay:0.70s}
+  .how .vis.play .dots i:nth-child(13){animation-delay:0.74s}
+  .how .vis.play .dots i:nth-child(14){animation-delay:0.78s}
+  .how .vis.play .dots i:nth-child(15){animation-delay:0.83s}
+  .how .vis.play .dots i:nth-child(16){animation-delay:0.88s}
+  .how .vis.play .dots i:nth-child(17){animation-delay:0.92s}
+  .how .vis.play .dots i:nth-child(18){animation-delay:0.97s}
+  .how .vis.play .dots i:nth-child(19){animation-delay:1.01s}
+  .how .vis.play .dots i:nth-child(20){animation-delay:1.05s}
+  .how .vis.play .dots i:nth-child(21){animation-delay:1.10s}
+  .how .vis.play .dots i:nth-child(22){animation-delay:1.15s}
+  .how .vis.play .dots i:nth-child(23){animation-delay:1.19s}
+  .how .vis.play .dots i:nth-child(24){animation-delay:1.23s}
+  .how .vis.play .dots i:nth-child(25){animation-delay:1.28s}
+  .how .vis.play .dots i:nth-child(26){animation-delay:1.32s}
+  .how .vis.play .dots i:nth-child(27){animation-delay:1.37s}
+  .how .vis.play .dots i:nth-child(28){animation-delay:1.41s}
+  .how .vis.play .dots i:nth-child(29){animation-delay:1.46s}
+  .how .vis.play .dots i:nth-child(30){animation-delay:1.50s}
+  .how .vis.play .dots i:nth-child(31){animation-delay:1.55s}
+  .how .vis.play .dots i:nth-child(32){animation-delay:1.59s}
+  .how .vis.play .dots i:nth-child(33){animation-delay:1.64s}
+  .how .vis.play .dots i:nth-child(34){animation-delay:1.68s}
+  .how .vis.play .dots i:nth-child(35){animation-delay:1.73s}
+  .how .vis.play .dots i:nth-child(36){animation-delay:1.77s}
+  .how .vis.play .dots i:nth-child(37){animation-delay:1.82s}
+  /* 8 · handed over */
+  .how .vis.play .docs li{opacity:0;transform:translateX(-14px);animation:hw-rise .4s ease forwards}
+  .how .vis.play .docs li:nth-child(1){animation-delay:.3s}
+  .how .vis.play .docs li:nth-child(2){animation-delay:.7s}
+  .how .vis.play .docs li:nth-child(3){animation-delay:1.1s}
+  .how .vis.play .who.team{animation:hw-pop .5s ease 1.7s both}
+}
+@keyframes hw-out{to{opacity:0}}
+@keyframes hw-in{to{opacity:1}}
+@keyframes hw-pop{0%{transform:scale(.9);opacity:.4}100%{transform:none;opacity:1}}
+@keyframes hw-flash{0%,70%{opacity:1}100%{opacity:0}}
+@keyframes hw-warn{0%{border-color:var(--amber);border-style:dashed;opacity:.75}100%{border-color:var(--line);border-style:solid;opacity:1}}
+@keyframes hw-pulse{50%{box-shadow:0 0 0 6px color-mix(in srgb,var(--amber) 25%,transparent)}}
+@keyframes hw-rise{to{opacity:1;transform:none}}
+@keyframes hw-strike{from{text-decoration-color:transparent;opacity:1}to{text-decoration-color:currentColor;opacity:.7}}
+@keyframes hw-check{from{background:transparent;outline:1px solid var(--line)}to{background:color-mix(in srgb,var(--muted) 30%,transparent)}}
+@keyframes hw-fill{from{width:0}to{width:100%}}
+@keyframes hw-toggle{from{left:3px}to{left:19px}}
+@keyframes hw-toggle-bg{from{background:var(--line)}to{background:var(--navy)}}
+
+@media (max-width:760px){
+  .how .dots{grid-template-columns:repeat(13,1fr)}
+  .how .steps{grid-template-columns:1fr}
+  .how .pr{grid-template-columns:1fr;gap:18px}
+  .how .sync-grid{grid-template-columns:repeat(2,1fr)}
+}
+
 /* ---------- respect reduced motion ---------- */
 @media (prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important}
