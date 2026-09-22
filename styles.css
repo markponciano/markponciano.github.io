@@ -145,7 +145,7 @@ h3{font-family:var(--sans);font-weight:600;font-size:1.2rem;margin:0 0 6px}
 
 /* ---------- proof strip ---------- */
 .proof{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:16px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;
   background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
   padding:26px 24px;box-shadow:var(--shadow-sm);margin-top:8px;
 }
@@ -192,6 +192,8 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 /* ---------- reveal on scroll ---------- */
 [data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s ease}
 [data-reveal].in{opacity:1;transform:none}
+/* No JavaScript: nothing would ever add .in, so show everything as written. */
+@media (scripting:none){[data-reveal]{opacity:1;transform:none}}
 
 /* ---------- responsive ---------- */
 @media (max-width:760px){
