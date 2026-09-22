@@ -57,18 +57,18 @@
         <p><b>Every booking's price lived in a row of fields that all looked the same.</b> The team worked from their CRM, GoHighLevel. Salespeople filled in the fields on each booking's card, and three things read those fields: the quote, the invoice, and the accounts.</p>
         <p>Then the pricing changed and got complicated: service charges, add-ons, extra hours. The salespeople were good at selling, not at invoicing or VAT, and the card gave them no help. The total sat in the same plain box as every field above it.</p>
       </div>
-      <figure class="vis v-card" aria-label="A booking card with ten identical fields. The total looks exactly like every other field.">
+      <figure class="vis v-card" aria-label="A booking card of ten identical fields. One field is changed, and the total changes with it, looking exactly like every other field.">
         <div class="card-mock" aria-hidden="true">
           <p class="cm-h">Booking card</p>
           <ul class="cm-rows">
             <li style="--i:1"><i>Guests</i><b>120</b></li><li style="--i:2"><i>Menu</i><b>Street food</b></li>
-            <li style="--i:3"><i>Hours</i><b>4</b></li><li style="--i:4"><i>Extra hour</i><b>Yes</b></li>
+            <li style="--i:3"><i>Hours</i><b>4</b></li><li style="--i:4" class="cm-edit"><i>Extra hour</i><b><s>Yes</s><em>No</em></b></li>
             <li style="--i:5"><i>Ice cream</i><b>Yes</b></li><li style="--i:6"><i>Soft drinks</i><b>No</b></li>
             <li style="--i:7"><i>Discount</i><b>0</b></li><li style="--i:8"><i>Travel</i><b>Zone 1</b></li>
-            <li style="--i:9"><i>VAT</i><b>20%</b></li><li style="--i:10" class="cm-total"><i>Total</i><b>£1,440</b></li>
+            <li style="--i:9"><i>VAT</i><b>20%</b></li><li style="--i:10" class="cm-total"><i>Total</i><b><s>£1,440</s><em>£1,320</em></b></li>
           </ul>
         </div>
-        <figcaption>Ten fields. Which one is the total?</figcaption>
+        <figcaption>One field changes. So does the total, quietly.</figcaption>
       </figure>
     </div>
   </section>
@@ -80,15 +80,15 @@
       <div class="cs-text">
         <p><b>Quotes went out with wrong details.</b> A wrong field didn't stay on the card. The general ledger believes what is happening inside the opportunity, so the mistake travelled into the quote, then the invoice, then the books.</p>
       </div>
-      <figure class="vis v-travel" aria-label="One wrong field on the card is copied into the quote, then the invoice, then the accounts, each now wrong.">
+      <figure class="vis v-travel" aria-label="The wrong total is copied from the card into the quote, then the invoice, then the accounts. Each one becomes wrong in turn.">
         <div class="travel" aria-hidden="true">
-          <span class="tv-node tv-src">One wrong field</span>
-          <span class="tv-arrow">→</span>
-          <span class="tv-node">Quote <b>✕</b></span>
-          <span class="tv-arrow">→</span>
-          <span class="tv-node">Invoice <b>✕</b></span>
-          <span class="tv-arrow">→</span>
-          <span class="tv-node">Accounts <b>✕</b></span>
+          <span class="tv-node tv-src">Card <b>£1,320</b></span>
+          <span class="tv-arrow"><i class="tv-dot"></i></span>
+          <span class="tv-node tv-step" data-step="1">Quote</span>
+          <span class="tv-arrow"><i class="tv-dot"></i></span>
+          <span class="tv-node tv-step" data-step="2">Invoice</span>
+          <span class="tv-arrow"><i class="tv-dot"></i></span>
+          <span class="tv-node tv-step" data-step="3">Accounts</span>
         </div>
         <figcaption>A mistake on the card became a mistake in the books.</figcaption>
       </figure>
@@ -113,10 +113,13 @@
     </ol>
     <figure class="vis v-four" aria-label="Four steps: quote, internal form, awaiting payment, paid. The current step is lit and shows its single action.">
       <div class="four-steps" aria-hidden="true">
-        <div class="fs live"><span class="fs-n">1</span>Quote<em class="fs-act">Approve quote</em></div>
-        <div class="fs"><span class="fs-n">2</span>Internal form</div>
-        <div class="fs"><span class="fs-n">3</span>Awaiting payment</div>
-        <div class="fs"><span class="fs-n">4</span>Paid</div>
+        <div class="fs-before"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+        <div class="fs-after">
+          <div class="fs live"><span class="fs-n">1</span>Quote<em class="fs-act">Approve quote</em></div>
+          <div class="fs"><span class="fs-n">2</span>Internal form</div>
+          <div class="fs"><span class="fs-n">3</span>Awaiting payment</div>
+          <div class="fs"><span class="fs-n">4</span>Paid</div>
+        </div>
       </div>
       <figcaption>One lit step, one right action.</figcaption>
     </figure>

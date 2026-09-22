@@ -57,15 +57,15 @@
         <p><b>Once the new booking system went live, the work happened on its own.</b> Quotes, invoices, payments, calendar dates and emails flowed between six tools without anyone re-typing them.</p>
         <p>That's the point of it, and also the risk. When a person drops a task, someone usually notices. When an automation drops one, nothing happens at all: the email just never arrives, the payment just never gets marked. Nobody sees a thing until a customer rings.</p>
       </div>
-      <figure class="vis v-watch" aria-label="A chain of automated steps: booking, invoice, email, payment. The email step has failed, and nothing raises it.">
+      <figure class="vis v-watch" aria-label="Work flows from booking to invoice to email to payment. The email step fails, the flow stops, and nothing raises it.">
         <div class="watch" aria-hidden="true">
           <div class="wt-chain">
-            <span class="wt-node">Booking</span><span class="wt-link"></span>
-            <span class="wt-node">Invoice</span><span class="wt-link"></span>
-            <span class="wt-node wt-dead">Email</span><span class="wt-link"></span>
-            <span class="wt-node">Payment</span>
+            <span class="wt-node wt-s1">Booking</span><span class="wt-link"><i class="wt-dot"></i></span>
+            <span class="wt-node wt-s2">Invoice</span><span class="wt-link"><i class="wt-dot"></i></span>
+            <span class="wt-node wt-s3">Email</span><span class="wt-link"></span>
+            <span class="wt-node wt-s4">Payment</span>
           </div>
-          <p class="wt-none">No alert. Nobody watching.</p>
+          <p class="wt-none">Nothing happened next. Nobody was told.</p>
         </div>
         <figcaption>A failure nobody sees.</figcaption>
       </figure>
@@ -80,13 +80,15 @@
         <p><b>The day after launch, a booking showed £1,584 when the real total was £1,440.</b> A leftover automation from the old system was still running. It was working out its own price from out-of-date details and writing it over the right one.</p>
         <p>It was a test booking, so no customer saw it. But it was only caught because I happened to be looking at that card. The real question was what else was going wrong where nobody was looking.</p>
       </div>
-      <figure class="vis v-total" aria-label="The booking card showed a total of £1,584. The correct total was £1,440.">
+      <figure class="vis v-total" aria-label="The booking's total was £1,440. A leftover automation overwrote it with £1,584.">
         <div class="tot" aria-hidden="true">
-          <div class="tot-row tot-bad"><i>Shown on the card</i><b>£1,584</b><em>✕</em></div>
-          <div class="tot-row tot-good"><i>The real total</i><b>£1,440</b><em>✓</em></div>
-          <p class="tot-why">Written by a leftover automation from the old system</p>
+          <div class="tot-card">
+            <p class="tot-h">Booking total</p>
+            <p class="tot-num"><s>£1,440</s><em>£1,584</em></p>
+            <p class="tot-tag">overwritten by the old system</p>
+          </div>
         </div>
-        <figcaption>Found by looking. Next time, it shouldn't need luck.</figcaption>
+        <figcaption>The right number, quietly replaced.</figcaption>
       </figure>
     </div>
   </section>
@@ -109,12 +111,12 @@
     </ol>
     <figure class="vis v-gauges" aria-label="Six checks that should always read zero. All six read zero.">
       <div class="gauges" aria-hidden="true">
-        <div class="g"><b>0</b><span>Paid, no trailer</span></div>
-        <div class="g"><b>0</b><span>Invoiced, no invoice number</span></div>
-        <div class="g"><b>0</b><span>Closed, no note on the contact</span></div>
-        <div class="g"><b>0</b><span>Paid, card not updated</span></div>
-        <div class="g"><b>0</b><span>Emails bounced this week</span></div>
-        <div class="g"><b>0</b><span>Confirmed, not on the calendar</span></div>
+        <div class="g"><b><s>–</s><em>0</em></b><span>Paid, no trailer</span></div>
+        <div class="g"><b><s>–</s><em>0</em></b><span>Invoiced, no invoice number</span></div>
+        <div class="g"><b><s>–</s><em>0</em></b><span>Closed, no note on the contact</span></div>
+        <div class="g"><b><s>–</s><em>0</em></b><span>Paid, card not updated</span></div>
+        <div class="g"><b><s>–</s><em>0</em></b><span>Emails bounced this week</span></div>
+        <div class="g"><b><s>–</s><em>0</em></b><span>Confirmed, not on the calendar</span></div>
       </div>
       <figcaption>Six checks. Zero is good.</figcaption>
     </figure>
@@ -124,15 +126,15 @@
   <section class="cs-sec" data-reveal>
     <h2 class="section-label">What changed</h2>
     <div class="cs-grid">
-      <figure class="vis v-watch v-watched" aria-label="The same chain, now watched: the email failure raises an alert. An outside service watches the monitoring itself.">
+      <figure class="vis v-watch v-watched" aria-label="The same chain, now watched. The email step fails and an alert is raised at once. An outside service watches the monitoring itself.">
         <div class="watch" aria-hidden="true">
           <p class="wt-outer">Healthchecks.io · is the monitoring still running? ✓</p>
           <p class="wt-mon">Observatory · watching every step</p>
           <div class="wt-chain">
-            <span class="wt-node">Booking</span><span class="wt-link"></span>
-            <span class="wt-node">Invoice</span><span class="wt-link"></span>
-            <span class="wt-node wt-flag">Email</span><span class="wt-link"></span>
-            <span class="wt-node">Payment</span>
+            <span class="wt-node wt-s1">Booking</span><span class="wt-link"><i class="wt-dot"></i></span>
+            <span class="wt-node wt-s2">Invoice</span><span class="wt-link"><i class="wt-dot"></i></span>
+            <span class="wt-node wt-s3">Email</span><span class="wt-link"></span>
+            <span class="wt-node wt-s4">Payment</span>
           </div>
           <p class="wt-alert"><span class="dot"></span>Alert: email not delivered. Here's what to do.</p>
         </div>
