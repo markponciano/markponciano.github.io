@@ -1192,6 +1192,27 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
   .case .st-grid{grid-template-columns:repeat(2,1fr)}
 }
 
+/* ---------- case studies index (generated cards; see tools/build_cases.py) ---------- */
+.cases-index .cx-filter{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 6px}
+.cases-index .cx-filter a{font-size:14px;font-weight:600;color:var(--muted);border:1px solid var(--line);
+  border-radius:20px;padding:7px 14px;background:var(--surface)}
+.cases-index .cx-filter a:hover{color:var(--ink);border-color:var(--muted)}
+.cases-index .cx-filter a.on{color:var(--navy);border-color:var(--navy);background:var(--navy-soft)}
+.cases-index .cx-sec{padding:4px 0 8px}
+.cases-index .cx-sec[hidden]{display:none}
+.cases-index .cx-sec .section-label{margin-top:44px}
+.cases-index .cx-count{font-family:var(--mono);color:var(--muted);margin-left:6px}
+.cases-index .cx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
+.cases-index .cx{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow-sm);color:inherit;
+  transition:transform .18s,box-shadow .18s,border-color .18s}
+.cases-index .cx:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--navy) 45%,var(--line))}
+.cases-index .cx-k{font-family:var(--mono);font-size:11px;letter-spacing:1.3px;text-transform:uppercase;color:var(--amber)}
+.cases-index .cx-t{font-family:var(--sans);font-weight:600;font-size:1.12rem;line-height:1.3;color:var(--ink)}
+.cases-index .cx-l{font-size:14.5px;line-height:1.5;color:var(--muted);flex:1}
+.cases-index .cx-n{font-family:var(--mono);font-size:13.5px;font-weight:600;color:var(--navy);border-top:1px solid var(--line);padding-top:10px}
+@media (prefers-reduced-motion:reduce){.cases-index .cx{transition:none}}
+
 /* ---------- page-to-page transitions ----------
    Cross-fade between pages instead of flashing blank (Chrome, Edge, Brave, recent Safari;
    other browsers just navigate as before). The header keeps its own name so it stays put
