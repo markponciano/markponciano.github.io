@@ -873,6 +873,89 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 @keyframes hw-fall{0%{opacity:1;top:0}100%{opacity:1;top:calc(100% - 10px)}}
 @keyframes hw-amber{from{border-color:var(--line);background:var(--surface-2);color:var(--muted)}to{border-color:var(--amber);background:var(--amber-soft);color:var(--ink)}}
 
+/* case: tools never agree */
+.case .ag-q{margin:0 0 10px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.case .ag-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.case .ag{display:flex;justify-content:space-between;align-items:center;gap:6px;background:var(--surface);
+  border:1px solid var(--line);border-radius:8px;padding:8px 10px;font-size:12.5px}
+.case .ag i{font-style:normal;color:var(--muted)}
+.case .ag-a{font-family:var(--mono);position:relative}
+.case .ag-a s{text-decoration:none;color:var(--amber)}
+.case .ag-a em{display:none;font-style:normal;color:var(--navy)}
+.case .ag-src{display:flex;justify-content:space-between;align-items:center;max-width:220px;margin:12px auto 0;
+  border:2px solid var(--navy);border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;opacity:0}
+.case .ag-src b{font-family:var(--mono);color:var(--navy)}
+/* the clash */
+.case .cl-date{margin:0 0 10px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.case .cl-row{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--line);background:var(--surface);
+  border-radius:8px;padding:9px 11px;margin-bottom:6px;font-size:13px;font-weight:600}
+.case .cl-t{font-family:var(--mono);color:var(--amber)}
+.case .cl-warn{margin:10px 0 0;font-size:12.5px;color:var(--ink);background:var(--amber-soft);border-radius:20px;
+  padding:5px 12px;display:inline-block;opacity:0}
+/* the derived stage */
+.case .dv-facts{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.case .dv-f{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 10px;font-size:12.5px;color:var(--muted)}
+.case .dv-f.on{border-color:var(--navy);color:var(--ink)}
+.case .dv-f.on::before{content:"✓ ";color:var(--navy);font-weight:700}
+.case .dv-out{display:flex;justify-content:space-between;align-items:center;margin:12px 0 0;border:2px solid var(--navy);
+  border-radius:10px;padding:9px 14px;font-size:13px}
+.case .dv-out i{font-style:normal;color:var(--muted)}
+.case .dv-out b{font-family:var(--mono);color:var(--navy)}
+.case .dv-note{margin:8px 0 0;font-size:12.5px;color:var(--muted)}
+/* one record, everything mirrors it */
+.case .mr-core{max-width:200px;margin:0 auto 12px;text-align:center;border:2px solid var(--navy);border-radius:10px;
+  padding:10px;font-weight:600;color:var(--navy)}
+.case .mr-ring{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.case .mr-ring span{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 6px;
+  text-align:center;font-size:12.5px;color:var(--muted);position:relative}
+.case .mr-ring span::before{content:"↑";display:block;color:var(--navy);font-size:11px;margin-bottom:2px}
+@media (prefers-reduced-motion:no-preference){
+  /* the six answers disagree, then settle on one */
+  .case .vis.play .ag-a s{animation:hw-out .3s ease 2.4s forwards}
+  .case .vis.play .ag-a em{display:inline;opacity:0;animation:hw-in .3s ease 2.6s forwards}
+  .case .vis.play .ag{opacity:0;animation:hw-rise .3s ease forwards}
+  .case .vis.play .ag:nth-child(1){animation-delay:.15s} .case .vis.play .ag:nth-child(2){animation-delay:.35s}
+  .case .vis.play .ag:nth-child(3){animation-delay:.55s} .case .vis.play .ag:nth-child(4){animation-delay:.75s}
+  .case .vis.play .ag:nth-child(5){animation-delay:.95s} .case .vis.play .ag:nth-child(6){animation-delay:1.15s}
+  .case .vis.play .ag-src{animation:hw-rise .4s ease 2.1s forwards}
+  /* two bookings land on the same trailer */
+  .case .vis.play .cl-row{opacity:0;animation:hw-rise .35s ease forwards}
+  .case .vis.play .cl-row:nth-of-type(1){animation-delay:.3s}
+  .case .vis.play .cl-row:nth-of-type(2){animation-delay:1.2s}
+  .case .vis.play .cl-row:nth-of-type(2) .cl-t{animation:hw-edit 1.2s ease 1.5s both}
+  .case .vis.play .cl-warn{animation:hw-in .35s ease 2.1s forwards}
+  /* the facts tick in, and the stage follows */
+  .case .vis.play .dv-f{opacity:0;animation:hw-rise .3s ease forwards}
+  .case .vis.play .dv-f:nth-child(1){animation-delay:.2s} .case .vis.play .dv-f:nth-child(2){animation-delay:.6s}
+  .case .vis.play .dv-f:nth-child(3){animation-delay:1s} .case .vis.play .dv-f:nth-child(4){animation-delay:1.4s}
+  .case .vis.play .dv-out{animation:hw-pop .45s ease 1.8s both}
+  .case .vis.play .dv-note{opacity:0;animation:hw-in .35s ease 2.2s forwards}
+  /* the record lands, then the copies follow it */
+  .case .vis.play .mr-core{animation:hw-pop .45s ease .2s both}
+  .case .vis.play .mr-ring span{opacity:0;animation:hw-rise .3s ease forwards}
+  .case .vis.play .mr-ring span:nth-child(1){animation-delay:.7s} .case .vis.play .mr-ring span:nth-child(2){animation-delay:.85s}
+  .case .vis.play .mr-ring span:nth-child(3){animation-delay:1s} .case .vis.play .mr-ring span:nth-child(4){animation-delay:1.15s}
+  .case .vis.play .mr-ring span:nth-child(5){animation-delay:1.3s} .case .vis.play .mr-ring span:nth-child(6){animation-delay:1.45s}
+}
+/* end state by default (no JS, reduced motion) */
+.case .vis:not(.armed) .ag-a s{display:none}
+.case .vis:not(.armed) .ag-a em{display:inline}
+.case .vis:not(.armed) .ag-src,.case .vis:not(.armed) .cl-warn,.case .vis:not(.armed) .dv-note{opacity:1}
+@media (max-width:560px){
+  .case .ag-grid{grid-template-columns:repeat(2,1fr)}
+  .case .mr-ring{grid-template-columns:repeat(2,1fr)}
+  .case .dv-facts{grid-template-columns:1fr}
+}
+
+/* more cases */
+.case .mc-row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.case .mc{display:block;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);
+  padding:18px 20px;box-shadow:var(--shadow-sm);transition:transform .18s,border-color .18s,box-shadow .18s}
+.case .mc:hover{transform:translateY(-3px);box-shadow:var(--shadow);border-color:color-mix(in srgb,var(--navy) 45%,var(--line))}
+.case .mc-k{display:block;font-family:var(--mono);font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);margin-bottom:6px}
+.case .mc-t{display:block;font-weight:600;line-height:1.35;color:var(--ink)}
+@media (max-width:560px){.case .mc-row{grid-template-columns:1fr}}
+
 /* ---------- page-to-page transitions ----------
    Cross-fade between pages instead of flashing blank (Chrome, Edge, Brave, recent Safari;
    other browsers just navigate as before). The header keeps its own name so it stays put

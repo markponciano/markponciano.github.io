@@ -93,6 +93,26 @@
     document.addEventListener('touchstart',warm,{passive:true});
   })();
 
+  /* More cases: two other case studies, picked fresh on every visit. The HTML ships with
+     two fixed links so this works with JavaScript off; Math.random() (no seed, no date,
+     nothing derived from the page) swaps them, never picking the page you are on. */
+  var moreRow=document.getElementById('moreCases');
+  if(moreRow){
+    var CASES=[
+      {url:'case-tools-agree.html',   title:"Our tools never agree on what's booked", topic:'Systems built'},
+      {url:'case-wrong-quotes.html',  title:'Salespeople keep sending wrong quotes',  topic:'Systems built'},
+      {url:'case-silent-failures.html',title:'We only find out something broke when someone happens to look', topic:'Systems built'}
+    ];
+    var here=(location.pathname.split('/').pop()||'').toLowerCase();
+    var pool=CASES.filter(function(c){return c.url.toLowerCase()!==here;});
+    if(pool.length>1){
+      for(var i=pool.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=pool[i];pool[i]=pool[j];pool[j]=t;}
+      moreRow.innerHTML=pool.slice(0,2).map(function(c){
+        return '<a class="mc" href="'+c.url+'"><span class="mc-k">'+c.topic+'</span><span class="mc-t">'+c.title+'</span></a>';
+      }).join('');
+    }
+  }
+
   /* copy-to-clipboard buttons */
   function fallbackCopy(txt,cb){
     try{var t=document.createElement('textarea');t.value=txt;t.setAttribute('readonly','');

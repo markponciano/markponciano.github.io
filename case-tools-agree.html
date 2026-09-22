@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Our tools never agree on what's booked — Mark Ponciano</title>
+<meta name="description" content="Case study: bookings lived in five places that disagreed, and someone rebuilt the real picture by hand. Now one record holds what is true and every tool updates from it.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Our tools never agree on what's booked — Mark Ponciano">
+<meta property="og:description" content="One record holds what is true. Every other tool updates from it.">
+<meta property="og:url" content="https://markponciano.github.io/case-tools-agree.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2322315c'/%3E%3Ctext%20x='16'%20y='22'%20font-family='monospace'%20font-size='14'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E">
+<!-- apply a saved light/dark choice before the first paint, so pages never flash the wrong theme -->
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html"><img class="brand-photo" src="mark.jpg" alt="" width="30" height="30" aria-hidden="true"><span>mark<b>.</b>ponciano</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="Case_Studies.html">Case studies</a>
+      <a href="Body_of_Work.html">Work</a>
+      <a href="Mark_Ponciano_Resume_2026.html">Résumé</a>
+      <a class="nav-cta" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a call</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch light / dark">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap how case">
+
+  <p class="cs-back"><a href="Case_Studies.html"><span aria-hidden="true">←</span> All case studies</a></p>
+
+  <section class="page-hero">
+    <p class="eyebrow">Systems built · Events caterer</p>
+    <h1>Our tools never agree on what's booked</h1>
+    <p class="lede">One record now holds what's true, and every other tool updates from it.</p>
+  </section>
+
+  <dl class="glance">
+    <div><dt>Result</dt><dd>Six tools, one record</dd></div>
+    <div><dt>My role</dt><dd>Systems &amp; Automation Manager</dd></div>
+    <div><dt>When</dt><dd>Designed and built from June 2026</dd></div>
+  </dl>
+
+  <!-- ============ the situation ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">The situation</h2>
+    <div class="cs-grid">
+      <div class="cs-text">
+        <p><b>A booking was born in whichever tool the customer happened to touch.</b> Some came through the website form, some through boards the team kept, some straight into an inbox, and some from marketing tools.</p>
+        <p>From there each tool kept its own copy: the CRM had one, the calendar another, the accounts a third. None of them had to agree, and nothing made them. Answering "is the 14th booked?" meant opening several screens and deciding which to believe.</p>
+      </div>
+      <figure class="vis v-agree" aria-label="Six tools asked whether the 14th is booked. They give four different answers.">
+        <div class="agree" aria-hidden="true">
+          <p class="ag-q">Is the 14th booked?</p>
+          <div class="ag-grid">
+            <span class="ag"><i>Website</i><b class="ag-a"><s>Yes</s><em>Yes</em></b></span>
+            <span class="ag"><i>CRM</i><b class="ag-a"><s>No</s><em>Yes</em></b></span>
+            <span class="ag"><i>Calendar</i><b class="ag-a"><s>—</s><em>Yes</em></b></span>
+            <span class="ag"><i>Accounts</i><b class="ag-a"><s>Paid</s><em>Yes</em></b></span>
+            <span class="ag"><i>Email</i><b class="ag-a"><s>?</s><em>Yes</em></b></span>
+            <span class="ag"><i>Boards</i><b class="ag-a"><s>Held</s><em>Yes</em></b></span>
+          </div>
+          <p class="ag-src"><span>One record</span><b>Booked</b></p>
+        </div>
+        <figcaption>Six answers, then one.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ what went wrong ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What went wrong</h2>
+    <div class="cs-grid">
+      <div class="cs-text">
+        <p><b>Bookings, trailers and calendars didn't always agree, so a date could be double-booked or missed.</b> Each one was somebody's job to keep up to date, and keeping up to date is exactly what people stop doing on a busy week.</p>
+        <p>The deeper problem was the stage a booking was in. It was a field someone typed. A booking could be paid in the accounts and still sitting in "awaiting payment" on the card, because updating the card was a separate act of memory.</p>
+      </div>
+      <figure class="vis v-clash" aria-label="Two bookings hold the same trailer on the same date, because two tools each thought it was free.">
+        <div class="clash" aria-hidden="true">
+          <p class="cl-date">Saturday 14th</p>
+          <div class="cl-row"><span class="cl-b">Booking A</span><span class="cl-t">Trailer 1</span></div>
+          <div class="cl-row"><span class="cl-b">Booking B</span><span class="cl-t">Trailer 1</span></div>
+          <p class="cl-warn">Both held. Neither tool knew about the other.</p>
+        </div>
+        <figcaption>Two bookings, one trailer.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ what I did ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What I did</h2>
+    <ol class="cs-steps">
+      <li><b>Mapped where a booking could be born.</b> The website form, the boards, the inbox, the marketing tools. Every route in, written down.</li>
+      <li><b>Picked one place to hold the truth.</b> A database I designed, holding the booking itself: the customer, the date, the trailer, the money, and what has happened to it.</li>
+      <li><b>Made the other tools copies.</b> The CRM, the accounts, the calendar, the email tool and the document tool all update from that record. Each connects the way it has to, and messages coming back in are signed so the system knows they're genuine.</li>
+      <li><b>Stopped anyone setting the stage by hand.</b> A booking's stage is worked out from what has actually happened: quote accepted, form in, invoiced, paid. There's no field to forget.</li>
+      <li><b>Gave dates and trailers one home.</b> A calendar built on the same record, so a trailer can't be promised twice.</li>
+      <li><b>Checked the copies every night.</b> A nightly pass compares the mirrors to the record and puts back anything that has drifted, so a missed update fixes itself instead of waiting to be noticed.</li>
+    </ol>
+    <figure class="vis v-derive" aria-label="A booking's stage is calculated from what has happened: quote accepted, form in, invoiced, paid.">
+      <div class="derive" aria-hidden="true">
+        <div class="dv-facts">
+          <span class="dv-f on">Quote accepted</span>
+          <span class="dv-f on">Form in</span>
+          <span class="dv-f on">Invoiced</span>
+          <span class="dv-f">Paid</span>
+        </div>
+        <p class="dv-out"><i>Stage</i><b>Awaiting payment</b></p>
+        <p class="dv-note">Worked out, never typed.</p>
+      </div>
+      <figcaption>The stage follows the facts.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ what changed ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What changed</h2>
+    <div class="cs-grid">
+      <figure class="vis v-mirror" aria-label="One record in the middle, with the website, CRM, accounts, calendar, email and documents all updating from it.">
+        <div class="mirror" aria-hidden="true">
+          <div class="mr-core">One record</div>
+          <div class="mr-ring">
+            <span>Website</span><span>CRM</span><span>Accounts</span>
+            <span>Calendar</span><span>Email</span><span>Documents</span>
+          </div>
+        </div>
+        <figcaption>One record. Everything else follows it.</figcaption>
+      </figure>
+      <table class="ba">
+        <thead><tr><th scope="col">Before</th><th scope="col">After</th></tr></thead>
+        <tbody>
+          <tr><td>Each tool kept its own version</td><td>One record, five copies of it</td></tr>
+          <tr><td>The stage was typed in, and forgotten</td><td>The stage is worked out from what happened</td></tr>
+          <tr><td>A trailer could be promised twice</td><td>Dates and trailers have one home</td></tr>
+          <tr><td>Drift was found by someone noticing</td><td>A nightly pass puts drift back</td></tr>
+          <tr><td>"Is the 14th booked?" meant checking four screens</td><td>One answer, everywhere</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <details class="cs-tech">
+      <summary>How it works <span>for the technical reader</span></summary>
+      <p>A MySQL schema I designed holds the booking and its facts. GoHighLevel, Xero, the calendar, Brevo and CloudConvert are mirrors, each with its own connection: a private integration token for the CRM, OAuth with rotating refresh tokens for Xero, API keys elsewhere, and HMAC signatures both to verify inbound webhooks and to sign the links sent to customers. Stage is derived from the facts on the booking rather than stored, so it cannot drift from reality; the one deliberate exception is delivery, which has to be attested by a human because it cannot be observed.</p>
+      <p>Outward writes are mirrored on every change, with a nightly sweep that re-reads the mirror and repairs anything missing. Writes that can be lost, such as a history note during a CRM outage, record what they wrote, so a nightly retry can finish the job rather than losing it for good. Every schema change is a numbered migration with the reason written into it.</p>
+    </details>
+  </section>
+
+  <!-- ============ links ============ -->
+  <section class="cs-sec cs-links" data-reveal>
+    <h2 class="section-label">Principles in this case</h2>
+    <p class="chips">
+      <a href="Body_of_Work.html#p1">Data you can trust</a>
+      <a href="Body_of_Work.html#p3">You know the moment something breaks</a>
+      <a href="Body_of_Work.html#p8">Nothing lives only in my head</a>
+    </p>
+  </section>
+
+  <section class="cs-sec cs-more" data-reveal>
+    <h2 class="section-label">More cases</h2>
+    <div class="mc-row" id="moreCases"><a class="mc" href="case-wrong-quotes.html"><span class="mc-k">Systems built</span><span class="mc-t">Salespeople keep sending wrong quotes</span></a><a class="mc" href="case-silent-failures.html"><span class="mc-k">Systems built</span><span class="mc-t">We only find out something broke when someone happens to look</span></a></div>
+  </section>
+
+  <section class="cta-band" data-reveal>
+    <h2>Tools that don't agree with each other?</h2>
+    <p>That's the kind of thing I fix.</p>
+    <div class="mail-row">
+      <a class="btn-book" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a 20-minute call →</a>
+      <span class="mail-alt"><span class="cta-or">or</span>
+      <a class="mail" href="Case_Studies.html">see all case studies</a></span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Mark Lorenze Ponciano · client details anonymised · updated September 2026</span>
+  <span class="mono">Remote · Philippines (GMT+8)</span>
+  <span class="privacy">No cookies · no analytics · no tracking. This site collects nothing about you.</span>
+</footer>
+
+</body>
+</html>
