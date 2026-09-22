@@ -74,6 +74,25 @@
     window.addEventListener('scroll',atEnd,{passive:true}); atEnd();
   }
 
+  /* prefetch the next page before the click. Chromium browsers get speculation rules
+     (fetch on hover or press); others get a <link rel=prefetch> on hover or touch. Only
+     same-site pages, never the PDF. */
+  (function prefetch(){
+    var sameSite=function(a){return a.origin===location.origin && /\.html$|\/$/.test(a.pathname) && a.pathname!==location.pathname;};
+    if(HTMLScriptElement.supports && HTMLScriptElement.supports('speculationrules')){
+      var s=document.createElement('script'); s.type='speculationrules';
+      s.textContent=JSON.stringify({prefetch:[{where:{and:[{href_matches:'/*'},{not:{href_matches:'/*.pdf'}}]},eagerness:'moderate'}]});
+      document.head.appendChild(s); return;
+    }
+    var done={};
+    var warm=function(e){
+      var a=e.target.closest && e.target.closest('a[href]'); if(!a||!sameSite(a)||done[a.href]) return;
+      done[a.href]=1; var l=document.createElement('link'); l.rel='prefetch'; l.href=a.href; document.head.appendChild(l);
+    };
+    document.addEventListener('mouseover',warm,{passive:true});
+    document.addEventListener('touchstart',warm,{passive:true});
+  })();
+
   /* copy-to-clipboard buttons */
   function fallbackCopy(txt,cb){
     try{var t=document.createElement('textarea');t.value=txt;t.setAttribute('readonly','');

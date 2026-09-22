@@ -659,6 +659,17 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
   .how .sync-grid{grid-template-columns:repeat(2,1fr)}
 }
 
+/* ---------- page-to-page transitions ----------
+   Cross-fade between pages instead of flashing blank (Chrome, Edge, Brave, recent Safari;
+   other browsers just navigate as before). The header keeps its own name so it stays put
+   while the page underneath changes. Off when reduced motion is set. */
+@view-transition{navigation:auto}
+.site-header{view-transition-name:site-header}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.18s}
+@media (prefers-reduced-motion:reduce){
+  @view-transition{navigation:none}
+}
+
 /* ---------- respect reduced motion ---------- */
 @media (prefers-reduced-motion:reduce){
   *{scroll-behavior:auto!important}
