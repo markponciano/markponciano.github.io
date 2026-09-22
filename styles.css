@@ -207,7 +207,15 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 }
 @media (max-width:560px){
   .brand span{display:none}
-  .nav{gap:11px}
+  /* keep every nav item on one line: no wrapping "Case studies" */
+  .nav{gap:10px}
+  .nav a{font-size:12.5px;white-space:nowrap}
+  .theme-toggle{width:26px;height:26px;font-size:13px}
+  .site-header .bar{padding-top:10px;padding-bottom:10px}
+}
+@media (max-width:400px){
+  .nav{gap:8px}
+  .nav a{font-size:12px}
 }
 
 /* ---------- content pages (case study / body of work / résumé) ---------- */
