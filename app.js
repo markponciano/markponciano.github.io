@@ -103,7 +103,8 @@
       {url:'case-wrong-quotes.html',  title:'Salespeople keep sending wrong quotes',  topic:'Systems built'},
       {url:'case-silent-failures.html',title:'We only find out something broke when someone happens to look', topic:'Systems built'},
       {url:'case-cutover.html',      title:'Can we switch systems without stopping the business?', topic:'Systems built'},
-      {url:'case-matchday-payroll.html', title:'Matchday payroll eats a whole morning after every game', topic:'Systems built'}
+      {url:'case-matchday-payroll.html', title:'Matchday payroll eats a whole morning after every game', topic:'Systems built'},
+      {url:'case-profit-gap.html', title:'Why is our profit lower than the report says?', topic:'Money found'}
     ];
     var here=(location.pathname.split('/').pop()||'').toLowerCase();
     var pool=CASES.filter(function(c){return c.url.toLowerCase()!==here;});
