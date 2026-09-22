@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Salespeople keep sending wrong quotes — Mark Ponciano</title>
+<meta name="description" content="Case study: pricing lived in fields that all looked the same, and wrong quotes travelled into the invoices and the books. Now the screen only offers the right next step.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Salespeople keep sending wrong quotes — Mark Ponciano">
+<meta property="og:description" content="Now the screen only offers the right next step.">
+<meta property="og:url" content="https://markponciano.github.io/case-wrong-quotes.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2322315c'/%3E%3Ctext%20x='16'%20y='22'%20font-family='monospace'%20font-size='14'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E">
+<!-- apply a saved light/dark choice before the first paint, so pages never flash the wrong theme -->
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html"><img class="brand-photo" src="mark.jpg" alt="" width="30" height="30" aria-hidden="true"><span>mark<b>.</b>ponciano</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="Case_Studies.html">Case studies</a>
+      <a href="Body_of_Work.html">Work</a>
+      <a href="Mark_Ponciano_Resume_2026.html">Résumé</a>
+      <a class="nav-cta" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a call</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch light / dark">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap how case">
+
+  <p class="cs-back"><a href="Case_Studies.html"><span aria-hidden="true">←</span> All case studies</a></p>
+
+  <section class="page-hero">
+    <p class="eyebrow">Systems built · Events caterer</p>
+    <h1>Salespeople keep sending wrong quotes</h1>
+    <p class="lede">Now the screen only offers the right next step.</p>
+  </section>
+
+  <dl class="glance">
+    <div><dt>Result</dt><dd>Four steps, nothing that breaks a quote</dd></div>
+    <div><dt>My role</dt><dd>Systems &amp; Automation Manager</dd></div>
+    <div><dt>When</dt><dd>June 2026, first version in four days</dd></div>
+  </dl>
+
+  <!-- ============ the situation ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">The situation</h2>
+    <div class="cs-grid">
+      <div class="cs-text">
+        <p><b>Every booking's price lived in a row of fields that all looked the same.</b> The team worked from their CRM, GoHighLevel. Salespeople filled in the fields on each booking's card, and three things read those fields: the quote, the invoice, and the accounts.</p>
+        <p>Then the pricing changed and got complicated: service charges, add-ons, extra hours. The salespeople were good at selling, not at invoicing or VAT, and the card gave them no help. The total sat in the same plain box as every field above it.</p>
+      </div>
+      <figure class="vis v-card" aria-label="A booking card with ten identical fields. The total looks exactly like every other field.">
+        <div class="card-mock" aria-hidden="true">
+          <p class="cm-h">Booking card</p>
+          <ul class="cm-rows">
+            <li style="--i:1"><i>Guests</i><b>120</b></li><li style="--i:2"><i>Menu</i><b>Street food</b></li>
+            <li style="--i:3"><i>Hours</i><b>4</b></li><li style="--i:4"><i>Extra hour</i><b>Yes</b></li>
+            <li style="--i:5"><i>Ice cream</i><b>Yes</b></li><li style="--i:6"><i>Soft drinks</i><b>No</b></li>
+            <li style="--i:7"><i>Discount</i><b>0</b></li><li style="--i:8"><i>Travel</i><b>Zone 1</b></li>
+            <li style="--i:9"><i>VAT</i><b>20%</b></li><li style="--i:10" class="cm-total"><i>Total</i><b>£1,440</b></li>
+          </ul>
+        </div>
+        <figcaption>Ten fields. Which one is the total?</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ what went wrong ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What went wrong</h2>
+    <div class="cs-grid">
+      <div class="cs-text">
+        <p><b>Quotes went out with wrong details.</b> A wrong field didn't stay on the card. The general ledger believes what is happening inside the opportunity, so the mistake travelled into the quote, then the invoice, then the books.</p>
+      </div>
+      <figure class="vis v-travel" aria-label="One wrong field on the card is copied into the quote, then the invoice, then the accounts, each now wrong.">
+        <div class="travel" aria-hidden="true">
+          <span class="tv-node tv-src">One wrong field</span>
+          <span class="tv-arrow">→</span>
+          <span class="tv-node">Quote <b>✕</b></span>
+          <span class="tv-arrow">→</span>
+          <span class="tv-node">Invoice <b>✕</b></span>
+          <span class="tv-arrow">→</span>
+          <span class="tv-node">Accounts <b>✕</b></span>
+        </div>
+        <figcaption>A mistake on the card became a mistake in the books.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ what I did ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What I did</h2>
+    <ol class="cs-steps">
+      <li><b>Found where it broke.</b> Every wrong quote traced back to the same thing: a flat screen that offered every move, including the wrong ones, to people who weren't there to do bookkeeping.</li>
+      <li><b>Wrote the plan first.</b> The Console got its own chapter in the system's written spec before any code: give people a screen where the wrong move isn't offered, instead of training them around a fragile one.</li>
+      <li><b>Built it.</b> The Operator Console, a screen linked from every booking card. The first version was built in four days.
+        <ul>
+          <li><b>Four steps, in the order the work happens:</b> quote, internal form, awaiting payment, paid. The current step is lit, and so is its one right action.</li>
+          <li><b>The quote is the invoice.</b> The quote is shown itemised, and the total a salesperson approves is exactly the total invoiced. Nothing gets re-typed.</li>
+          <li><b>Choices, not free typing.</b> Discounts are 0, 5, 10 or 15%. Add-ons are switches.</li>
+          <li><b>One way out.</b> Cancel is the only other action on a live booking.</li>
+          <li><b>A safety net.</b> Edits can be undone for 15 seconds, and every action is logged with who took it.</li>
+        </ul>
+      </li>
+    </ol>
+    <figure class="vis v-four" aria-label="Four steps: quote, internal form, awaiting payment, paid. The current step is lit and shows its single action.">
+      <div class="four-steps" aria-hidden="true">
+        <div class="fs live"><span class="fs-n">1</span>Quote<em class="fs-act">Approve quote</em></div>
+        <div class="fs"><span class="fs-n">2</span>Internal form</div>
+        <div class="fs"><span class="fs-n">3</span>Awaiting payment</div>
+        <div class="fs"><span class="fs-n">4</span>Paid</div>
+      </div>
+      <figcaption>One lit step, one right action.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ what changed ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What changed</h2>
+    <div class="cs-grid">
+      <figure class="vis v-card v-fixed" aria-label="The same booking, now shown as an itemised quote with the total on its own line.">
+        <div class="card-mock" aria-hidden="true">
+          <p class="cm-h">Quote · step 1 of 4</p>
+          <ul class="cm-rows cm-quote">
+            <li style="--i:1"><i>Street food, 120 guests</i><b>£1,000</b></li>
+            <li style="--i:2"><i>Extra hour</i><b>£100</b></li>
+            <li style="--i:3"><i>Ice cream</i><b>£100</b></li>
+            <li style="--i:4"><i>VAT 20%</i><b>£240</b></li>
+            <li style="--i:5" class="cm-total"><i>Total, as invoiced</i><b>£1,440</b></li>
+          </ul>
+        </div>
+        <figcaption>The same booking, repaired. Example figures.</figcaption>
+      </figure>
+      <table class="ba">
+        <thead><tr><th scope="col">Before</th><th scope="col">After</th></tr></thead>
+        <tbody>
+          <tr><td>A row of identical fields</td><td>Four steps, in order</td></tr>
+          <tr><td>The total buried among them</td><td>The itemised quote, and its total</td></tr>
+          <tr><td>Discounts typed in by hand</td><td>0, 5, 10 or 15%</td></tr>
+          <tr><td>Mistakes travelled into the books</td><td>The approved total is the invoiced total</td></tr>
+          <tr><td>No record of who changed a price</td><td>Every action logged with who took it</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <details class="cs-tech">
+      <summary>How it works <span>for the technical reader</span></summary>
+      <p>A standalone page inside WordPress, behind a login and a single permission that only the operator role and admins hold. It reads each booking from the MySQL database that every tool mirrors, and the booking's stage is worked out from what has happened, never set by hand. Approving a quote raises the Xero invoice from the same itemised lines the operator saw. Edits queue for 15 seconds before they send, so an undo never reaches the customer. Every action writes a row to an audit log. A link on each GoHighLevel card opens that booking's Console. It was rehearsed in a dry-run mode before the switch-over, so no real invoice or email went out until it was proven.</p>
+    </details>
+  </section>
+
+  <!-- ============ links ============ -->
+  <section class="cs-sec cs-links" data-reveal>
+    <h2 class="section-label">Principles in this case</h2>
+    <p class="chips">
+      <a href="Body_of_Work.html#p2">The wrong button isn't there</a>
+      <a href="Body_of_Work.html#p5">Every change leaves a trail</a>
+      <a href="Body_of_Work.html#p1">Data you can trust</a>
+    </p>
+  </section>
+
+  <section class="cta-band" data-reveal>
+    <h2>Got a screen your team keeps getting wrong?</h2>
+    <p>That's the kind of thing I fix.</p>
+    <div class="mail-row">
+      <a class="btn-book" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a 20-minute call →</a>
+      <span class="mail-alt"><span class="cta-or">or</span>
+      <a class="mail" href="Case_Studies.html">see all case studies</a></span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Mark Lorenze Ponciano · client details anonymised · updated September 2026</span>
+  <span class="mono">Remote · Philippines (GMT+8)</span>
+  <span class="privacy">No cookies · no analytics · no tracking. This site collects nothing about you.</span>
+</footer>
+
+</body>
+</html>

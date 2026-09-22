@@ -659,6 +659,109 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
   .how .sync-grid{grid-template-columns:repeat(2,1fr)}
 }
 
+/* ---------- case study pages (main.case; shares .how's visuals) ---------- */
+.case .cs-back{margin:34px 0 0;font-family:var(--mono);font-size:13px}
+.case .cs-back a{color:var(--muted)}
+.case .cs-back a:hover{color:var(--ink)}
+.case .page-hero{padding-top:22px}
+.case .glance{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:26px 0 0}
+.case .glance div{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:14px 18px;box-shadow:var(--shadow-sm)}
+.case .glance dt{font-family:var(--mono);font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--amber);margin:0 0 4px}
+.case .glance dd{margin:0;font-weight:600;line-height:1.35}
+.case .cs-sec{padding:6px 0 10px}
+.case .cs-sec .section-label{margin-top:52px}
+.case .cs-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:start}
+.case .cs-text p{margin:0 0 14px;font-size:1.06rem;line-height:1.65}
+.case .cs-steps{margin:0 0 22px;padding-left:22px;max-width:720px}
+.case .cs-steps > li{margin:0 0 14px;font-size:1.06rem;line-height:1.6;padding-left:4px}
+.case .cs-steps ul{margin:10px 0 0;padding-left:18px}
+.case .cs-steps ul li{margin:6px 0;font-size:.98rem;color:var(--ink)}
+.case .cs-steps ul li b{font-weight:600}
+
+/* the booking card */
+.case .card-mock{background:var(--surface-2);border:1px solid var(--line);border-radius:10px;padding:14px}
+.case .cm-h{font-size:12px;font-weight:600;color:var(--muted);margin:0 0 10px}
+.case .cm-rows{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+.case .cm-rows li{display:flex;justify-content:space-between;gap:8px;font-size:12.5px;background:var(--surface);
+  border:1px solid var(--line);border-radius:6px;padding:6px 9px}
+.case .cm-rows i{font-style:normal;color:var(--muted)}
+.case .cm-rows b{font-weight:500;font-family:var(--mono)}
+.case .cm-quote{grid-template-columns:1fr}
+.case .v-fixed .cm-total{border:2px solid var(--navy);font-size:14px}
+.case .v-fixed .cm-total i{color:var(--ink);font-weight:600}
+.case .v-fixed .cm-total b{font-weight:700;color:var(--navy)}
+
+/* the mistake travelling */
+.case .travel{display:flex;align-items:center;flex-wrap:wrap;gap:6px}
+.case .tv-node{border:1px solid var(--amber);background:var(--amber-soft);border-radius:10px;padding:8px 11px;
+  font-size:13px;font-weight:600;white-space:nowrap}
+.case .tv-node b{color:var(--amber);margin-left:3px}
+.case .tv-src{border-style:dashed}
+.case .tv-arrow{color:var(--amber);font-weight:700}
+
+/* four steps */
+.case .v-four{max-width:720px}
+.case .four-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.case .fs{position:relative;border:1px solid var(--line);background:var(--surface-2);border-radius:10px;
+  padding:12px 12px 14px;font-size:13.5px;font-weight:600;color:var(--muted)}
+.case .fs-n{display:block;font-family:var(--mono);font-size:12px;margin-bottom:4px}
+.case .fs.done{color:var(--ink)}
+.case .fs.done .fs-n::after{content:" ✓";color:var(--navy)}
+.case .fs.live{border:2px solid var(--amber);color:var(--ink)}
+.case .fs-act{display:block;margin-top:10px;font-style:normal;font-size:12px;text-align:center;border-radius:16px;
+  padding:5px 8px;background:var(--amber);color:#fff}
+:root[data-theme="dark"] .case .fs-act{color:#1a140b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .case .fs-act{color:#1a140b}}
+
+/* before / after */
+.case .ba{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--surface);border:1px solid var(--line);
+  border-radius:var(--radius);overflow:hidden}
+.case .ba th{text-align:left;font-family:var(--mono);font-size:11.5px;letter-spacing:1.5px;text-transform:uppercase;
+  padding:12px 14px;border-bottom:1px solid var(--line);color:var(--muted)}
+.case .ba th + th{color:var(--navy)}
+.case .ba td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.45}
+.case .ba tr:last-child td{border-bottom:0}
+.case .ba td:first-child{color:var(--muted)}
+.case .ba td + td{font-weight:600}
+
+/* how it works (native details, no JS) */
+.case .cs-tech{margin:26px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:4px 20px}
+.case .cs-tech summary{cursor:pointer;padding:12px 0;font-weight:600}
+.case .cs-tech summary span{font-weight:400;color:var(--muted);font-size:.92rem;margin-left:6px}
+.case .cs-tech p{margin:0 0 16px;line-height:1.65;color:var(--ink)}
+
+/* principle chips */
+.case .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0}
+.case .chips a{font-size:14px;font-weight:600;color:var(--navy);background:var(--navy-soft);border-radius:20px;padding:7px 14px}
+.case .chips a:hover{text-decoration:underline}
+
+@media (prefers-reduced-motion:no-preference){
+  .case .vis.play .cm-rows li{opacity:0;animation:hw-rise .3s ease forwards}
+  .case .vis.play .cm-rows li:nth-child(n){animation-delay:calc(.08s * var(--i,0))}
+  .case .vis.play .tv-node,.case .vis.play .tv-arrow{opacity:0;animation:hw-in .3s ease forwards}
+  .case .vis.play .travel > :nth-child(1){animation-delay:.2s}
+  .case .vis.play .travel > :nth-child(2){animation-delay:.7s}
+  .case .vis.play .travel > :nth-child(3){animation-delay:.9s}
+  .case .vis.play .travel > :nth-child(4){animation-delay:1.4s}
+  .case .vis.play .travel > :nth-child(5){animation-delay:1.6s}
+  .case .vis.play .travel > :nth-child(6){animation-delay:2.1s}
+  .case .vis.play .travel > :nth-child(7){animation-delay:2.3s}
+  .case .vis.play .fs{opacity:0;animation:hw-rise .35s ease forwards}
+  .case .vis.play .fs:nth-child(1){animation-delay:.2s}
+  .case .vis.play .fs:nth-child(2){animation-delay:.45s}
+  .case .vis.play .fs:nth-child(3){animation-delay:.7s}
+  .case .vis.play .fs:nth-child(4){animation-delay:.95s}
+  .case .vis.play .fs-act{opacity:0;animation:hw-pop .4s ease 1.5s both}
+  .case .vis.play.v-fixed .cm-total{animation:hw-pop .5s ease 1s both}
+}
+.case .vis.armed:not(.play) > :not(figcaption){visibility:hidden}
+
+@media (max-width:760px){
+  .case .glance{grid-template-columns:1fr}
+  .case .cs-grid{grid-template-columns:1fr;gap:18px}
+  .case .four-steps{grid-template-columns:repeat(2,1fr)}
+}
+
 /* ---------- page-to-page transitions ----------
    Cross-fade between pages instead of flashing blank (Chrome, Edge, Brave, recent Safari;
    other browsers just navigate as before). The header keeps its own name so it stays put
