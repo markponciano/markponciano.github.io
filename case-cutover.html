@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can we switch systems without stopping the business? — Mark Ponciano</title>
+<meta name="description" content="Case study: moving a live booking and payment system onto new rails in one evening, with about 130 checks first and every step reversible in under a minute.">>
+<meta property="og:type" content="article">
+<meta property="og:title" content="Can we switch systems without stopping the business? — Mark Ponciano">
+<meta property="og:description" content="One evening, about 130 checks first, and a way back at every step.">
+<meta property="og:url" content="https://markponciano.github.io/case-cutover.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2322315c'/%3E%3Ctext%20x='16'%20y='22'%20font-family='monospace'%20font-size='14'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E">
+<!-- apply a saved light/dark choice before the first paint, so pages never flash the wrong theme -->
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html"><img class="brand-photo" src="mark.jpg" alt="" width="30" height="30" aria-hidden="true"><span>mark<b>.</b>ponciano</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="Case_Studies.html">Case studies</a>
+      <a href="Body_of_Work.html">Work</a>
+      <a href="Mark_Ponciano_Resume_2026.html">Résumé</a>
+      <a class="nav-cta" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a call</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch light / dark">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap how case">
+
+  <p class="cs-back"><a href="Case_Studies.html"><span aria-hidden="true">←</span> All case studies</a></p>
+
+  <section class="page-hero">
+    <p class="eyebrow">Systems built · Events caterer</p>
+    <h1>Can we switch systems without stopping the business?</h1>
+    <p class="lede">One evening, about 130 checks first, and a way back at every step.</p>
+  </section>
+
+  <dl class="glance">
+    <div><dt>Result</dt><dd>About 130 checks. No downtime.</dd></div>
+    <div><dt>My role</dt><dd>Systems &amp; Automation Manager</dd></div>
+    <div><dt>When</dt><dd>4 July 2026, about 90 minutes</dd></div>
+  </dl>
+
+  <!-- ============ the situation ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">The situation</h2>
+    <div class="cs-grid">
+      <div class="cs-text">
+        <p><b>The new system was finished. The business was still running on the old one.</b> Every enquiry, quote, invoice and payment was flowing through the old setup, and customers were mid-booking on it.</p>
+        <p>This is the part most businesses put off, because it's where things go wrong. Stop the system for an evening and you lose enquiries. Switch carelessly and you lose a booking someone has already paid for.</p>
+      </div>
+      <figure class="vis v-gap" aria-label="A switch done badly leaves a gap where enquiries and payments are lost. The aim is a switch with no gap at all.">
+        <div class="gap" aria-hidden="true">
+          <p class="gp-h">The usual way</p>
+          <div class="gp-line"><span class="gp-old">Old system</span><span class="gp-hole">closed</span><span class="gp-new">New system</span></div>
+          <p class="gp-cost">Enquiries and payments land in the hole.</p>
+        </div>
+        <figcaption>The gap nobody can afford.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ what went wrong ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What nearly went wrong</h2>
+    <div class="cs-grid">
+      <div class="cs-text">
+        <p><b>A rule in the new system closes any quote older than 14 days.</b> Sensible on its own: old quotes shouldn't sit open forever.</p>
+        <p>But at the moment of the switch there were real bookings carrying quotes older than that, customers who were still deciding. Switching the rule on with everything else would have quietly closed live bookings on day one. I found it while working through the checks, and held that one rule back until the old quotes had been dealt with by hand.</p>
+      </div>
+      <figure class="vis v-rule" aria-label="A rule that closes quotes older than 14 days would have closed live bookings at the moment of the switch. It was held back.">
+        <div class="rule" aria-hidden="true">
+          <p class="rl-h">Rule: close quotes older than 14 days</p>
+          <div class="rl-rows">
+            <span class="rl-r">Quote · 3 days old<b class="rl-ok">safe</b></span>
+            <span class="rl-r rl-hit">Quote · 21 days old<b class="rl-bad">would close</b></span>
+            <span class="rl-r rl-hit">Quote · 33 days old<b class="rl-bad">would close</b></span>
+          </div>
+          <p class="rl-held">Held back until those were handled by hand.</p>
+        </div>
+        <figcaption>Caught in the checks, not on the night.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ what I did ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What I did</h2>
+    <ol class="cs-steps">
+      <li><b>Proved it worked before it touched anyone.</b> About 130 checks across the whole journey, run against the live system in a rehearsal: a real invoice issued and then voided, the calendar and the money paths exercised, and nothing left behind afterwards.</li>
+      <li><b>Ran the new system alongside the old one, switched off.</b> Every action it could take was rehearsed in a mode that changed nothing: no real invoice, no real email. That's how the team practised too.</li>
+      <li><b>Went through the live bookings one by one.</b> 30 of them: 23 carried across, 7 closed as dead. Each one checked, not batch-imported and hoped for.</li>
+      <li><b>Kept in-flight customer links alive.</b> Anyone holding a quote or form link from the old system still had it work after the switch, because the old addresses were bridged to the new ones.</li>
+      <li><b>Wrote the switch as a runbook.</b> An ordered sequence of small steps, each one reversible in under a minute, so any step could be undone on its own rather than rolling the whole thing back.</li>
+      <li><b>Picked a quiet evening</b>, trained the team first, and ran it: about 90 minutes of work. Customers kept booking throughout.</li>
+    </ol>
+    <figure class="vis v-runbook" aria-label="The switch was an ordered runbook: freeze, re-sync, funnel, quotes and forms, payments, then the old system off. Each step reversible in under a minute.">
+      <ol class="runbook" aria-hidden="true">
+        <li><b>1</b>Freeze changes<em>undo &lt; 1 min</em></li>
+        <li><b>2</b>Re-sync the records<em>undo &lt; 1 min</em></li>
+        <li><b>3</b>Move the enquiry form<em>undo &lt; 1 min</em></li>
+        <li><b>4</b>Move quotes and forms<em>undo &lt; 1 min</em></li>
+        <li><b>5</b>Move payments<em>undo &lt; 1 min</em></li>
+        <li><b>6</b>Old system off<em>undo &lt; 1 min</em></li>
+      </ol>
+      <figcaption>Six steps, each one reversible on its own.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ what changed ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What changed</h2>
+    <div class="cs-grid">
+      <figure class="vis v-gap v-nogap" aria-label="The switch as it happened: the old system hands straight over to the new one, with no gap.">
+        <div class="gap" aria-hidden="true">
+          <p class="gp-h">4 July 2026</p>
+          <div class="gp-line"><span class="gp-old">Old system</span><span class="gp-join">handover</span><span class="gp-new">New system</span></div>
+          <p class="gp-cost gp-good">No gap. Customers kept booking.</p>
+        </div>
+        <figcaption>The same evening, no hole in it.</figcaption>
+      </figure>
+      <table class="ba">
+        <thead><tr><th scope="col">The usual way</th><th scope="col">How this went</th></tr></thead>
+        <tbody>
+          <tr><td>Close for an evening, or a weekend</td><td>About 90 minutes, still trading</td></tr>
+          <tr><td>Hope it works</td><td>About 130 checks first, on the live system</td></tr>
+          <tr><td>All or nothing rollback</td><td>Every step reversible in under a minute</td></tr>
+          <tr><td>Old links break</td><td>In-flight customer links kept working</td></tr>
+          <tr><td>Import everything and sort it out later</td><td>30 live bookings reviewed one by one</td></tr>
+          <tr><td>The team learns on the day</td><td>Trained first, on a version that changed nothing</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <details class="cs-tech">
+      <summary>How it works <span>for the technical reader</span></summary>
+      <p>The cutover was a big bang by design: all customer-facing surfaces moved at once, because a half-moved booking is worse than either state. What made that safe was everything around it. Every action in the new system sat behind a flag and ran dry until it was proven. A pre-flip gate of about 130 live checks covered each layer end to end, including a real invoice issued and voided, and was re-run until it left no residue. The deployed code was verified to match the repository before the window opened, and the schema's migration ledger was reconciled.</p>
+      <p>The runbook sequenced the flips so each had its own rollback: freeze, re-sync, funnel, quote and op-form atomically, payments, then the legacy automations off. Old quote and form URLs were bridged to the new routes so in-flight customers were unaffected. A rule that auto-closes stale quotes was deliberately left off until the migrated quotes had been handled. The day after, a leftover automation from the old system was still writing its own price to cards; it was caught on a test booking and every legacy automation was switched off that morning, which is <a href="case-silent-failures.html">its own case study</a>.</p>
+    </details>
+  </section>
+
+  <!-- ============ links ============ -->
+  <section class="cs-sec cs-links" data-reveal>
+    <h2 class="section-label">Principles in this case</h2>
+    <p class="chips">
+      <a href="Body_of_Work.html#p7">Carefully planned changes, so the business never stops</a>
+      <a href="Body_of_Work.html#p3">You know the moment something breaks</a>
+      <a href="Body_of_Work.html#p8">Nothing lives only in my head</a>
+    </p>
+  </section>
+
+  <section class="cs-sec cs-more" data-reveal>
+    <h2 class="section-label">More cases</h2>
+    <div class="mc-row" id="moreCases"><a class="mc" href="case-tools-agree.html"><span class="mc-k">Systems built</span><span class="mc-t">Our tools never agree on what's booked</span></a><a class="mc" href="case-wrong-quotes.html"><span class="mc-k">Systems built</span><span class="mc-t">Salespeople keep sending wrong quotes</span></a></div>
+  </section>
+
+  <section class="cta-band" data-reveal>
+    <h2>Got a system you're afraid to move off?</h2>
+    <p>That's the kind of thing I plan and run.</p>
+    <div class="mail-row">
+      <a class="btn-book" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a 20-minute call →</a>
+      <span class="mail-alt"><span class="cta-or">or</span>
+      <a class="mail" href="Case_Studies.html">see all case studies</a></span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Mark Lorenze Ponciano · client details anonymised · updated September 2026</span>
+  <span class="mono">Remote · Philippines (GMT+8)</span>
+  <span class="privacy">No cookies · no analytics · no tracking. This site collects nothing about you.</span>
+</footer>
+
+</body>
+</html>

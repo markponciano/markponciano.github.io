@@ -956,6 +956,61 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 .case .mc-t{display:block;font-weight:600;line-height:1.35;color:var(--ink)}
 @media (max-width:560px){.case .mc-row{grid-template-columns:1fr}}
 
+/* case: the cutover */
+.case .gp-h{margin:0 0 10px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.case .gp-line{display:flex;align-items:stretch;gap:0}
+.case .gp-old,.case .gp-new{flex:1;border:1px solid var(--line);background:var(--surface);border-radius:8px;
+  padding:12px 10px;text-align:center;font-size:12.5px;font-weight:600}
+.case .gp-hole{width:64px;border-top:2px dashed var(--amber);border-bottom:2px dashed var(--amber);
+  display:grid;place-items:center;font-size:11px;font-family:var(--mono);color:var(--amber);background:var(--amber-soft)}
+.case .gp-join{width:64px;display:grid;place-items:center;font-size:11px;font-family:var(--mono);color:var(--navy);
+  border-top:2px solid var(--navy);border-bottom:2px solid var(--navy);background:var(--navy-soft)}
+.case .gp-cost{margin:10px 0 0;font-size:12.5px;color:var(--amber)}
+.case .gp-good{color:var(--navy)}
+/* the rule that would have closed live bookings */
+.case .rl-h{margin:0 0 10px;font-size:12.5px;font-weight:600}
+.case .rl-rows{display:grid;gap:6px}
+.case .rl-r{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--line);background:var(--surface);
+  border-radius:8px;padding:8px 11px;font-size:12.5px}
+.case .rl-ok{color:var(--navy);font-family:var(--mono);font-size:11.5px}
+.case .rl-bad{color:var(--amber);font-family:var(--mono);font-size:11.5px}
+.case .rl-held{margin:10px 0 0;font-size:12.5px;color:var(--ink);background:var(--navy-soft);border-radius:20px;
+  padding:5px 12px;display:inline-block;opacity:0}
+/* the runbook */
+.case .runbook{list-style:none;margin:0;padding:0;display:grid;gap:6px;max-width:520px}
+.case .runbook li{display:grid;grid-template-columns:26px 1fr auto;align-items:center;gap:10px;
+  border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:9px 12px;font-size:13px;font-weight:600}
+.case .runbook b{font-family:var(--mono);color:var(--navy);font-weight:600}
+.case .runbook em{font-style:normal;font-family:var(--mono);font-size:11px;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){
+  /* the hole opens up, then the cost lands */
+  .case .vis.play .gp-old{opacity:0;animation:hw-in .3s ease .2s forwards}
+  .case .vis.play .gp-new{opacity:0;animation:hw-in .3s ease .5s forwards}
+  .case .vis.play .gp-hole{opacity:0;animation:hw-in .35s ease 1s forwards,hw-pulse 1.1s ease 1.3s 2}
+  .case .vis.play .gp-join{opacity:0;animation:hw-in .35s ease 1s forwards}
+  .case .vis.play .gp-cost{opacity:0;animation:hw-in .35s ease 1.8s forwards}
+  /* the rule runs down the list and flags the old quotes */
+  .case .vis.play .rl-r{opacity:0;animation:hw-rise .3s ease forwards}
+  .case .vis.play .rl-r:nth-child(1){animation-delay:.3s}
+  .case .vis.play .rl-r:nth-child(2){animation-delay:.9s}
+  .case .vis.play .rl-r:nth-child(3){animation-delay:1.3s}
+  .case .vis.play .rl-hit{animation:hw-rise .3s ease forwards,hw-edit 1.2s ease 1.7s both}
+  .case .vis.play .rl-held{animation:hw-in .35s ease 2.6s forwards}
+  /* the runbook steps tick through */
+  .case .vis.play .runbook li{opacity:0;animation:hw-rise .28s ease forwards}
+  .case .vis.play .runbook li:nth-child(1){animation-delay:.2s} .case .vis.play .runbook li:nth-child(2){animation-delay:.45s}
+  .case .vis.play .runbook li:nth-child(3){animation-delay:.7s} .case .vis.play .runbook li:nth-child(4){animation-delay:.95s}
+  .case .vis.play .runbook li:nth-child(5){animation-delay:1.2s} .case .vis.play .runbook li:nth-child(6){animation-delay:1.45s}
+}
+.case .vis:not(.armed) .rl-held{opacity:1}
+@media (max-width:560px){
+  .case .gp-line{flex-direction:column}
+  .case .gp-hole,.case .gp-join{width:auto;height:34px;border-left:2px dashed var(--amber);border-right:2px dashed var(--amber);border-top:0;border-bottom:0}
+  .case .gp-join{border-left:2px solid var(--navy);border-right:2px solid var(--navy)}
+  .case .runbook li{grid-template-columns:22px 1fr;row-gap:2px}
+  .case .runbook em{grid-column:2}
+}
+
 /* ---------- page-to-page transitions ----------
    Cross-fade between pages instead of flashing blank (Chrome, Edge, Brave, recent Safari;
    other browsers just navigate as before). The header keeps its own name so it stays put
