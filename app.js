@@ -106,7 +106,7 @@
       {url:'case-matchday-payroll.html', title:'Matchday payroll eats a whole morning after every game', topic:'Systems built'},
       {url:'case-profit-gap.html', title:'Why is our profit lower than the report says?', topic:'Money found'},
       {url:'case-double-payments.html', title:'Are we paying anyone twice?', topic:'Money found'},
-      {url:'case-reconciliation.html', title:'Can 15,000 payments a month match themselves?', topic:'Money found'},
+      {url:'case-reconciliation.html', title:"Reconciliation takes up someone's whole month", topic:'Money found'},
       {url:'case-supplier-invoices.html', title:'Supplier invoices eat hours of data entry', topic:'Systems built'}
     ];
     var here=(location.pathname.split('/').pop()||'').toLowerCase();

@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Supplier invoices eat hours of data entry — Mark Ponciano</title>
-<meta name="description" content="Case study: accounts payable across five cafés, each with its own Xero ledger. Supplier invoices were keyed in by hand; rules now route each one to the right ledger, cutting 15 to 25 manual entries a day.">>
+<meta name="description" content="Case study: accounts payable across five cafés, each with its own Xero ledger. Supplier bills were sent across by hand every week; rules now route each one to the right ledger, cutting 15 to 25 manual entries a day.">>
 <meta property="og:type" content="article">
 <meta property="og:title" content="Supplier invoices eat hours of data entry — Mark Ponciano">
 <meta property="og:description" content="15 to 25 manual entries a day, gone.">
@@ -40,7 +40,7 @@
   <section class="page-hero">
     <p class="eyebrow">Systems built · Café group</p>
     <h1>Supplier invoices eat hours of data entry</h1>
-    <p class="lede">Now each invoice routes itself to the right café, 15 to 25 fewer typed entries a day.</p>
+    <p class="lede">Now each bill routes itself to the right café's ledger, by its own rules.</p>
   </section>
 
   <dl class="glance">
@@ -53,15 +53,15 @@
     <div class="cs-grid">
       <div class="cs-text">
         <p><b>A hospitality group ran five cafés, and each one was its own business in the accounts.</b> Five separate Xero ledgers, each with its own suppliers, bank feeds and reconciliation.</p>
-        <p>I ran accounts payable across all five. Supplier invoices arrived by email, and each one had to be entered by hand into the right café's books.</p>
+        <p>This was my first role there: accounts payable across all five. Supplier bills arrived in the mailboxes, and every week I sent each one across by hand to the right café's Xero.</p>
       </div>
-      <figure class="vis v-cafes" aria-label="Supplier invoices arrive in one inbox, and each has to be typed by hand into the right one of five separate ledgers.">
+      <figure class="vis v-cafes" aria-label="Supplier bills arrive in the mailboxes, and each has to be sent by hand to the right one of five separate ledgers.">
         <div class="cafes" aria-hidden="true">
           <p class="cf-in">Supplier invoices, by email</p>
-          <p class="cf-hand">↓ typed in by hand ↓</p>
+          <p class="cf-hand">↓ sent across by hand, every week ↓</p>
           <div class="cf-row"><span class="cf">Café 1</span><span class="cf">Café 2</span><span class="cf">Café 3</span><span class="cf">Café 4</span><span class="cf">Café 5</span></div>
         </div>
-        <figcaption>One inbox, five ledgers, all by hand.</figcaption>
+        <figcaption>Mailboxes, five ledgers, all by hand.</figcaption>
       </figure>
     </div>
   </section>
@@ -71,7 +71,7 @@
     <div class="cs-grid">
       <div class="cs-text">
         <p><b>Five ledgers means five places an invoice can go, and only one of them is right.</b></p>
-        <p>Every invoice was a small decision and a small piece of typing, 15 to 25 times a day, every day. That's where the hours went.</p>
+        <p>Every bill was a small decision and a small manual job, 15 to 25 of them a day. Repetitive, and exactly the kind of work where one slip puts a bill in the wrong café's books.</p>
       </div>
       <figure class="vis v-cafes v-wrong" aria-label="With five separate ledgers there are five places an invoice can go, and only one is right.">
         <div class="cafes" aria-hidden="true">
@@ -87,9 +87,9 @@
   <section class="cs-sec" data-reveal>
     <h2 class="section-label">What I did</h2>
     <ol class="cs-steps">
-      <li><b>Ran it by hand first.</b> Accounts payable end to end across all five cafés, so I knew which suppliers served which café and how their invoices arrived.</li>
+      <li><b>Did it by hand first.</b> Every week, across all five cafés, until I knew which suppliers served which café and how their bills arrived. And until I'd had enough of it.</li>
       <li><b>Used the tools already there.</b> No custom code: rules in the group's email and in Xero were enough to do the sorting. The right size for the job.</li>
-      <li><b>Routed each invoice to the right café.</b> Supplier invoices coming into Gmail were sent straight into the correct café's Xero, instead of being typed in.</li>
+      <li><b>Wrote a rule for each café.</b> Each of the five Xero organisations got its own specific routing rules, so a bill only lands where it belongs. Accuracy first; the time saved came with it.</li>
     </ol>
     <figure class="vis v-pipe" aria-label="Rules in the email and the accounts software send each supplier's invoice straight to the right café's ledger.">
       <div class="pipe" aria-hidden="true">
@@ -110,21 +110,21 @@
           <p class="cf-hand cf-auto">↓ routed by rules ↓</p>
           <div class="cf-row"><span class="cf cf-ok">Café 1</span><span class="cf cf-ok">Café 2</span><span class="cf cf-ok">Café 3</span><span class="cf cf-ok">Café 4</span><span class="cf cf-ok">Café 5</span></div>
         </div>
-        <figcaption>15 to 25 fewer entries typed, every day.</figcaption>
+        <figcaption>15 to 25 fewer manual entries, every day.</figcaption>
       </figure>
       <table class="ba">
         <thead><tr><th scope="col">Before</th><th scope="col">After</th></tr></thead>
         <tbody>
-          <tr><td>15 to 25 invoices typed in by hand a day</td><td>Routed automatically</td></tr>
+          <tr><td>15 to 25 bills sent across by hand a day</td><td>Routed automatically</td></tr>
           <tr><td>A decision on every invoice: which café?</td><td>The rule already knows</td></tr>
-          <tr><td>Hours of data entry</td><td>Checking instead of typing</td></tr>
+          <tr><td>A weekly chore</td><td>Checking instead of sending</td></tr>
         </tbody>
       </table>
     </div>
 
     <details class="cs-tech">
       <summary>How it works <span>for the technical reader</span></summary>
-      <p>Each café was a standalone Xero organisation. Rules in Google Workspace identified supplier invoices as they arrived in Gmail and passed each one to the Xero organisation it belonged to, where it landed ready for review instead of being keyed in. Nothing custom was built: the email and accounting tools the group already paid for did the routing. Reconciliation stayed per organisation, against each café's own bank feed.</p>
+      <p>Each café was a standalone Xero organisation. Rules in Google Workspace identified supplier bills as they arrived in the mailboxes and passed each one to the Xero organisation it belonged to, where it landed ready for review. Each organisation had its own specific rules, written for accuracy. Nothing custom was built: the email and accounting tools the group already paid for did the routing. Reconciliation stayed per organisation, against each café's own bank feed.</p>
     </details>
   </section>
 
