@@ -1011,6 +1011,78 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
   .case .runbook em{grid-column:2}
 }
 
+/* case: matchday payroll */
+.case .forms{display:grid;gap:6px}
+.case .fm{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--line);background:var(--surface);
+  border-radius:8px;padding:8px 11px;font-size:12.5px}
+.case .fm i{font-style:normal;font-weight:600}
+.case .fm b{font-family:var(--mono);font-weight:500;color:var(--muted)}
+.case .fm-alias{border-color:var(--amber)}
+.case .fm-alias i::after{content:" · same person?";font-weight:400;color:var(--amber)}
+.case .fm-dup{border-color:var(--amber);border-style:dashed}
+.case .fm-dup i::after{content:" · sent twice";font-weight:400;color:var(--amber)}
+.case .fm-pile{margin:6px 0 0;font-size:12.5px;color:var(--amber)}
+.case .dp-row{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--line);background:var(--surface);
+  border-radius:8px;padding:9px 11px;margin-bottom:6px;font-size:12.5px}
+.case .dp-row i{font-style:normal;font-family:var(--mono);color:var(--muted)}
+.case .dp-row:first-child{opacity:.55;text-decoration:line-through}
+.case .dp-kept{border-color:var(--navy)}
+.case .dp-kept::after{content:"kept";font-family:var(--mono);font-size:11px;color:var(--navy);margin-left:6px}
+.case .dp-flag{margin:10px 0 0;font-size:13px;font-weight:600;background:var(--amber-soft);border:1px solid var(--amber);
+  border-radius:20px;padding:5px 12px;display:inline-flex;gap:6px;opacity:0}
+.case .v-pipe{max-width:760px}
+.case .pipe{display:flex;align-items:center;gap:0;flex-wrap:nowrap}
+.case .pp{flex:0 0 auto;border:1px solid var(--line);background:var(--surface-2);border-radius:8px;padding:8px 10px;
+  font-size:12.5px;font-weight:600;white-space:nowrap}
+.case .pp-end{border:2px solid var(--navy);color:var(--navy)}
+.case .pp-a{position:relative;flex:1;min-width:14px;height:2px;background:var(--line)}
+.case .pp-dot{position:absolute;top:-4px;left:0;width:10px;height:10px;border-radius:50%;background:var(--navy);opacity:0}
+.case .sn-h{margin:0 0 10px;font-size:12.5px;font-weight:600;color:var(--muted)}
+.case .sn-bar{display:flex;height:22px;border-radius:6px;overflow:hidden;background:var(--surface-2);border:1px solid var(--line)}
+.case .sn-ok{width:var(--w);background:var(--navy)}
+.case .sn-flag{width:var(--w);background:var(--amber)}
+.case .sn-keys{display:grid;gap:6px;margin-top:12px;font-size:13px}
+.case .sn-keys b{font-family:var(--mono);color:var(--navy);margin-right:4px}
+.case .sn-keys .k-flag b,.case .sn-keys .k-dup b{color:var(--amber)}
+.case .cs-note{max-width:720px;margin:20px 0 0;font-size:1.02rem;line-height:1.6}
+@media (prefers-reduced-motion:no-preference){
+  .case .vis.play .fm{opacity:0;animation:hw-rise .3s ease forwards}
+  .case .vis.play .fm:nth-child(1){animation-delay:.2s} .case .vis.play .fm:nth-child(2){animation-delay:.45s}
+  .case .vis.play .fm:nth-child(3){animation-delay:.7s} .case .vis.play .fm:nth-child(4){animation-delay:.95s}
+  .case .vis.play .fm:nth-child(5){animation-delay:1.2s}
+  .case .vis.play .fm-alias,.case .vis.play .fm-dup{animation:hw-rise .3s ease forwards,hw-edit 1.2s ease 1.6s both}
+  .case .vis.play .fm-pile{opacity:0;animation:hw-in .4s ease 2.2s forwards}
+  .case .vis.play .dp-row{opacity:0;animation:hw-rise .3s ease forwards}
+  .case .vis.play .dp-row:nth-child(1){animation-delay:.2s}
+  .case .vis.play .dp-row:nth-child(2){animation-delay:.6s}
+  .case .vis.play .dp-row:first-child{animation:hw-rise .3s ease .2s forwards,hw-strike-row .5s ease 1.2s both}
+  .case .vis.play .dp-flag{animation:hw-in .35s ease 1.8s forwards,hw-pulse 1s ease 2.1s 2}
+  .case .vis.play .pp-dot{animation:hw-run .7s ease forwards}
+  .case .vis.play .pipe > :nth-child(2) .pp-dot{animation-delay:.2s}
+  .case .vis.play .pipe > :nth-child(4) .pp-dot{animation-delay:.9s}
+  .case .vis.play .pipe > :nth-child(6) .pp-dot{animation-delay:1.6s}
+  .case .vis.play .pipe > :nth-child(8) .pp-dot{animation-delay:2.3s}
+  .case .vis.play .pp-end{animation:hw-pop .45s ease 3s both}
+  .case .vis.play .sn-ok,.case .vis.play .sn-flag{animation:hw-grow 1.1s cubic-bezier(.3,.6,.3,1) .3s both}
+  .case .vis.play .sn-flag{animation-delay:1.3s}
+  .case .vis.play .sn-keys span{opacity:0;animation:hw-rise .3s ease forwards}
+  .case .vis.play .sn-keys span:nth-child(1){animation-delay:1.2s}
+  .case .vis.play .sn-keys span:nth-child(2){animation-delay:1.9s}
+  .case .vis.play .sn-keys span:nth-child(3){animation-delay:2.3s}
+}
+@keyframes hw-grow{from{width:0}to{width:var(--w)}}
+@keyframes hw-strike-row{from{opacity:1;text-decoration-color:transparent}to{opacity:.55;text-decoration-color:currentColor}}
+.case .vis:not(.armed) .fm-pile,.case .vis:not(.armed) .dp-flag{opacity:1}
+@media (max-width:760px){
+  .case .pipe{flex-direction:column;align-items:center}
+  .case .pp-a{width:2px;height:16px;flex:none;min-width:0}
+  .case .pp-dot{left:-4px}
+  .case .vis.play .pp-dot{animation-name:hw-fall}
+}
+@media (max-width:560px){
+  .case .dp-row{flex-direction:column;gap:2px}
+}
+
 /* ---------- page-to-page transitions ----------
    Cross-fade between pages instead of flashing blank (Chrome, Edge, Brave, recent Safari;
    other browsers just navigate as before). The header keeps its own name so it stays put

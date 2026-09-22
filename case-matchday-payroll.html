@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matchday payroll eats a whole morning after every game — Mark Ponciano</title>
+<meta name="description" content="Case study: staff shift forms, a posted rota and a whole morning of checking after every game. Now it runs overnight: names cleaned, duplicates caught, hours matched to the rota, and pay worked out.">>
+<meta property="og:type" content="article">
+<meta property="og:title" content="Matchday payroll eats a whole morning after every game — Mark Ponciano">
+<meta property="og:description" content="Now it runs overnight, and flags only what needs a person.">
+<meta property="og:url" content="https://markponciano.github.io/case-matchday-payroll.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2322315c'/%3E%3Ctext%20x='16'%20y='22'%20font-family='monospace'%20font-size='14'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E">
+<!-- apply a saved light/dark choice before the first paint, so pages never flash the wrong theme -->
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html"><img class="brand-photo" src="mark.jpg" alt="" width="30" height="30" aria-hidden="true"><span>mark<b>.</b>ponciano</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="Case_Studies.html">Case studies</a>
+      <a href="Body_of_Work.html">Work</a>
+      <a href="Mark_Ponciano_Resume_2026.html">Résumé</a>
+      <a class="nav-cta" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a call</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch light / dark">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap how case">
+
+  <p class="cs-back"><a href="Case_Studies.html"><span aria-hidden="true">←</span> All case studies</a></p>
+
+  <section class="page-hero">
+    <p class="eyebrow">Systems built · Events caterer</p>
+    <h1>Matchday payroll eats a whole morning after every game</h1>
+    <p class="lede">Now it runs overnight, and only what needs a person gets flagged.</p>
+  </section>
+
+  <dl class="glance">
+    <div><dt>Result</dt><dd>A morning's work, done overnight</dd></div>
+    <div><dt>My role</dt><dd>Systems &amp; Automation Manager</dd></div>
+    <div><dt>When</dt><dd>2026 season, 10 games, 162 shifts</dd></div>
+  </dl>
+
+  <!-- ============ the situation ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">The situation</h2>
+    <div class="cs-grid">
+      <div class="cs-text">
+        <p><b>On a football day the business runs around ten food units in a stadium, staffed by a rotating crew.</b> After each game, every worker filled in a form: who they were, which unit, when they started and finished, what break they took.</p>
+        <p>Then someone spent the whole next morning turning those forms into pay. Matching each form to the posted rota, working out hours and breaks, and catching the mistakes: the same person typed three different ways, a shift sent twice, hours that didn't match what was scheduled.</p>
+      </div>
+      <figure class="vis v-forms" aria-label="After a game, shift forms arrive with the same person's name typed differently, a shift sent twice, and hours that don't match the rota. All of it lands in a pile to check by hand.">
+        <div class="forms" aria-hidden="true">
+          <span class="fm"><i>Jon Smith</i><b>12:00–18:00</b></span>
+          <span class="fm fm-alias"><i>jon smith</i><b>12:00–18:00</b></span>
+          <span class="fm fm-alias"><i>J. Smith</i><b>11:45–18:30</b></span>
+          <span class="fm"><i>Priya K.</i><b>13:00–19:15</b></span>
+          <span class="fm fm-dup"><i>Priya K.</i><b>13:00–19:15</b></span>
+          <p class="fm-pile">→ checked by hand: the whole next morning</p>
+        </div>
+        <figcaption>Example forms, invented names.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ what went wrong ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What went wrong</h2>
+    <div class="cs-grid">
+      <div class="cs-text">
+        <p><b>A shift sent twice gets paid twice.</b> Nobody checking a stack of forms on a tired Monday is going to notice that two of them are the same shift, especially when the name is spelled differently on each.</p>
+        <p>When the duplicate check went in, it went back over the season so far. It found three shifts that had been submitted twice, and one of them had already been paid. That row was flagged red for review instead of quietly staying in the books.</p>
+      </div>
+      <figure class="vis v-dup" aria-label="Two identical shift submissions. The system keeps the latest, logs the other, and flags the row red because it has already been paid.">
+        <div class="dup" aria-hidden="true">
+          <div class="dp-row"><i>Submitted 18:22</i><b>Same person · same date · same unit</b></div>
+          <div class="dp-row dp-kept"><i>Submitted 18:40</i><b>Same person · same date · same unit</b></div>
+          <p class="dp-flag"><span>🔴</span>Already paid: review duplicate</p>
+        </div>
+        <figcaption>Kept the latest, logged the other, flagged the payment.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ============ what I did ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What I did</h2>
+    <ol class="cs-steps">
+      <li><b>Found every way the forms went wrong.</b> Names spelled differently, shifts sent twice, breaks written as words, hours that didn't match the rota. Each one became a rule.</li>
+      <li><b>Kept it in Google Sheets.</b> The work is seasonal and the team already lived in Sheets, so a spreadsheet with a script behind it was the right size. A custom system would have been more to maintain for the same result.</li>
+      <li><b>Gave every person one name.</b> A staff list maps every spelling to one canonical name, so "jon smith" and "J. Smith" pay the same person. Anyone new who picks "Others" on the form triggers an email to me, so the list stays complete.</li>
+      <li><b>Caught duplicates, and kept a record.</b> Same person, same date, same unit counts as one shift. The latest submission is kept, and every discarded one is logged with when it was sent.</li>
+      <li><b>Checked every shift against the rota.</b> Each payroll line shows whether the person was on the posted rota, their scheduled hours, and how far off they were: on track, over, under, or a major gap.</li>
+      <li><b>Made it run on its own.</b> Every night the script cleans the new forms, then builds the payroll lines an hour later. The morning job became reading the flags.</li>
+    </ol>
+    <figure class="vis v-pipe" aria-label="Forms go in, names are cleaned, duplicates are removed, shifts are matched to the rota, and payroll lines come out, every night.">
+      <div class="pipe" aria-hidden="true">
+        <span class="pp">Shift forms</span><span class="pp-a"><i class="pp-dot"></i></span>
+        <span class="pp">One name each</span><span class="pp-a"><i class="pp-dot"></i></span>
+        <span class="pp">Duplicates out</span><span class="pp-a"><i class="pp-dot"></i></span>
+        <span class="pp">Matched to rota</span><span class="pp-a"><i class="pp-dot"></i></span>
+        <span class="pp pp-end">Payroll, with flags</span>
+      </div>
+      <figcaption>Every night, while nobody is working.</figcaption>
+    </figure>
+  </section>
+
+  <!-- ============ what changed ============ -->
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What changed</h2>
+    <div class="cs-grid">
+      <figure class="vis v-season" aria-label="Across the season: 162 shifts, 148 matched to the rota automatically, 14 flagged as not on the rota, 3 duplicates caught.">
+        <div class="season" aria-hidden="true">
+          <p class="sn-h">The season, 10 games</p>
+          <div class="sn-bar"><span class="sn-ok" style="--w:91.4%"></span><span class="sn-flag" style="--w:8.6%"></span></div>
+          <div class="sn-keys">
+            <span><b>148</b> matched to the rota</span>
+            <span class="k-flag"><b>14</b> not on the rota</span>
+            <span class="k-dup"><b>3</b> duplicates caught</span>
+          </div>
+        </div>
+        <figcaption>162 shifts. A person only looks at the flagged ones.</figcaption>
+      </figure>
+      <table class="ba">
+        <thead><tr><th scope="col">Before</th><th scope="col">After</th></tr></thead>
+        <tbody>
+          <tr><td>A whole morning after every game</td><td>Ready overnight; the morning is reading flags</td></tr>
+          <tr><td>One person, three spellings</td><td>One name per person</td></tr>
+          <tr><td>Duplicate shifts paid twice</td><td>Kept once, logged, flagged if already paid</td></tr>
+          <tr><td>Hours taken on trust</td><td>Every shift checked against the posted rota</td></tr>
+          <tr><td>Wages worked out separately from sales</td><td>Profit per game, with wages as a share of sales</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cs-note"><b>It grew beyond payroll.</b> The same spreadsheet takes each unit's sales report and shows every game's profit: gross sales, VAT, stock, rent, the stadium's admin fee, wages, and wages as a share of sales against target.</p>
+
+    <details class="cs-tech">
+      <summary>How it works <span>for the technical reader</span></summary>
+      <p>Google Forms feed a response sheet. An Apps Script runs nightly on a time trigger: it builds an alias map from the staff list, resolves every submission to a canonical name, and groups submissions by person, date and unit. The latest in each group is kept; the rest are appended to a hidden audit tab with their row numbers and timestamps. Kept rows are written to a processed tab as formulas, with start and end times rounded to 15 minutes, breaks converted from the form's options to hours, and pay calculated at the rate in force on the shift date, so the April 2026 rate change applied from the right game without touching earlier ones.</p>
+      <p>An hour later a second trigger creates one payroll line per person per game, skipping any that already exist, so re-runs never double up. Each line looks up the opponent, sums hours and pay, checks the posted rota, and grades the variance against scheduled hours with two thresholds. A system flag marks any line with a duplicate behind it, red if it has already been paid. A form trigger emails me when someone submits as "Others", so the staff list never falls behind.</p>
+    </details>
+  </section>
+
+  <!-- ============ links ============ -->
+  <section class="cs-sec cs-links" data-reveal>
+    <h2 class="section-label">Principles in this case</h2>
+    <p class="chips">
+      <a href="Body_of_Work.html#p6">The tool fits the job</a>
+      <a href="Body_of_Work.html#p1">Data you can trust</a>
+      <a href="Body_of_Work.html#p5">Every change leaves a trail</a>
+    </p>
+  </section>
+
+  <section class="cs-sec cs-more" data-reveal>
+    <h2 class="section-label">More cases</h2>
+    <div class="mc-row" id="moreCases"><a class="mc" href="case-tools-agree.html"><span class="mc-k">Systems built</span><span class="mc-t">Our tools never agree on what's booked</span></a><a class="mc" href="case-cutover.html"><span class="mc-k">Systems built</span><span class="mc-t">Can we switch systems without stopping the business?</span></a></div>
+  </section>
+
+  <section class="cta-band" data-reveal>
+    <h2>Losing a morning to the same job every week?</h2>
+    <p>That's the kind of thing I automate.</p>
+    <div class="mail-row">
+      <a class="btn-book" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a 20-minute call →</a>
+      <span class="mail-alt"><span class="cta-or">or</span>
+      <a class="mail" href="Case_Studies.html">see all case studies</a></span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Mark Lorenze Ponciano · client details anonymised · updated September 2026</span>
+  <span class="mono">Remote · Philippines (GMT+8)</span>
+  <span class="privacy">No cookies · no analytics · no tracking. This site collects nothing about you.</span>
+</footer>
+
+</body>
+</html>
