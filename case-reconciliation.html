@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Can 15,000 payments a month match themselves? — Mark Ponciano</title>
+<meta name="description" content="Case study: a medical clinic reconciling about 15,000 transaction lines a month across nine payment types with no shared ID. About 80% now match automatically, and it balanced every month.">>
+<meta property="og:type" content="article">
+<meta property="og:title" content="Can 15,000 payments a month match themselves? — Mark Ponciano">
+<meta property="og:description" content="About 80% now match automatically, and it balanced every month.">
+<meta property="og:url" content="https://markponciano.github.io/case-reconciliation.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%2322315c'/%3E%3Ctext%20x='16'%20y='22'%20font-family='monospace'%20font-size='14'%20font-weight='700'%20fill='%23fff'%20text-anchor='middle'%3EMP%3C/text%3E%3C/svg%3E">
+<!-- apply a saved light/dark choice before the first paint, so pages never flash the wrong theme -->
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+<link rel="stylesheet" href="fonts.css">
+<link rel="stylesheet" href="styles.css">
+<script src="app.js" defer></script>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html"><img class="brand-photo" src="mark.jpg" alt="" width="30" height="30" aria-hidden="true"><span>mark<b>.</b>ponciano</span></a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="Case_Studies.html">Case studies</a>
+      <a href="Body_of_Work.html">Work</a>
+      <a href="Mark_Ponciano_Resume_2026.html">Résumé</a>
+      <a class="nav-cta" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a call</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch light / dark">◐</button>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap how case">
+
+  <p class="cs-back"><a href="Case_Studies.html"><span aria-hidden="true">←</span> All case studies</a></p>
+
+  <section class="page-hero">
+    <p class="eyebrow">Money found · Medical clinic (same client)</p>
+    <h1>Can 15,000 payments a month match themselves?</h1>
+    <p class="lede">About 80% of them, now. The rest are sorted for a person, hardest last.</p>
+  </section>
+
+  <dl class="glance">
+    <div><dt>Result</dt><dd>About 80% matched automatically</dd></div>
+    <div><dt>My role</dt><dd>Bookkeeper</dd></div>
+    <div><dt>When</dt><dd>Monthly, through 2025</dd></div>
+  </dl>
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">The situation</h2>
+    <div class="cs-grid">
+      <div class="cs-text">
+        <p><b>Every month, about 15,000 transaction lines had to be matched against the payments that actually came in.</b> The clinic's practice system recorded the work; the money arrived through nine different channels.</p>
+        <p>Each channel had its own rules, and there was no shared ID running through them to match on. Direct debit, EFT, Medicare, DVA, WorkCover, HICAPS, card, cash, and deposits each had to be worked a different way.</p>
+      </div>
+      <figure class="vis v-streams" aria-label="Nine payment types, each with its own rules and no shared ID, all landing in one pile to match by hand.">
+        <div class="streams" aria-hidden="true">
+          <div class="st-grid"><span class="st">Direct debit</span><span class="st">EFT</span><span class="st">Medicare</span><span class="st">DVA</span><span class="st">WorkCover</span><span class="st">HICAPS</span><span class="st">Card</span><span class="st">Cash</span><span class="st">Deposits</span></div>
+          <p class="st-pile">→ about 15,000 lines a month to match, no shared ID</p>
+        </div>
+        <figcaption>Nine ways in, nothing in common.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What made it hard</h2>
+    <div class="cs-grid">
+      <div class="cs-text">
+        <p><b>Some lines had nothing to match on at all.</b> WorkCover was the worst: high volume and mostly without a reference, so there was often nothing clean to tie a payment back to.</p>
+        <p>And the practice system's export didn't come out clean. None of it could be matched reliably until it had been put into one consistent shape first.</p>
+      </div>
+      <figure class="vis v-noref" aria-label="A WorkCover payment line with no reference, and nothing in the records to match it to.">
+        <div class="noref" aria-hidden="true">
+          <div class="nr-row"><i>WorkCover payment</i><b>reference: <em>none</em></b></div>
+          <div class="nr-q">? ? ?</div>
+          <p class="nr-cap">Nothing to match it to.</p>
+        </div>
+        <figcaption>The hardest lines had no handle at all.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What I did</h2>
+    <ol class="cs-steps">
+      <li><b>Did it by hand first.</b> I reconciled the real exports month by month before automating anything, to learn how each payment type actually behaved and where matching broke.</li>
+      <li><b>Cleaned the export into one shape.</b> A normalisation step turned each messy export into one consistent format, because nothing downstream can be trusted until that's done.</li>
+      <li><b>Gave each payment type its own rules.</b> An Apps Script pipeline worked all nine channels, each against the rules that fit it.</li>
+      <li><b>Sorted the results by how sure it was.</b> Matched outright, part-matched for a quick confirm, or left for a person. The genuinely ambiguous cases, like unreferenced WorkCover, stayed with a human rather than letting a machine guess at real providers' money.</li>
+      <li><b>Ran it every month, then handed it over,</b> with a walkthrough, so it didn't depend on me.</li>
+    </ol>
+    <figure class="vis v-pipe" aria-label="The export is cleaned first, then each payment type is matched by its own rules, and the result is split into matched, quick confirm and by hand.">
+      <div class="pipe" aria-hidden="true">
+        <span class="pp">Raw export</span><span class="pp-a"><i class="pp-dot"></i></span>
+        <span class="pp">Cleaned into one shape</span><span class="pp-a"><i class="pp-dot"></i></span>
+        <span class="pp">Nine sets of rules</span><span class="pp-a"><i class="pp-dot"></i></span>
+        <span class="pp pp-end">Matched, confirm, or by hand</span>
+      </div>
+      <figcaption>Clean first, then match.</figcaption>
+    </figure>
+  </section>
+
+  <section class="cs-sec" data-reveal>
+    <h2 class="section-label">What changed</h2>
+    <div class="cs-grid">
+      <figure class="vis v-season" aria-label="About 80 percent matched automatically, 15 percent part-matched for a quick confirm, and 5 percent left for full manual reconciliation.">
+        <div class="season" aria-hidden="true">
+          <p class="sn-h">Every month</p>
+          <div class="sn-bar"><span class="sn-ok" style="--w:80%"></span><span class="sn-mid" style="--w:15%"></span><span class="sn-flag" style="--w:5%"></span></div>
+          <div class="sn-keys">
+            <span><b>~80%</b> matched automatically</span>
+            <span class="k-mid"><b>~15%</b> part-matched, a quick confirm</span>
+            <span class="k-flag"><b>~5%</b> left for a person</span>
+          </div>
+        </div>
+        <figcaption>A person only works the hard 5%.</figcaption>
+      </figure>
+      <table class="ba">
+        <thead><tr><th scope="col">Before</th><th scope="col">After</th></tr></thead>
+        <tbody>
+          <tr><td>Every line matched by hand</td><td>About 80% matched automatically</td></tr>
+          <tr><td>Messy exports, no shared ID</td><td>Cleaned first, then matched by each type's rules</td></tr>
+          <tr><td>The hard cases buried in the easy ones</td><td>The hard 5% set aside for a person</td></tr>
+          <tr><td>Knowledge in one person's head</td><td>Handed over with a walkthrough</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="cs-note"><b>It balanced, every month.</b> Across about 15,000 lines, one wrong match would have shown up as a break that stopped the reconciliation balancing.</p>
+
+    <details class="cs-tech">
+      <summary>How it works <span>for the technical reader</span></summary>
+      <p>The practice system's export was normalised into a single schema first: consistent dates, amounts, provider identifiers and payment-type labels. Each of the nine payment types then ran through its own matching rules, since a Medicare line and a HICAPS line carry different evidence. Results were bucketed by confidence: exact matches cleared automatically, partial matches were queued for a human to confirm, and lines with nothing to match on went to full manual reconciliation. Because every line had to land in one of the three, a wrong match would show up as a break in the month's balance. It balanced every month.</p>
+    </details>
+  </section>
+
+  <section class="cs-sec cs-links" data-reveal>
+    <h2 class="section-label">Principles in this case</h2>
+    <p class="chips">
+      <a href="Body_of_Work.html#p1">Data you can trust</a>
+      <a href="Body_of_Work.html#p6">The tool fits the job</a>
+      <a href="Body_of_Work.html#p8">Nothing lives only in my head</a>
+    </p>
+  </section>
+
+  <section class="cs-sec cs-more" data-reveal>
+    <h2 class="section-label">More cases</h2>
+    <div class="mc-row" id="moreCases"><a class="mc" href="case-double-payments.html"><span class="mc-k">Money found</span><span class="mc-t">Are we paying anyone twice?</span></a><a class="mc" href="case-matchday-payroll.html"><span class="mc-k">Systems built</span><span class="mc-t">Matchday payroll eats a whole morning after every game</span></a></div>
+  </section>
+
+  <section class="cta-band" data-reveal>
+    <h2>Reconciliation that never quite ties out?</h2>
+    <p>That’s the kind of thing I automate.</p>
+    <div class="mail-row">
+      <a class="btn-book" href="https://cal.com/markponciano/intro-call" target="_blank" rel="noopener">Book a 20-minute call →</a>
+      <span class="mail-alt"><span class="cta-or">or</span>
+      <a class="mail" href="Case_Studies.html">see all case studies</a></span>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <span>© 2026 Mark Lorenze Ponciano · client details anonymised · updated September 2026</span>
+  <span class="mono">Remote · Philippines (GMT+8)</span>
+  <span class="privacy">No cookies · no analytics · no tracking. This site collects nothing about you.</span>
+</footer>
+
+</body>
+</html>

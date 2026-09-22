@@ -104,7 +104,10 @@
       {url:'case-silent-failures.html',title:'We only find out something broke when someone happens to look', topic:'Systems built'},
       {url:'case-cutover.html',      title:'Can we switch systems without stopping the business?', topic:'Systems built'},
       {url:'case-matchday-payroll.html', title:'Matchday payroll eats a whole morning after every game', topic:'Systems built'},
-      {url:'case-profit-gap.html', title:'Why is our profit lower than the report says?', topic:'Money found'}
+      {url:'case-profit-gap.html', title:'Why is our profit lower than the report says?', topic:'Money found'},
+      {url:'case-double-payments.html', title:'Are we paying anyone twice?', topic:'Money found'},
+      {url:'case-reconciliation.html', title:'Can 15,000 payments a month match themselves?', topic:'Money found'},
+      {url:'case-supplier-invoices.html', title:'Supplier invoices eat hours of data entry', topic:'Systems built'}
     ];
     var here=(location.pathname.split('/').pop()||'').toLowerCase();
     var pool=CASES.filter(function(c){return c.url.toLowerCase()!==here;});
