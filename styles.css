@@ -652,6 +652,10 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 @keyframes hw-toggle{from{left:3px}to{left:19px}}
 @keyframes hw-toggle-bg{from{background:var(--line)}to{background:var(--navy)}}
 
+@media (max-width:560px){
+  /* the handover is three columns of text; stack it rather than squeeze it on a phone */
+  .how .hand{grid-template-columns:1fr;justify-items:start;gap:10px}
+}
 @media (max-width:760px){
   .how .dots{grid-template-columns:repeat(13,1fr)}
   .how .steps{grid-template-columns:1fr}
