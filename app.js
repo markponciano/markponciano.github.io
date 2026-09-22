@@ -99,15 +99,15 @@
   var moreRow=document.getElementById('moreCases');
   if(moreRow){
     var CASES=[
-      {url:'case-tools-agree.html',   title:"Our tools never agree on what's booked", topic:'Systems built'},
-      {url:'case-wrong-quotes.html',  title:'Salespeople keep sending wrong quotes',  topic:'Systems built'},
-      {url:'case-silent-failures.html',title:'We only find out something broke when someone happens to look', topic:'Systems built'},
-      {url:'case-cutover.html',      title:'Can we switch systems without stopping the business?', topic:'Systems built'},
-      {url:'case-matchday-payroll.html', title:'Matchday payroll eats a whole morning after every game', topic:'Systems built'},
-      {url:'case-profit-gap.html', title:'Why is our profit lower than the report says?', topic:'Money found'},
-      {url:'case-double-payments.html', title:'Are we paying anyone twice?', topic:'Money found'},
-      {url:'case-reconciliation.html', title:"Reconciliation takes up someone's whole month", topic:'Money found'},
-      {url:'case-supplier-invoices.html', title:'Supplier invoices eat hours of data entry', topic:'Systems built'}
+      {url:'case-tools-agree.html',   title:"Our tools never agree on what's booked", topic:'Systems that run themselves'},
+      {url:'case-wrong-quotes.html',  title:'Salespeople keep sending wrong quotes',  topic:'Systems that run themselves'},
+      {url:'case-silent-failures.html',title:'We only find out something broke when someone happens to look', topic:'Systems that run themselves'},
+      {url:'case-cutover.html',      title:'Can we switch systems without stopping the business?', topic:'Systems that run themselves'},
+      {url:'case-matchday-payroll.html', title:'Matchday payroll eats a whole morning after every game', topic:'Systems that run themselves'},
+      {url:'case-profit-gap.html', title:'Why is our profit lower than the report says?', topic:'Numbers you can trust'},
+      {url:'case-double-payments.html', title:'Are we paying anyone twice?', topic:'Numbers you can trust'},
+      {url:'case-reconciliation.html', title:"Reconciliation takes up someone's whole month", topic:'Numbers you can trust'},
+      {url:'case-supplier-invoices.html', title:'Supplier invoices eat hours of data entry', topic:'Systems that run themselves'}
     ];
     var here=(location.pathname.split('/').pop()||'').toLowerCase();
     var pool=CASES.filter(function(c){return c.url.toLowerCase()!==here;});
