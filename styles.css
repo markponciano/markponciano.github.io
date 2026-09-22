@@ -466,7 +466,7 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 .how .steps h3{margin:0 0 6px;font-size:1.08rem}
 .how .steps p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
 
-.how .pr{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center;
+.how .pr{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:34px;align-items:center;
   padding:34px 0;border-top:1px solid var(--line)}
 .how .pr-plain{grid-template-columns:1fr}
 .how .pr-plain .pr-text{max-width:560px}
@@ -655,6 +655,9 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 @media (max-width:560px){
   /* the handover is three columns of text; stack it rather than squeeze it on a phone */
   .how .hand{grid-template-columns:1fr;justify-items:start;gap:10px}
+  /* the alert chain can't wrap, so on a narrow screen it runs downward instead */
+  .how .chain{flex-direction:column;align-items:flex-start;gap:0}
+  .how .chain .link{flex:none;width:2px;height:14px;margin-left:22px}
 }
 @media (max-width:760px){
   .how .dots{grid-template-columns:repeat(13,1fr)}
@@ -674,7 +677,7 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 .case .glance dd{margin:0;font-weight:600;line-height:1.35}
 .case .cs-sec{padding:6px 0 10px}
 .case .cs-sec .section-label{margin-top:52px}
-.case .cs-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:34px;align-items:start}
+.case .cs-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:34px;align-items:start}
 .case .cs-text p{margin:0 0 14px;font-size:1.06rem;line-height:1.65}
 .case .cs-steps{margin:0 0 22px;padding-left:22px;max-width:720px}
 .case .cs-steps > li{margin:0 0 14px;font-size:1.06rem;line-height:1.6;padding-left:4px}
