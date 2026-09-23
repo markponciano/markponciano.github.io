@@ -1,5 +1,5 @@
 {
-  "_comment": "The one list of case studies. Add a case here, then run: python3 tools/build_cases.py. It rewrites the index cards in Case_Studies.html and the More cases list in app.js. Newest first within each topic.",
+  "_comment": "The one list of case studies. Add a case here, then run: python3 tools/build_cases.py. It rewrites the index cards in case-studies.html and the More cases list in app.js. Newest first within each topic.",
   "topics": [
     {"id": "numbers", "name": "Numbers you can trust"},
     {"id": "systems", "name": "Systems that run themselves"}

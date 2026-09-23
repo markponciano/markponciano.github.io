@@ -457,7 +457,7 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
   a[href^="http"]::after,a[href^="mailto"]::after{content:""!important}
 }
 
-/* ---------- how I work (Body_of_Work.html) ----------
+/* ---------- how I work (how-i-work.html) ----------
    Every visual shows its finished state by default: with JavaScript off, with reduced
    motion, or before it scrolls in. The short animations only run once the visual reaches
    the upper part of the screen, where people are actually reading (.play), and only when
