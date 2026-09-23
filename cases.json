@@ -1,45 +1,99 @@
 {
-  "_comment": "The one list of case studies. Add a case here, then run: python3 tools/build_cases.py. It rewrites the index cards in case-studies.html and the More cases list in app.js. Newest first within each topic.",
+  "_comment": "The one list of case studies. Add a case here, then run: python3 tools/build_cases.py. It rewrites the index cards in case-studies.html and the More cases list in app.js. Newest first within each topic. Set \"featured\": true on up to three cases to show them on the homepage.",
   "topics": [
-    {"id": "numbers", "name": "Numbers you can trust"},
-    {"id": "systems", "name": "Systems that run themselves"}
+    {
+      "id": "numbers",
+      "name": "Numbers you can trust"
+    },
+    {
+      "id": "systems",
+      "name": "Systems that run themselves"
+    }
   ],
   "cases": [
-    {"slug": "case-profit-gap", "topic": "numbers", "client": "Events caterer", "added": "2026-09-23",
-     "title": "Why is our profit lower than the report says?",
-     "line": "The weekly profit report was missing real costs. Checking it against Xero found them.",
-     "number": "About £80,000 a year"},
-    {"slug": "case-double-payments", "topic": "numbers", "client": "Medical clinic", "added": "2026-09-23",
-     "title": "Are we paying anyone twice?",
-     "line": "A change in how providers were paid overlapped with the old way. Cross-checking the exports found who, and how much.",
-     "number": "About A$8,000 recovered"},
-    {"slug": "case-reconciliation", "topic": "numbers", "client": "Medical clinic", "added": "2026-09-23",
-     "title": "Reconciliation takes up someone's whole month",
-     "line": "15,000 lines a month across nine payment types, with no shared ID. Now most of it matches itself.",
-     "number": "A month, down to Monday morning"},
-    {"slug": "case-tools-agree", "topic": "systems", "client": "Events caterer", "added": "2026-09-23",
-     "title": "Our tools never agree on what's booked",
-     "line": "Bookings lived in several tools that disagreed. Now one record holds the truth and every tool shows it.",
-     "number": "Six tools, one record"},
-    {"slug": "case-wrong-quotes", "topic": "systems", "client": "Events caterer", "added": "2026-09-23",
-     "title": "Salespeople keep sending wrong quotes",
-     "line": "Pricing got complicated and wrong quotes went out. Now the screen only offers the right next step.",
-     "number": "Four steps, nothing that breaks a quote"},
-    {"slug": "case-silent-failures", "topic": "systems", "client": "Events caterer", "added": "2026-09-23",
-     "title": "We only find out something broke when someone happens to look",
-     "line": "The day after launch, a leftover from the old system put a wrong total on a test booking. Now the system watches itself.",
-     "number": "Caught in a test, not by a customer"},
-    {"slug": "case-cutover", "topic": "systems", "client": "Events caterer", "added": "2026-09-23",
-     "title": "Can we switch systems without stopping the business?",
-     "line": "The whole booking system moved over in one evening, with a way back at every step and the team trained first.",
-     "number": "About 130 checks. No downtime."},
-    {"slug": "case-matchday-payroll", "topic": "systems", "client": "Events caterer", "added": "2026-09-23",
-     "title": "Matchday payroll eats a whole morning after every game",
-     "line": "Shift forms, a posted rota and a morning of checking. Now it runs overnight and flags only what needs a person.",
-     "number": "A morning's work, done overnight"},
-    {"slug": "case-supplier-invoices", "topic": "systems", "client": "Café group", "added": "2026-09-23",
-     "title": "Supplier invoices eat hours of data entry",
-     "line": "Five cafés, five Xero ledgers, bills sent across by hand every week. Now each one routes itself.",
-     "number": "15–25 manual entries a day, gone"}
+    {
+      "slug": "case-profit-gap",
+      "topic": "numbers",
+      "client": "Events caterer",
+      "added": "2026-09-23",
+      "title": "Why is our profit lower than the report says?",
+      "line": "The weekly profit report was missing real costs. Checking it against Xero found them.",
+      "number": "About £80,000 a year",
+      "featured": true
+    },
+    {
+      "slug": "case-double-payments",
+      "topic": "numbers",
+      "client": "Medical clinic",
+      "added": "2026-09-23",
+      "title": "Are we paying anyone twice?",
+      "line": "A change in how providers were paid overlapped with the old way. Cross-checking the exports found who, and how much.",
+      "number": "About A$8,000 recovered"
+    },
+    {
+      "slug": "case-reconciliation",
+      "topic": "numbers",
+      "client": "Medical clinic",
+      "added": "2026-09-23",
+      "title": "Reconciliation takes up someone's whole month",
+      "line": "15,000 lines a month across nine payment types, with no shared ID. Now most of it matches itself.",
+      "number": "A month, down to Monday morning",
+      "featured": true
+    },
+    {
+      "slug": "case-tools-agree",
+      "topic": "systems",
+      "client": "Events caterer",
+      "added": "2026-09-23",
+      "title": "Our tools never agree on what's booked",
+      "line": "Bookings lived in several tools that disagreed. Now one record holds the truth and every tool shows it.",
+      "number": "Six tools, one record"
+    },
+    {
+      "slug": "case-wrong-quotes",
+      "topic": "systems",
+      "client": "Events caterer",
+      "added": "2026-09-23",
+      "title": "Salespeople keep sending wrong quotes",
+      "line": "Pricing got complicated and wrong quotes went out. Now the screen only offers the right next step.",
+      "number": "Four steps, nothing that breaks a quote"
+    },
+    {
+      "slug": "case-silent-failures",
+      "topic": "systems",
+      "client": "Events caterer",
+      "added": "2026-09-23",
+      "title": "We only find out something broke when someone happens to look",
+      "line": "The day after launch, a leftover from the old system put a wrong total on a test booking. Now the system watches itself.",
+      "number": "Caught in a test, not by a customer"
+    },
+    {
+      "slug": "case-cutover",
+      "topic": "systems",
+      "client": "Events caterer",
+      "added": "2026-09-23",
+      "title": "Can we switch systems without stopping the business?",
+      "line": "The whole booking system moved over in one evening, with a way back at every step and the team trained first.",
+      "number": "About 130 checks. No downtime.",
+      "featured": true
+    },
+    {
+      "slug": "case-matchday-payroll",
+      "topic": "systems",
+      "client": "Events caterer",
+      "added": "2026-09-23",
+      "title": "Matchday payroll eats a whole morning after every game",
+      "line": "Shift forms, a posted rota and a morning of checking. Now it runs overnight and flags only what needs a person.",
+      "number": "A morning's work, done overnight"
+    },
+    {
+      "slug": "case-supplier-invoices",
+      "topic": "systems",
+      "client": "Café group",
+      "added": "2026-09-23",
+      "title": "Supplier invoices eat hours of data entry",
+      "line": "Five cafés, five Xero ledgers, bills sent across by hand every week. Now each one routes itself.",
+      "number": "15–25 manual entries a day, gone"
+    }
   ]
 }
