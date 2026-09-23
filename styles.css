@@ -1218,6 +1218,50 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 .featured .featured-all a{color:var(--navy)}
 .featured .featured-all a:hover{text-decoration:underline}
 
+/* ---------- homepage (rewrite, 2026-09-23) ---------- */
+.avail{margin:14px 0 0;font-size:13.5px;color:var(--muted)}
+.avail::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#3fa46a;margin-right:8px;vertical-align:1px}
+/* hero: scattered admin work settling into one running system */
+.mess{--k:1;position:relative;display:grid;grid-template-columns:1fr 1fr;gap:8px;width:100%;max-width:300px;margin:34px auto 44px}
+.mx-hub{grid-column:1/-1;text-align:center;border:2px solid var(--navy);color:var(--navy);border-radius:10px;
+  padding:10px;font-weight:600;font-size:14px;background:var(--navy-soft);opacity:.25;transform:scale(.85);
+  transition:opacity .6s ease 1.1s,transform .6s ease 1.1s}
+.mx{position:relative;display:flex;justify-content:space-between;align-items:center;border:1px dashed var(--amber);
+  background:var(--surface);border-radius:8px;padding:8px 11px;font-size:13px;font-weight:600;color:var(--ink);
+  transform:translate(calc(var(--x) * var(--k)),calc(var(--y) * var(--k))) rotate(var(--r));
+  transition:transform .9s cubic-bezier(.3,.7,.25,1) var(--d),border-color .4s ease calc(var(--d) + .6s)}
+.mx::after{content:"?";font-family:var(--mono);color:var(--amber);transition:color .3s ease calc(var(--d) + .7s)}
+.mess.resolved .mx{transform:none;border-style:solid;border-color:var(--line)}
+.mess.resolved .mx::after{content:"✓";color:var(--navy)}
+.mess.resolved .mx-hub{opacity:1;transform:none}
+@media (scripting:none){.mess .mx{transform:none;border-style:solid;border-color:var(--line)}.mess .mx::after{content:"✓";color:var(--navy)}.mess .mx-hub{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.mx,.mx-hub,.mx::after{transition:none!important}}
+/* how I take on a project */
+.method .section-label{margin-top:56px}
+.m-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.m-steps li{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:20px 22px;box-shadow:var(--shadow-sm)}
+.m-n{display:inline-grid;place-items:center;width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--bg);
+  font-family:var(--mono);font-weight:600;font-size:13px;margin-bottom:10px}
+.m-steps h3{margin:0 0 6px;font-size:1.08rem}
+.m-steps p{margin:0;color:var(--muted);font-size:15px;line-height:1.55}
+.m-more{margin:14px 0 0;font-size:14px;font-weight:600}
+.m-more a{color:var(--navy)}
+.m-more a:hover{text-decoration:underline}
+/* what clients said */
+.said .section-label{margin-top:56px}
+.said-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+.q{margin:0;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--amber);border-radius:var(--radius);
+  padding:22px 24px;box-shadow:var(--shadow-sm)}
+.q blockquote{margin:0}
+.q blockquote p{margin:0;font-family:var(--serif);font-size:1.25rem;line-height:1.45;color:var(--ink)}
+.q blockquote .q2{margin-top:10px;font-size:1.05rem;color:var(--muted)}
+.q figcaption{margin-top:14px;font-size:13.5px;font-weight:600;color:var(--ink)}
+.q figcaption span{font-weight:400;color:var(--muted)}
+@media (max-width:760px){
+  .m-steps{grid-template-columns:1fr}
+  .mess{--k:.45;max-width:260px;margin:18px auto 26px}
+}
+
 /* ---------- page-to-page transitions ----------
    Cross-fade between pages instead of flashing blank (Chrome, Edge, Brave, recent Safari;
    other browsers just navigate as before). The header keeps its own name so it stays put
