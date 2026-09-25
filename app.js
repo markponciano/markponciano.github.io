@@ -165,7 +165,9 @@
       var href=a.getAttribute('href');
       if(!href||href.charAt(0)==='#'||href.indexOf('mailto:')===0) return;
       var file=href.split('/').pop().split('#')[0].split('?')[0].toLowerCase();
-      if(file===path||(path==='index.html'&&file==='')){ a.setAttribute('aria-current','page'); }
+      /* a case study counts as being in "Case studies" */
+      var here=path.indexOf('case-')===0?'case-studies.html':path;
+      if(file===here||(here==='index.html'&&file==='')){ a.setAttribute('aria-current','page'); }
     });
   })();
 })();
