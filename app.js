@@ -1,24 +1,7 @@
-/* shared behaviours: theme toggle, scroll reveal, count-up, chaos resolve */
+/* shared behaviours: scroll reveal, count-up, chaos resolve (the site is dark only, no theme toggle) */
 (function(){
   var root=document.documentElement;
   var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  /* theme (persists) */
-  var saved=null; try{saved=localStorage.getItem('theme');}catch(e){}
-  if(saved){root.setAttribute('data-theme',saved);}
-  var btn=document.getElementById('themeToggle');
-  function isDark(){var t=root.getAttribute('data-theme');
-    if(t)return t==='dark';
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;}
-  function paint(){ if(!btn) return; var d=isDark(); btn.textContent=d?'☀':'☾';
-    btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode'); btn.title=btn.getAttribute('aria-label'); }
-  paint();
-  if(btn){btn.addEventListener('click',function(){
-    var next=isDark()?'light':'dark';
-    root.setAttribute('data-theme',next);
-    try{localStorage.setItem('theme',next);}catch(e){}
-    paint();
-  });}
 
   /* chaos -> order (landing only) */
   var chaos=document.getElementById('chaos');
