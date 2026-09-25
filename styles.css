@@ -526,6 +526,7 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 .how .alert{display:inline-flex;align-items:center;gap:8px;margin:14px 0 0;font-size:13px;font-weight:600;
   color:var(--ink);background:var(--amber-soft);border-radius:20px;padding:5px 12px}
 .how .alert .dot{width:8px;height:8px;border-radius:50%;background:var(--amber)}
+.how .alert .alert-done{color:var(--navy)}
 
 /* 4 · access */
 .how .cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
@@ -588,6 +589,7 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
   .how .vis.play .chain .last .fail{display:inline;position:absolute;right:12px;animation:hw-out .3s ease 2.5s forwards}
   .how .vis.play .chain .last{animation:hw-warn 2.6s steps(1) .2s both}
   .how .vis.play .alert{opacity:0;animation:hw-in .3s ease .9s forwards,hw-pulse 1s ease 1.2s 2}
+  .how .vis.play .alert .alert-done{opacity:0;animation:hw-in .3s ease 2.6s forwards}
   .how .vis.play .log li{opacity:0;transform:translateY(6px);animation:hw-rise .35s ease forwards}
   .how .vis.play .log li:nth-child(1){animation-delay:.3s}
   .how .vis.play .log li:nth-child(2){animation-delay:.7s}
@@ -841,10 +843,12 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 .case .cm-edit{border-color:var(--amber)}
 .case .cm-rows s,.case .cm-rows em{font-style:normal;text-decoration:none}
 .case .cm-rows em{display:none}
-.case .vis:not(.armed) .cm-rows s,.case .vis:not(.armed) .tot-num s,.case .vis:not(.armed) .g b s{display:none}
+.case .vis:not(.armed) .tot-num s,.case .vis:not(.armed) .g b s{display:none}
 .case .vis:not(.armed) .cm-rows em,.case .vis:not(.armed) .tot-num em,.case .vis:not(.armed) .g b em{display:inline}
 .case .vis:not(.armed) .wt-none,.case .vis:not(.armed) .wt-alert,.case .vis:not(.armed) .tot-tag{opacity:1}
-.case .cm-rows s{text-decoration:none}
+.case .vis:not(.armed) .wt-s3{border-style:dashed;border-color:var(--amber);color:var(--muted);opacity:.65}   /* the failed step, when the animation doesn't run */
+/* the old value stays visible, struck through, so the edit is still readable after the animation */
+.case .vis:not(.armed) .cm-rows s{text-decoration:line-through;color:var(--muted);margin-right:6px}
 .case .tv-node{transition:none}
 /* end state by default (no JS, reduced motion); the animation starts them grey */
 .case .tv-step{border-color:var(--amber);background:var(--amber-soft);color:var(--ink)}
@@ -858,7 +862,7 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 
 @media (prefers-reduced-motion:no-preference){
   /* the card: one field is edited, and the total changes with it */
-  .case .vis.play .cm-edit s,.case .vis.play .cm-total s{animation:hw-out .3s ease 1.6s forwards}
+  .case .vis.play .cm-edit s,.case .vis.play .cm-total s{margin-right:6px;animation:hw-strike-val .3s ease 1.6s forwards}
   .case .vis.play .cm-edit em,.case .vis.play .cm-total em{display:inline;opacity:0;animation:hw-in .3s ease 1.9s forwards}
   .case .vis.play .cm-edit{animation:hw-edit 1.2s ease 1.4s both}
   .case .vis.play .cm-total{animation:hw-edit 1.2s ease 2s both}
@@ -875,6 +879,7 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
   .case .vis.play .fs-after{opacity:0;animation:hw-in .5s ease 1.6s forwards}
   .case .vis.play .fs-act{opacity:0;animation:hw-pop .4s ease 2.2s both}
 }
+@keyframes hw-strike-val{to{text-decoration:line-through;color:var(--muted)}}
 @keyframes hw-edit{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--amber) 45%,transparent)}40%{box-shadow:0 0 0 5px color-mix(in srgb,var(--amber) 28%,transparent)}100%{box-shadow:0 0 0 0 transparent}}
 @keyframes hw-run{0%{opacity:1;left:0}100%{opacity:1;left:calc(100% - 10px)}}
 @keyframes hw-fall{0%{opacity:1;top:0}100%{opacity:1;top:calc(100% - 10px)}}
@@ -888,10 +893,6 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 .case .ag i{font-style:normal;color:var(--muted)}
 .case .ag-a{font-family:var(--mono);position:relative}
 .case .ag-a s{text-decoration:none;color:var(--amber)}
-.case .ag-a em{display:none;font-style:normal;color:var(--navy)}
-.case .ag-src{display:flex;justify-content:space-between;align-items:center;max-width:220px;margin:12px auto 0;
-  border:2px solid var(--navy);border-radius:10px;padding:8px 14px;font-size:13px;font-weight:600;opacity:0}
-.case .ag-src b{font-family:var(--mono);color:var(--navy)}
 /* the clash */
 .case .cl-date{margin:0 0 10px;font-size:12.5px;font-weight:600;color:var(--muted)}
 .case .cl-row{display:flex;justify-content:space-between;gap:10px;border:1px solid var(--line);background:var(--surface);
@@ -915,16 +916,13 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
 .case .mr-ring{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .case .mr-ring span{border:1px solid var(--line);background:var(--surface);border-radius:8px;padding:8px 6px;
   text-align:center;font-size:12.5px;color:var(--muted);position:relative}
-.case .mr-ring span::before{content:"↑";display:block;color:var(--navy);font-size:11px;margin-bottom:2px}
+.case .mr-ring span::before{content:"↓";display:block;color:var(--navy);font-size:11px;margin-bottom:2px}
 @media (prefers-reduced-motion:no-preference){
-  /* the six answers disagree, then settle on one */
-  .case .vis.play .ag-a s{animation:hw-out .3s ease 2.4s forwards}
-  .case .vis.play .ag-a em{display:inline;opacity:0;animation:hw-in .3s ease 2.6s forwards}
+  /* the six tools answer one by one, and disagree (the fix is the "one record" visual further down) */
   .case .vis.play .ag{opacity:0;animation:hw-rise .3s ease forwards}
   .case .vis.play .ag:nth-child(1){animation-delay:.15s} .case .vis.play .ag:nth-child(2){animation-delay:.35s}
   .case .vis.play .ag:nth-child(3){animation-delay:.55s} .case .vis.play .ag:nth-child(4){animation-delay:.75s}
   .case .vis.play .ag:nth-child(5){animation-delay:.95s} .case .vis.play .ag:nth-child(6){animation-delay:1.15s}
-  .case .vis.play .ag-src{animation:hw-rise .4s ease 2.1s forwards}
   /* two bookings land on the same trailer */
   .case .vis.play .cl-row{opacity:0;animation:hw-rise .35s ease forwards}
   .case .vis.play .cl-row:nth-of-type(1){animation-delay:.3s}
@@ -945,9 +943,7 @@ section.cta-band h2{color:#fff;margin:0 0 16px;font-size:1.3rem;letter-spacing:-
   .case .vis.play .mr-ring span:nth-child(5){animation-delay:1.3s} .case .vis.play .mr-ring span:nth-child(6){animation-delay:1.45s}
 }
 /* end state by default (no JS, reduced motion) */
-.case .vis:not(.armed) .ag-a s{display:none}
-.case .vis:not(.armed) .ag-a em{display:inline}
-.case .vis:not(.armed) .ag-src,.case .vis:not(.armed) .cl-warn,.case .vis:not(.armed) .dv-note{opacity:1}
+.case .vis:not(.armed) .cl-warn,.case .vis:not(.armed) .dv-note{opacity:1}
 @media (max-width:560px){
   .case .ag-grid{grid-template-columns:repeat(2,1fr)}
   .case .mr-ring{grid-template-columns:repeat(2,1fr)}
