@@ -116,7 +116,7 @@
     if(pool.length>1){
       for(var i=pool.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=pool[i];pool[i]=pool[j];pool[j]=t;}
       moreRow.innerHTML=pool.slice(0,2).map(function(c){
-        return '<a class="mc" href="'+c.url+'"><span class="mc-k">'+c.topic+'</span><span class="mc-t">'+c.title+'</span></a>';
+        return '<a class="mc" href="'+c.url+'"><span class="mc-k">'+c.topic+'</span><span class="mc-t">'+c.title+'</span><span class="mc-go">Read <span aria-hidden="true">→</span></span></a>';
       }).join('');
     }
   }

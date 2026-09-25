@@ -38,7 +38,8 @@ def card(c, with_topic=False):
             f'        <span class="cx-k">{kicker}</span>\n'
             f'        <span class="cx-t">{esc(c["title"])}</span>\n'
             f'        <span class="cx-l">{esc(c["line"])}</span>\n'
-            f'        <span class="cx-n">{esc(c["number"])}</span>\n'
+            f'        <span class="cx-n"><span>{esc(c["number"])}</span>'
+            f'<span class="cx-go">Read <span class="arw" aria-hidden="true">→</span></span></span>\n'
             f'      </a>')
 
 sections = []
