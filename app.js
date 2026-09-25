@@ -10,7 +10,8 @@
   function isDark(){var t=root.getAttribute('data-theme');
     if(t)return t==='dark';
     return window.matchMedia('(prefers-color-scheme: dark)').matches;}
-  function paint(){ if(btn) btn.textContent=isDark()?'☀':'☾'; }
+  function paint(){ if(!btn) return; var d=isDark(); btn.textContent=d?'☀':'☾';
+    btn.setAttribute('aria-label',d?'Switch to light mode':'Switch to dark mode'); btn.title=btn.getAttribute('aria-label'); }
   paint();
   if(btn){btn.addEventListener('click',function(){
     var next=isDark()?'light':'dark';
@@ -140,20 +141,22 @@
   }
 
   /* copy-to-clipboard buttons */
-  function fallbackCopy(txt,cb){
+  function fallbackCopy(txt,cb,fail){
     try{var t=document.createElement('textarea');t.value=txt;t.setAttribute('readonly','');
       t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);
-      t.select();document.execCommand('copy');document.body.removeChild(t);cb();}catch(e){}
+      t.select();var ok=document.execCommand('copy');document.body.removeChild(t);if(ok)cb();else fail();}catch(e){fail();}
   }
   document.querySelectorAll('.copy-btn').forEach(function(b){
     var label=b.textContent;
+    b.setAttribute('aria-live','polite');   /* screen readers hear "Copied" too */
     b.addEventListener('click',function(){
       var txt=b.getAttribute('data-copy')||'';
       var done=function(){b.textContent='Copied ✓';b.classList.add('copied');
         setTimeout(function(){b.textContent=label;b.classList.remove('copied');},1600);};
+      var fail=function(){b.textContent='Couldn\'t copy';setTimeout(function(){b.textContent=label;},2400);};
       if(navigator.clipboard&&navigator.clipboard.writeText){
-        navigator.clipboard.writeText(txt).then(done,function(){fallbackCopy(txt,done);});
-      }else{fallbackCopy(txt,done);}
+        navigator.clipboard.writeText(txt).then(done,function(){fallbackCopy(txt,done,fail);});
+      }else{fallbackCopy(txt,done,fail);}
     });
   });
 
