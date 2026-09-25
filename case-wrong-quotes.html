@@ -84,7 +84,7 @@
     <h2 class="section-label">What went wrong</h2>
     <div class="cs-grid">
       <div class="cs-text">
-        <p><b>Quotes went out with wrong details.</b> A wrong field didn't stay on the card. The general ledger believes what is happening inside the opportunity, so the mistake travelled into the quote, then the invoice, then the books.</p>
+        <p><b>Quotes went out with wrong details.</b> A wrong field didn't stay on the card. The quote, the invoice and the accounts all copied whatever the card said, so the mistake travelled into the quote, then the invoice, then the books.</p>
       </div>
       <figure class="vis v-travel" aria-label="The wrong total is copied from the card into the quote, then the invoice, then the accounts. Each one becomes wrong in turn.">
         <div class="travel" aria-hidden="true">
@@ -162,7 +162,7 @@
 
     <details class="cs-tech">
       <summary>How it works <span>for the technical reader</span></summary>
-      <p>A standalone page inside WordPress, behind a login and a single permission that only the operator role and admins hold. It reads each booking from the MySQL database that every tool mirrors, and the booking's stage is worked out from what has happened, never set by hand. Approving a quote raises the Xero invoice from the same itemised lines the operator saw. Edits queue for 15 seconds before they send, so an undo never reaches the customer. Every action writes a row to an audit log. A link on each GoHighLevel card opens that booking's Console. It was rehearsed in a dry-run mode before the switch-over, so no real invoice or email went out until it was proven.</p>
+      <p>The general ledger believes what is happening inside the opportunity: the quote, the invoice and the accounts all read the same card fields, so a wrong field became a wrong invoice. A standalone page inside WordPress, behind a login and a single permission that only the operator role and admins hold. It reads each booking from the MySQL database that every tool mirrors, and the booking's stage is worked out from what has happened, never set by hand. Approving a quote raises the Xero invoice from the same itemised lines the operator saw. Edits queue for 15 seconds before they send, so an undo never reaches the customer. Every action writes a row to an audit log. A link on each GoHighLevel card opens that booking's Console. It was rehearsed in a dry-run mode before the switch-over, so no real invoice or email went out until it was proven.</p>
     </details>
   </section>
 

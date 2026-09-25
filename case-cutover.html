@@ -108,10 +108,10 @@
       <li><b>Wrote the switch as a runbook.</b> An ordered sequence of small steps, each one reversible in under a minute, so any step could be undone on its own rather than rolling the whole thing back.</li>
       <li><b>Picked a quiet evening</b>, trained the team first, and ran it: about 90 minutes of work. Customers kept booking throughout.</li>
     </ol>
-    <figure class="vis v-runbook" aria-label="The switch was an ordered runbook: freeze, re-sync, funnel, quotes and forms, payments, then the old system off. Each step reversible in under a minute.">
+    <figure class="vis v-runbook" aria-label="The switch was an ordered runbook: freeze, bring the records up to date, move the enquiry form, quotes and forms, payments, then the old system off. Each step reversible in under a minute.">
       <ol class="runbook" aria-hidden="true">
         <li><b>1</b>Freeze changes<em>undo &lt; 1 min</em></li>
-        <li><b>2</b>Re-sync the records<em>undo &lt; 1 min</em></li>
+        <li><b>2</b>Bring the records up to date<em>undo &lt; 1 min</em></li>
         <li><b>3</b>Move the enquiry form<em>undo &lt; 1 min</em></li>
         <li><b>4</b>Move quotes and forms<em>undo &lt; 1 min</em></li>
         <li><b>5</b>Move payments<em>undo &lt; 1 min</em></li>
@@ -149,7 +149,7 @@
     <details class="cs-tech">
       <summary>How it works <span>for the technical reader</span></summary>
       <p>The cutover was a big bang by design: all customer-facing surfaces moved at once, because a half-moved booking is worse than either state. What made that safe was everything around it. Every action in the new system sat behind a flag and ran dry until it was proven. A pre-flip gate of about 130 live checks covered each layer end to end, including a real invoice issued and voided, and was re-run until it left no residue. The deployed code was verified to match the repository before the window opened, and the schema's migration ledger was reconciled.</p>
-      <p>The runbook sequenced the flips so each had its own rollback: freeze, re-sync, funnel, quote and op-form atomically, payments, then the legacy automations off. Old quote and form URLs were bridged to the new routes so in-flight customers were unaffected. A rule that auto-closes stale quotes was deliberately left off until the migrated quotes had been handled. The day after, a leftover automation from the old system was still writing its own price to cards; it was caught on a test booking and every legacy automation was switched off that morning, which is <a href="case-silent-failures.html">its own case study</a>.</p>
+      <p>The runbook sequenced the flips so each had its own rollback: freeze, bring the records up to date, move the enquiry form, quote and op-form atomically, payments, then the legacy automations off. Old quote and form URLs were bridged to the new routes so in-flight customers were unaffected. A rule that auto-closes stale quotes was deliberately left off until the migrated quotes had been handled. The day after, a leftover automation from the old system was still writing its own price to cards; it was caught on a test booking and every legacy automation was switched off that morning, which is <a href="case-silent-failures.html">its own case study</a>.</p>
     </details>
   </section>
 
