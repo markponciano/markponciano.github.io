@@ -1,2 +1,7 @@
+# Link previews only: LinkedIn may read pages to build its preview cards.
+# Search engines stay out until Mark decides to be indexed (pages also carry noindex).
+User-agent: LinkedInBot
+Allow: /
+
 User-agent: *
 Disallow: /
