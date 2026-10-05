@@ -1170,6 +1170,30 @@ section.cta-band h2{color:var(--ink);margin:0 0 16px;font-size:1.3rem;letter-spa
   .case .st-grid{grid-template-columns:repeat(2,1fr)}
 }
 
+/* case: mixed books (reuses the cafés and duplicate-row visuals) */
+.case .cf-row.n8{grid-template-columns:repeat(8,1fr);margin:0}
+.case .cf-row.n6{grid-template-columns:repeat(3,1fr)}   /* six sets of books, two rows of three: "Personal ✓" won't fit six across */
+.case .cf-pile{margin:0;text-align:center;border:1px solid var(--amber);background:var(--amber-soft);border-radius:8px;
+  padding:12px 8px;font-size:12.5px;font-weight:600}
+.case .v-pile .cf-note{color:var(--muted);font-family:var(--mono)}
+/* the owner's words, shown as a plain quote rather than a warning */
+.case .dp-quote{background:none;border:0;padding:0;font-weight:400;font-style:italic;color:var(--muted)}
+@media (prefers-reduced-motion:no-preference){
+  .case .vis.play .cf:nth-child(6){animation-delay:1.25s} .case .vis.play .cf:nth-child(7){animation-delay:1.4s}
+  .case .vis.play .cf:nth-child(8){animation-delay:1.55s}
+  /* the six sets of books land after the accounts and the arrow line */
+  .case .vis.play .n6 .cf:nth-child(1){animation-delay:1.9s} .case .vis.play .n6 .cf:nth-child(2){animation-delay:2.05s}
+  .case .vis.play .n6 .cf:nth-child(3){animation-delay:2.2s} .case .vis.play .n6 .cf:nth-child(4){animation-delay:2.35s}
+  .case .vis.play .n6 .cf:nth-child(5){animation-delay:2.5s} .case .vis.play .n6 .cf:nth-child(6){animation-delay:2.65s}
+  .case .vis.play .cf-pile{animation:hw-pop .45s ease 1.9s both}
+  .case .vis.play .v-pile .cf-note{opacity:0;animation:hw-in .4s ease 2.3s forwards}
+  .case .vis.play .dp-quote{animation:hw-in .35s ease 1.8s forwards}   /* no pulse: it's a quote, not an alarm */
+}
+@media (max-width:560px){
+  .case .cf-row.n8{grid-template-columns:repeat(4,1fr)}
+  .case .cf-row.n6{grid-template-columns:repeat(3,1fr)}
+}
+
 /* ---------- case studies index (generated cards; see tools/build_cases.py) ---------- */
 .cases-index .cx-filter{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 6px}
 .cases-index .cx-filter a{font-size:14px;font-weight:600;color:var(--muted);border:1px solid var(--line);

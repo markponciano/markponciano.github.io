@@ -12,6 +12,15 @@
   ],
   "cases": [
     {
+      "slug": "case-mixed-books",
+      "topic": "numbers",
+      "client": "Inn and rentals",
+      "added": "2026-10-05",
+      "title": "Which business was this spent on?",
+      "line": "Five businesses and a year of spending through the same eight accounts. Now every line belongs to one of them.",
+      "number": "1,230 transactions, six sets of books"
+    },
+    {
       "slug": "case-profit-gap",
       "topic": "numbers",
       "client": "Events caterer",
