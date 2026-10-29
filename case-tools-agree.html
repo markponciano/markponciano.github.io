@@ -152,8 +152,8 @@
 
     <details class="cs-tech">
       <summary>How it works <span>for the technical reader</span></summary>
-      <p>A MySQL schema I designed holds the booking and its facts. GoHighLevel, Xero, the calendar, Brevo and CloudConvert are mirrors, each with its own connection: a private integration token for the CRM, OAuth with rotating refresh tokens for Xero, API keys elsewhere, and HMAC signatures both to verify inbound webhooks and to sign the links sent to customers. Stage is derived from the facts on the booking rather than stored, so it cannot drift from reality; the one deliberate exception is delivery, which has to be attested by a human because it cannot be observed.</p>
-      <p>Outward writes are mirrored on every change, with a nightly sweep that re-reads the mirror and repairs anything missing. Writes that can be lost, such as a history note during a CRM outage, record what they wrote, so a nightly retry can finish the job rather than losing it for good. Every schema change is a numbered migration with the reason written into it.</p>
+      <p>A MySQL schema I designed holds the booking and its facts. GoHighLevel, Xero, the calendar, Brevo and CloudConvert are mirrors, each with its own connection: a private integration token for the CRM, OAuth with rotating refresh tokens for Xero, API keys elsewhere, and HMAC signatures both to verify inbound webhooks and to sign the links sent to customers. Stage is worked out from the facts on the booking each time, so it can't drift from reality; the one deliberate exception is delivery, which has to be attested by a human because it cannot be observed.</p>
+      <p>Outward writes are mirrored on every change, with a nightly sweep that re-reads the mirror and repairs anything missing. Writes that can be lost, such as a history note during a CRM outage, record what they wrote, so a nightly retry can finish the job. Every schema change is a numbered migration with the reason written into it.</p>
     </details>
   </section>
 
